@@ -1,0 +1,23 @@
+{
+  "name": "Forge",
+  "version": "1.0.0",
+  "description": "![badge](https://img.shields.io/github/languages/top/ratalla816/group-project-2)   <br>    ![badge](https://img.shields.io/github/languages/count/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/github/issues/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/github/issues-closed/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/github/last-commit/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/badge/license-MIT-important)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratalla816/Forge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ratalla816/Forge/issues"
+  },
+  "homepage": "https://github.com/ratalla816/Forge#readme",
+  "dependencies": {
+    "heroku": "^7.59.0"
+  }
+}
