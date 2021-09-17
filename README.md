@@ -151,7 +151,7 @@ Thanks goes to these wonderful people:
 <!-- CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/"><img src="" width="100px;" alt=""/><br /><sub><b>Audry Ford</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/audryf"><img src="" width="100px;" alt=""/><br /><sub><b>Audry Ford</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/"><img src="" width="100px;" alt=""/><br /><sub><b>Cody McCray</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/Derimarg"><img src="" width="100px;" alt=""/><br /><sub><b>Derimar Gray</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/ratalla816"><img src="https://avatars.githubusercontent.com" width="100px;" alt=""/><br /><sub><b>Rob Atalla</b></sub></a><br /></td>
