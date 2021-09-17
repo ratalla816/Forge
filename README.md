@@ -10,7 +10,7 @@
 <br />
 <p align="center">
 
-<img src="./assets/images/logo.png" alt="Logo" width="80" height="80">
+<img src="./assets/images/logo.png" alt="Logo" width="150" height="100">
 
 <h3 align="center" id="forge">Forge</h3>
 
