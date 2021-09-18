@@ -1,10 +1,10 @@
 {
-  "name": "Forge",
+  "name": "forge",
   "version": "1.0.0",
-  "description": "![badge](https://img.shields.io/github/languages/top/ratalla816/group-project-2)   <br>    ![badge](https://img.shields.io/github/languages/count/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/github/issues/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/github/issues-closed/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/github/last-commit/ratalla816/group-project-2)   <br>   ![badge](https://img.shields.io/badge/license-MIT-important)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,15 @@
   },
   "homepage": "https://github.com/ratalla816/Forge#readme",
   "dependencies": {
-    "heroku": "^7.59.0"
-  }
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "heroku": "^7.59.0",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {}
 }
