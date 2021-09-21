@@ -1,4 +1,4 @@
-// completed by Rob at Audry on 09/21 @ 1426 //
+// completed by Rob and Audry on 09/21 @ 1426 //
 
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require ('bcrypt');
@@ -33,3 +33,4 @@ User.init(
 )
 
 module.exports = User;
+
