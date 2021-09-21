@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --primary-color: 
+    --secondary-color: 
+    --tertiary-color: 
+  }
+  
+
+
+
+
+  /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    .hero-form button {
+        width: 100%;
+    }
+  
+    .section-title {
+        width: 95%;
+    }
+  
+    .intro p {
+        width: 100%;
+    }
+  
+    .trainer {
+        flex: 0 100%;
+    }
+    
+    .contact-info {
+        text-align: center;
+    }
+  
+    .contact-info > * {
+        flex: 0 100%;
+    }
+  
+    .contact-form {
+        order: 3;
+    }
+  }
