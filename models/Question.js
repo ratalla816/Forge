@@ -1,8 +1,8 @@
+// completed by Rob on 9/21 @ 1504
 
-// completed by Rob on 9/21 @ 1540
-
-// WHEN I choose to share an experience
-// THEN I am able to post some text with a title to my page – MODEL: EXPERIENCE (ID TITLE TEXT) 
+// THEN I see options for asking a question, sharing an experience, or reviewing code
+// WHEN I go to ask a question
+// THEN I am able to post a link with some text and a title to my page for other developers to review- CREATE MODEL FOR QUESTION POST (ID TITLE LINK EXPLANATION)
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
@@ -14,7 +14,7 @@ Post.init(
   {
     id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true, autoIncrement: true },
     user_id: { type: DataTypes.INTEGER, references: { model: 'user', key: 'id' }},
-    title: { type: DataTypes.STRING, allowNull: false },
+    title: {type: DataTypes.STRING, allowNull: false },
     post_url: { type: DataTypes.STRING, allowNull: false, validate: { isURL: true }}
   },
 
@@ -22,8 +22,8 @@ Post.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Experience'
+    modelName: 'question'
   }
 );
 
-module.exports = Experience;
+module.exports = Question;

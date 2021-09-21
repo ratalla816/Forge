@@ -1,3 +1,7 @@
+// completed by Rob on 9/21 @ 1530
+
+// WHEN I choose to review code for other developers – COMMENT MODEL (ID, COMMENT TEXT, 
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -5,34 +9,12 @@ class Comment extends Model {}
 
 Comment.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    comment_text: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id'
-      }
-    },
-    post_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'post',
-        key: 'id'
-      }
-    }
+    id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true, autoIncrement: true },
+    post_id: { type: DataTypes.INTEGER, references: { model: 'post', key: 'id' }},
+    user_id: { type: DataTypes.INTEGER, references: { model: 'user', key: 'id' }},
+    comment_text: { type: DataTypes.STRING, allowNull: false }
   },
+
   {
     sequelize,
     freezeTableName: true,
