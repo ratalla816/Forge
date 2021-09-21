@@ -10,7 +10,7 @@
 <br />
 <p align="center">
 
-<img src="./assets/images/logo.png" alt="Logo" width="150" height="100">
+<img src="./public/assets/images/logo.png" alt="Logo" width="150" height="100">
 
 <h3 align="center" id="forge">Forge</h3>
 
@@ -152,7 +152,7 @@ Thanks goes to these wonderful people:
 <table>
   <tr>
     <td align="center"><a href="https://github.com/audryf"><img src="" width="100px;" alt=""/><br /><sub><b>Audry Ford</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/"><img src="" width="100px;" alt=""/><br /><sub><b>Cody McCray</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/cmccray87"><img src="" width="100px;" alt=""/><br /><sub><b>Cody McCray</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/Derimarg"><img src="" width="100px;" alt=""/><br /><sub><b>Derimar Gray</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/ratalla816"><img src="https://avatars.githubusercontent.com" width="100px;" alt=""/><br /><sub><b>Rob Atalla</b></sub></a><br /></td>
   </tr>
@@ -206,7 +206,3 @@ SOFTWARE.
 [issues-shield]: https://img.shields.io/github/issues/ratalla816/Forge.svg?style=for-the-badge
 [issues-url]: https://github.com/ratalla816/Forge/issues
 [license-shield]: https://img.shields.io/static/v1?label=license&message=MIT&color=yellowgreen.svg&style=for-the-badge
-  
-
-
-  TEST
