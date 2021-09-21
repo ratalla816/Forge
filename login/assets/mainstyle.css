@@ -70,7 +70,7 @@ nav .nav-middle a > i{
 }
 
 nav .nav-right .profile, .container .left-panel .profile{
-    background: url('/assets/images/dp.png');
+    background: url('./images/dp.png');
     height:30px;
     width:30px;
     background-size: cover;
