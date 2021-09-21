@@ -15,15 +15,17 @@ Post.init(
     id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true, autoIncrement: true },
     user_id: { type: DataTypes.INTEGER, references: { model: 'user', key: 'id' }},
     title: { type: DataTypes.STRING, allowNull: false },
-    post_url: { type: DataTypes.STRING, allowNull: false, validate: { isURL: true }}
+    post_url: { type: DataTypes.STRING, allowNull: true, validate: { isURL: true }},
+    post_body: { type: DataTypes.STRING, allowNull: false}
+
   },
 
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Experience'
+    modelName: 'post'
   }
 );
 
-module.exports = Experience;
+module.exports = Post;
