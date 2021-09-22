@@ -7,6 +7,7 @@ window.addEventListener ("scroll", function ()
     parallax.style.backgroundPositionY = offset * 0.7 + "px"; 
 })
 
+
 function myFunction() {
     var element = document.body;
     var container = document.getElementsByClassName('container');
