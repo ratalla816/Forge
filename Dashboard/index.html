@@ -166,9 +166,13 @@
                 </div>
             </div>
 
+    <!--------------- THIS IS WHERE THE MIDDLE SECTION STARTS ------------------------------>
+
             <div class="post create">
-                <div class="post-top">
-                    <div class="dp">
+                <!-- SCROLL -->
+                <div class="scroll">
+               <div class="post-top">
+                   <div class="dp">
                         <img src="./assets/images/dp.png" alt="Rob's profile image">
                     </div>
                     <input type="text" placeholder="What's on your mind Rob Atalla ?" />
@@ -191,6 +195,8 @@
             </div>
 
             <div class="post">
+                 <!-- SCROLL -->
+                 <!-- <div class="scroll"> -->
                 <div class="post-top">
                     <div class="dp">
                         <img src="./assets/images/girl.jpg" alt="">
@@ -223,6 +229,8 @@
             </div>
 
             <div class="post">
+                 <!-- SCROLL -->
+                 <!-- <div class="scroll"> -->
                 <div class="post-top">
                     <div class="dp">
                         <img src="./assets/images/dg.jpg" alt="">
@@ -254,6 +262,8 @@
             </div>
 
             <div class="post">
+                 <!-- SCROLL -->
+                 <!-- <div class="scroll"> -->
                 <div class="post-top">
                     <div class="dp">
                         <img src="./assets/images/bb.jpg" alt="profile image">
@@ -289,6 +299,8 @@
            
 
             <div class="post">
+                 <!-- SCROLL -->
+                 <!-- <div class="scroll"> -->
                 <div class="post-top">
                     <div class="dp">
                         <img src="./assets/images/fb.jpg" alt="profile image">
@@ -319,6 +331,8 @@
                 </div>
             </div>
         </div>
+       </div> 
+
         <div class="right-panel">
             <div class="pages-section">
                 <h4>Your pages</h4>
@@ -394,9 +408,24 @@
 </body>
 
 <script src="index.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js" 
-        integrity="sha512-PNXCBnFH9wShbV+mYnrfo0Gf3iSREgBWmYAoMIfc+Z83vVq3Nu4yxBk6j+BZ40ZIhtW3WlTQdBvW3AYLAnlgpA==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+
+<script>
+
+    window.addEventListener ('scroll', function (e) {
+
+        const target = document.querySelector('.scroll');
+        // target.style.transform = 'translate3d(0px, 50px, 0px';
+        target.style.background = '#b3ff00';
+        // console.log(target.style);
+        console.log(window.pageYOffset);
+        var scrolled = window.pageYOffset;
+        var rate = scrolled * 0.5;
+        target.style.transform = 'translate3d(0px, '+rate+' px, 0px';
+
+
+});
+
+</script>
 
 
 </html>
