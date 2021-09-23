@@ -403,42 +403,25 @@ nav .nav-right a > i{
 
 /* col-sm */
 @media screen and (min-width: 640px) {
-
-
-  }
-  
-  
- 
-  
-  /* col-lg */
-  @media screen and (min-width: 992px) {
-
+    
+    
    
-  }
-  
-  /* col-xl */
-  @media screen and (min-width: 1200px) {
+}
 
-   
-
-  }
-
-   /* media queries for smaller computer screens and tablets */
-   @media screen and (max-width: 980px) {
-
-
-  }
-  
-  /* media queries for tablets and mobile phones */
-  @media screen and (max-width: 768px) {
-  
-  
-  } 
-  
-  /* media querys for mobile phones and smaller */
-  @media screen and (max-width: 575px) { 
-  
+/* col-md */
+@media screen and (min-width: 768px) {
  
-  
-  }
+}
+
+
+/* col-lg */
+@media screen and (min-width: 992px) {
+ 
+}
+
+
+/* col-xl */
+@media screen and (min-width: 1200px) {
+ 
+}
   
