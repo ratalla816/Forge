@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // completed by Rob on 9/22 @ 1548
-=======
-// completed by Rob on 9/22 @ 1547
->>>>>>> develop
 // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
 
 import Comment from "../api/comment-routes";

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // completed by Rob on 9/22 @ 1548
-=======
-// completed by Rob on 9/22 @ 1547
->>>>>>> develop
 //expects {username: 'test', email: 'testgmail.com', password: 'password1234'}
 
 
