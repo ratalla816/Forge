@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
       }
       res.json(userData)
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     })
 });
 
@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_url', 'post_body', 'created_at']
+        attributes: ['id', 'title', 'url', 'body', 'created_at']
       }
     ]
   })
@@ -40,9 +40,9 @@ router.get('/:id', (req, res) => {
       }
       res.json(userData)
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     })
 });
 
@@ -63,19 +63,19 @@ router.post('/', (req, res) => {
         res.json(userData);
       });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
 // user login - findOne()
 // tested 09/22/21, 7:00pm (NOT WORKING)
 router.post('/login', (req, res) => {
-  User.findOne({ where: { email: req.body.email } })
+  User.findOne({ where: { username: req.body.username } })
     .then(userData => {
       if (!userData) {
-        res.status(404).json({ message: 'Email address not found' });
+        res.status(404).json({ message: 'Username address not found' });
         return;
       }
 
@@ -86,7 +86,7 @@ router.post('/login', (req, res) => {
       }
       req.session.save(() => {
         req.session.user_id = userData.id;
-        req.session.email = userData.email;
+        req.session.username = userData.username;
         req.session.loggedIn = true;
 
         res.json({ user: userData, message: 'Log in success' });
@@ -117,9 +117,9 @@ router.delete('/:id', (req, res) => {
       }
       res.json(userData);
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
