@@ -1,3 +1,5 @@
+// Completed by Derimar Gray on 9/22, updated by Rob Atalla on 9/23 @ 1338
+
 async function signupFormHandler(event) {
     event.preventDefault();
 
@@ -8,20 +10,13 @@ async function signupFormHandler(event) {
     if (name && email && password) {
         const response = await fetch('/api/users', {
             method: 'post',
-            body: JSON.stringify({
-                name,
-                email,
-                password
-            }),
+            body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' }
         });
 
-        if (response.ok) {
-            document.location.replace('/homepage');
-        } else {
-            alert(response.statusText);
-        }
-    }
-}
+        if (response.ok) 
+        { document.location.replace('/homepage'); } 
+        else { alert(response.statusText); }
+    }}
 
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
