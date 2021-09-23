@@ -261,51 +261,51 @@ footer a {
 /* col-sm */
 @media screen and (min-width: 640px) {
 	.col-sm-1 {
-	  flex: 0 0 calc(100% * 1 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 1 / 12 - 0.5%);
 	}
   
 	.col-sm-2 {
-	  flex: 0 0 calc(100% * 2 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 2 / 12 - 0.5%);
 	}
   
 	.col-sm-3 {
-	  flex: 0 0 calc(100% * 3 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 3 / 12 - 0.5%);
 	}
   
 	.col-sm-4 {
-	  flex: 0 0 calc(100% * 4 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 4 / 12 - 0.5%);
 	}
   
 	.col-sm-5 {
-	  flex: 0 0 calc(100% * 5 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 5 / 12 - 0.5%);
 	}
   
 	.col-sm-6 {
-	  flex: 0 0 calc(100% * 6 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 6 / 12 - 0.5%);
 	}
   
 	.col-sm-7 {
-	  flex: 0 0 calc(100% * 7 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 7 / 12 - 0.5%);
 	}
   
 	.col-sm-8 {
-	  flex: 0 0 calc(100% * 8 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 8 / 12 - 0.5%);
 	}
   
 	.col-sm-9 {
-	  flex: 0 0 calc(100% * 9 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 9 / 12 - 0.5%);
 	}
   
 	.col-sm-10 {
-	  flex: 0 0 calc(100% * 10 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 10 / 12 - 0.5%);
 	}
   
 	.col-sm-11 {
-	  flex: 0 0 calc(100% * 11 / 12 - 0.5%);
+	  flex: 0 0 calc(50% * 11 / 12 - 0.5%);
 	}
   
 	.col-sm-12 {
-	  flex: 0 0 100%;
+	  flex: 0 0 50%;
 	}
   }
   
@@ -472,7 +472,7 @@ footer a {
   }
 
    /* media queries for smaller computer screens and tablets */
-   @media screen and (max-width: 980px) {
+   /* @media screen and (max-width: 980px) {
     header {
       padding-bottom: 0;
       justify-content: center;
@@ -518,10 +518,10 @@ footer a {
     .contact-info iframe{
       flex: 1 100%;
     }
-  }
+  } */
   
   /* media queries for tablets and mobile phones */
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     section {
       padding: 30px 15px;
     }
@@ -540,10 +540,10 @@ footer a {
     .date-text {
       flex: 100%;  
     }
-  }
+  } */
   
   /* media querys for mobile phones and smaller */
-  @media screen and (max-width: 575px) {
+  /* @media screen and (max-width: 575px) {
   
     .hero-form button {
       width: 100%;
@@ -572,5 +572,5 @@ footer a {
     .contact-form {
       order: 3;
     }
-  }
+  } */
   
