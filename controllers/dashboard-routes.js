@@ -34,11 +34,15 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
-    })
-    .catch(err => {
+      res.render('all-posts-admin',
+        {
+          layout: 'main',
+          posts,
+          loggedIn: true
+        });
+    }).catch(err => {
       console.log(err);
-      res.status(500).json(err);
+      res.redirect('login');
     });
 });
 
@@ -68,8 +72,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
     .then(dbPostData => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
-        
+
         res.render('edit-post', {
+          layout: 'main',
           post,
           loggedIn: true
         });
