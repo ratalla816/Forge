@@ -402,10 +402,36 @@ nav .nav-right a > i{
 }
 
 /* col-sm */
-@media screen and (min-width: 640px) {
+@media screen and (max-width: 1160px) {
     
+    .left-panel {
+        display: block;
+        position: relative !important;
+        flex: none;
+        width: 100%;
     
-   
+    }
+    
+    .middle-panel {
+        display: block;
+        position: relative !important;
+        flex: none;
+        width: 100%;
+    }
+
+    .right-panel {
+        display: block;
+        position: relative !important;
+        flex: none;
+        width: 100%;
+    }
+    .container {
+        display: block !important;
+    }
+
+    .story {
+        width: 20% !important;
+    }
 }
 
 /* col-md */
