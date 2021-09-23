@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main-style.css">
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <title>Forge</title>
 </head>
@@ -43,14 +43,21 @@
             <span class="profile"></span>
 
             <a href="#">
-                <i class="fa fa-bell"></i>
+                <i class="fa fa-bell">
+                </i>
             </a>
-
-            <a href="#">
-                <i class="fas fa-ellipsis-h"></i>
-            </a>
-             <i class="fas fa-toggle-on dk" onclick="myfunction()"></i>
-
+            <span>
+                <div>
+                    <i class="fas fa-ellipsis-h dropbtn" onclick="dl()"></i>
+                    <div id="myDropdown" class="dropdown-content">
+                        <ul>
+                            <li href="#logout">Logout</li>
+                            <li href="#settings">Settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </span>
+            <i class="fas fa-toggle-on dk" onclick="myfunction()"></i>
         </div>
 
     </nav>
@@ -173,7 +180,7 @@
                     </div>
                     <input type="text" placeholder="What's on your mind Rob Atalla ?" />
                 </div>
-                
+
                 <div class="post-bottom">
                     <div class="action">
                         <i class="fa fa-video"></i>
@@ -203,9 +210,10 @@
                 </div>
 
                 <div class="post-content">
-                    “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”
+                    “Any fool can write code that a computer can understand. Good programmers write code that humans can
+                    understand.”
                 </div>
-                
+
                 <div class="post-bottom">
                     <div class="action">
                         <i class="far fa-thumbs-up"></i>
@@ -234,7 +242,7 @@
                     <i class="fas fa-ellipsis-h"></i>
                 </div>
                 <div class="post-content">
-                    Happy birthday to me!!! 
+                    Happy birthday to me!!!
                     <img src="./images/b.jpg" alt="Beach">
                 </div>
                 <div class="post-bottom">
@@ -269,7 +277,7 @@
                     Code is so cool...
                     <img src="images/c.jpg" />
                 </div>
-                
+
                 <div class="post-bottom">
                     <div class="action">
                         <i class="far fa-thumbs-up"></i>
@@ -286,7 +294,7 @@
                 </div>
             </div>
 
-           
+
 
             <div class="post">
                 <div class="post-top">
@@ -387,7 +395,7 @@
                     </div>
                     <p class="name">Willian Hass</p>
                 </a>
-                
+
             </div>
         </div>
     </div>
