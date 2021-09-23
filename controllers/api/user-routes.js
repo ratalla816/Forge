@@ -1,4 +1,4 @@
-// updated 09/22/21, 7:10pm (audry)
+// completed 09/22/21, 7:10pm (audry)
 
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
@@ -84,7 +84,6 @@ router.post('/login', (req, res) => {
         res.status(404).json({ message: 'Password is incorrect' });
         return;
       }
-
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.email = userData.email;
