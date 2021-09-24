@@ -1,8 +1,8 @@
+// finalized 09/23/21, 9:00pm - audry
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 
-// get all posts - findAll()
+// /api/posts/ - get all posts - findAll()
 // include user's username and comments with user's username
 // tested 09/22/21, 8:51pm (works)
 router.get('/', (req, res) => {
@@ -31,13 +31,10 @@ router.get('/', (req, res) => {
       }
       res.json(postData)
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error)
-    })
+    .catch(error => res.status(500).json(error))
 });
 
-// get single post by id - findOne()
+// /api/posts/1 - get single post by id - findOne()
 // include user's username and comments with user's username
 // tested 09/23/21, 1:00pm (works)
 router.get('/:id', (req, res) => {
@@ -66,14 +63,11 @@ router.get('/:id', (req, res) => {
       }
       res.json(postData)
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error)
-    });
+    .catch(error => res.status(500).json(error))
 })
 
 
-// create post - create()
+// /api/posts/ - create post - create()
 // tested 09/23/21, 1:00pm (works)
 router.post('/', (req, res) => {
   Post.create({
@@ -83,27 +77,21 @@ router.post('/', (req, res) => {
     body: req.body.body
   })
     .then(postData => res.json(postData))
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
-    });
+    .catch(error => res.status(500).json(error));
 });
 
-// delete post - destroy()
+// /api/posts/1 - delete post - destroy()
 // tested 09/23/21, 1:00pm (WORKS)
 router.delete('/:id', (req, res) => {
   Post.destroy({ where: { id: req.params.id } })
     .then(postData => {
       if (!postData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       res.json(postData)
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500);
-    });
+    .catch(error => res.status(500).json(error));
 });
 
 module.exports = router;

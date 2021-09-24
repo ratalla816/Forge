@@ -1,10 +1,9 @@
-// completed 09/22/21, 7:10pm (audry)
-
+// finalized 09/23/21, 9:00pm - audry
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
-// get all users - findAll()
-// tested 09/22/21, 6:45pm (works)
+// /api/users/ - get all users - findAll()
+// tested 09/23/21, 8:25pm (works)
 router.get('/', (req, res) => {
   User.findAll({ attributes: { exclude: ['password'] } })
     .then(userData => {
@@ -14,14 +13,11 @@ router.get('/', (req, res) => {
       }
       res.json(userData)
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
-    })
+    .catch(error => res.status(500).json(error))
 });
 
-// get one user by id - findOne()
-// tested 09/22/21, 6:45pm (works)
+// /api/users/1 - get one user by id - findOne()
+// tested 09/23/21, 8:45pm (works)
 router.get('/:id', (req, res) => {
   User.findOne({
     where: { id: req.params.id },
@@ -30,6 +26,10 @@ router.get('/:id', (req, res) => {
       {
         model: Post,
         attributes: ['id', 'title', 'url', 'body', 'created_at']
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'body', 'created_at']
       }
     ]
   })
@@ -40,14 +40,11 @@ router.get('/:id', (req, res) => {
       }
       res.json(userData)
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
-    })
+    .catch(error => res.status(500).json(error))
 });
 
-// create user - create()
-// tested 09/22/21, 6:45pm (works)
+// /api/users/ - create user - create()
+// tested 09/23/21, 8:20pm (works)
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
@@ -69,13 +66,13 @@ router.post('/', (req, res) => {
     });
 });
 
-// user login - findOne()
-// tested 09/22/21, 7:00pm (NOT WORKING)
+// /api/users/login - user login - findOne()
+// tested 09/23/21, 8:30pm (WORKING)
 router.post('/login', (req, res) => {
   User.findOne({ where: { username: req.body.username } })
     .then(userData => {
       if (!userData) {
-        res.status(404).json({ message: 'Username address not found' });
+        res.status(404).json({ message: 'Username not found' });
         return;
       }
 
@@ -89,13 +86,14 @@ router.post('/login', (req, res) => {
         req.session.username = userData.username;
         req.session.loggedIn = true;
 
-        res.json({ user: userData, message: 'Log in success' });
+        res.json({ user: userData, message: 'Login successful' });
       });
-    });
+    })
+    .catch(error => res.status(500).json(error));
 });
 
-// logout route findOne()
-// not tested, unsure how to test with out using button (maybe create a test)
+// /api/users/ - logout route findOne()
+// tested with insomnia 09/23/21, 8:30pm (works), gives 204 success message
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -106,8 +104,8 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// DELETE user by id - destroy()
-// tested - 9/22/21, 6:45pm (works)
+// /api/users/1 - delete user by id - destroy()
+// tested - 9/23/21, 8:35pm (works)
 router.delete('/:id', (req, res) => {
   User.destroy({ where: { id: req.params.id } })
     .then(userData => {
@@ -117,10 +115,7 @@ router.delete('/:id', (req, res) => {
       }
       res.json(userData);
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
-    });
+    .catch(error => res.status(500).json(error));
 });
 
 module.exports = router;

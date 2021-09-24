@@ -1,22 +1,23 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
-// get all comments - findAll()
+// /api/comments/ - get all comments - findAll()
 // include user's username
-// tested 09/23/21, 2:00pm (NOT WORKING)
+// tested 09/23/21, 9:00pm (NOT WORKING)
 router.get('/', (req, res) => {
     Comment.findAll({
         attributes: ['id', 'body', 'user_id', 'created_at'],
-        include: [
-            {
-                model: 'user',
-                attributes: ['username']
-            },
-            {
-                model: 'post',
-                attributes: 'title'
-            }
-        ]
+        // THE ISSUE IS HERE - SOMETHING TO DO WITH THE ASSOCIATIONS I THINK - ROUTE WORKS IN THIS STATE 9/23/21, 9:15pm
+        // include: [
+        //     {
+        //         model: 'user',
+        //         attributes: ['username']
+        //     },
+        //     {
+        //         model: 'post',
+        //         attributes: ['title', 'created_at']
+        //     }
+        // ]
     })
         .then(commentData => {
             if (!commentData) {
@@ -31,22 +32,24 @@ router.get('/', (req, res) => {
         })
 });
 
-// get one comment - findOne()
+// /api/comments/1 - get one comment - findOne()
 // include user's username and post title
+// tested 09/23/21, 9:00pm (NOT WORKING)
 router.get('/:id', (req, res) => {
     Comment.findOne({
         where: { id: req.params.id },
         attributes: ['id', 'body', 'user_id', 'created_at'],
-        include: [
-            {
-                model: 'user',
-                attributes: ['username']
-            },
-            {
-                model: 'post',
-                attributes: 'title'
-            }
-        ]
+        // THE ISSUE IS HERE - SOMETHING TO DO WITH THE ASSOCIATIONS I THINK - ROUTE WORKS IN THIS STATE 9/23/21, 9:15pm
+        // include: [
+        //     {
+        //         model: 'user',
+        //         attributes: ['username']
+        //     },
+        //     {
+        //         model: 'post',
+        //         attributes: 'title'
+        //     }
+        // ]
     })
         .then(commentData => {
             if (!commentData) {
@@ -78,8 +81,9 @@ router.post('/', (req, res) => {
         })
 });
 
-// delete post - destroy()
+// /api/comments/1 - delete post - destroy()
 // include user's username
+// tested 09/23/21, 9:00pm (works)
 router.delete('/:id', (req, res) => {
     Comment.destroy({ where: { id: req.params.id } })
         .then(commentData => {
@@ -89,10 +93,7 @@ router.delete('/:id', (req, res) => {
             }
             res.json(commentData)
         })
-        .catch(error => {
-            console.log(error);
-            res.status(500).json(error)
-        })
+        .catch(error => res.status(500).json(error))
 });
 
 module.exports = router;
