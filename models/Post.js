@@ -13,11 +13,10 @@ class Post extends Model {}
 Post.init(
   {
     id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true, autoIncrement: true },
-    user_id: { type: DataTypes.INTEGER, references: { model: 'user', key: 'id' }},
+    user_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'user', key: 'id' }},
     title: { type: DataTypes.STRING, allowNull: false },
-    post_url: { type: DataTypes.STRING, allowNull: true, validate: { isURL: true }},
-    post_body: { type: DataTypes.STRING, allowNull: false}
-
+    url: { type: DataTypes.STRING, allowNull: true, validate: { isURL: true }},
+    body: { type: DataTypes.STRING, allowNull: false}
   },
 
   {

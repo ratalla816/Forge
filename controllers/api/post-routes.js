@@ -1,123 +1,78 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
 
-// get all users
+// get all posts - findAll()
+// include user's username and comments with user's username
+// tested 09/22/21, 8:51pm (works)
 router.get('/', (req, res) => {
-  console.log('======================');
   Post.findAll({
+    order: [['created_at', 'DESC']],
+    attributes: ['id', 'title', 'url', 'body', 'created_at'],
     include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
       {
         model: User,
         attributes: ['username']
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'body'],
+        indlude: {
+          model: User,
+          attributes: ['username']
+        }
       }
     ]
   })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    .then(postData => {
+      if (!postData) {
+        res.status(404).json({ message: 'No posts found' });
+        return;
+      }
+      res.json(postData)
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error)
+    })
 });
 
+// get single post by id - findOne()
+// include user's username and comments with user's username
 router.get('/:id', (req, res) => {
-  Post.findOne({
-    where: {
-      id: req.params.id
-    },
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
-        return;
-      }
-      res.json(dbPostData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+
 });
 
-router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+// create post - create()
+// tested 09/22/21, 9:00pm (works)
+router.post('/', (req, res) => {
   Post.create({
+    user_id: req.session.user_id,
+    url: req.body.url,
     title: req.body.title,
-    post_url: req.body.post_url,
-    user_id: req.session.user_id
+    body: req.body.body
   })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .then(postData => res.json(postData))
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
-
-router.put('/:id', withAuth, (req, res) => {
-  Post.update(
-    {
-      title: req.body.title
-    },
-    {
-      where: {
-        id: req.params.id
-      }
-    }
-  )
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+// delete post - destroy()
+// tested 09/22/21, 9:05pm (NOT WORKING)
+router.delete('/:id', (req, res) => {
+  Post.destroy({ where: { id: req.body.id } })
+    .then(postData => {
+      if (!postData) {
+        res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(dbPostData);
+      res.json(postData)
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-router.delete('/:id', withAuth, (req, res) => {
-  console.log('id', req.params.id);
-  Post.destroy({
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
-        return;
-      }
-      res.json(dbPostData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500);
     });
 });
 
