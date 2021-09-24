@@ -476,13 +476,7 @@
       height: 185px; }
 
   nav .nav-left > input {
-      /* height: 40px; */
       padding: 5px 110px; 
-      /* border: none; */
-      /* border-radius: 25px; */
-      /* outline: none; */
-      /* background-color: #eee; */
-      /* margin-left: 10px; */
       width: 100% }    
 
   /* nav .nav-middle {
@@ -537,7 +531,6 @@
 @media screen and (max-width: 1160px) {
   
   nav {
-      /* display: block !important;  */
       flex-wrap: wrap; 
       height: 185px; }
 
