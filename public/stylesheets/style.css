@@ -258,37 +258,115 @@ footer a {
 	height: 25%;
 }
 
-/* col-md */
-@media screen and (min-width: 768px) {
-	
-	  }
-	  
-	  
-	  /* col-lg */
-	  @media screen and (min-width: 992px) {
-	
-	  }
-	  
-	  
-	  /* col-xl */
-	  @media screen and (min-width: 1200px) {
+/* mobile phones up to iphone 13 */
+@media screen and (max-width: 576px) {
 
-	
-	  }
-	
-	   /* media queries for smaller computer screens and tablets */
-	   @media screen and (max-width: 980px) {
-	  
-	  }
-	  
-	  /* media queries for tablets and mobile phones */
-	  @media screen and (max-width: 768px) {
-	  
-	  }
-	  
-	  /* media querys for mobile phones and smaller */
-	  @media screen and (max-width: 575px) {
-	  
-	 
-	  }
+    .sign-up-container {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+    .form-container {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .overlay-panel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        top: 0;
+        height: 97%;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+
+    form {
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        height: 97%;
+        text-align: center;
+    }
+
+    .logo {
+        margin: 40px;
+        width: 105%;
+        height: 16%;
+    }
+
+    .h1, h1 {
+        font-size: 1.5rem;
+    }
+
+
+}
+
+
+
+ /* tablet */
+ @media screen and (max-width: 1160px) {
+    
+    .sign-up-container {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+    .form-container {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .overlay-panel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+
+    form {
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        height: 97%;
+        text-align: center;
+    }
+
+    .logo {
+        margin: 40px;
+        width: 105%;
+        height: 16%;
+    }
+
+    .h1, h1 {
+        font-size: 1.5rem;
+    }
+
+ }
+
 	
