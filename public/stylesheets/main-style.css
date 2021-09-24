@@ -467,40 +467,101 @@
     display: block;
   }
   
-   /* col-sm */
-@media screen and (max-width: 1160px) {
+  /* col-sm */
+  @media screen and (max-width: 1160px) {
     
-  .left-panel { display: block; 
-                position: relative !important; 
-                flex: none; 
-                width: 100%; }
+    nav {
+        flex-wrap: wrap; 
+        height: 185px;
+ }
+
+    .left-panel { display: block; 
+        position: relative !important; 
+        flex: none; 
+        width: 100%; }
+
+    .middle-panel { 
+        display: block;
+        position: relative !important; } 
+           
+    .right-panel { 
+        display: block;
+        position: relative !important;
+        flex: none;
+        width: 100%; }
+
+    .container { 
+        display: block !important; 
+        flex: grow; } 
+      
+    .story { 
+        width: 20% !important; 
+        height: 200px; 
+        position: relative;
+        flex-direction: row;
+        overflow: visible;}
   
-  .middle-panel { display: block;
-                  position: relative !important;
-                  flex: none;
-                  width: 100%; }
+    .post 
+       { width: 65% !important; }
 
-  .right-panel { display: block;
-                 position: relative !important;
-                 flex: none;
-                 width: 100%; }
+    .action 
+       { width: 20% !important }
   
-  .container { display: block !important; }
+    }
+  
+  
+  
+  /* col-md */
+  @media screen and (max-width: 812px) {
 
-  .story { width: 20% !important; }
+    nav {
+        flex-wrap: wrap; 
+        height: 185px;
+ }
 
-}
+    .left-panel { display: block; 
+        position: relative !important; 
+        flex: none; 
+        width: 100%; }
 
-/* col-md */
-@media screen and (min-width: 768px) {
+    .middle-panel { 
+        display: block;
+        position: relative !important; } 
+         
+       
 
-}
+    .right-panel { 
+        display: block;
+        position: relative !important;
+        flex: none;
+        width: 100%; }
 
-/* col-lg */
-@media screen and (min-width: 992px) {
-}
+    .container { 
+        display: block !important; 
+        flex: grow; } 
+    
+    .story { 
+        width: 20% !important; 
+        height: 200px; 
+        position: relative;
+        flex-direction: row;
+        overflow: visible;}
+   
+    .post 
+       { width: 94% !important; }
 
-/* col-xl */
-@media screen and (min-width: 1200px) {
+    .action 
+       { width: 20% !important }
+  
+  }
+  
+  /* col-lg */
+  @media screen and (min-width: 992px) {
+  }
+  
+  /* col-xl */
+  @media screen and (min-width: 1200px) {
+  
+  }
+  
 
-}
