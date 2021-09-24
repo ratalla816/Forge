@@ -1,23 +1,22 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comment, User, Post } = require('../../models');
 
 // /api/comments/ - get all comments - findAll()
 // include user's username
-// tested 09/23/21, 9:00pm (NOT WORKING)
+// tested 09/23/21, 9:30pm (WORKING)
 router.get('/', (req, res) => {
     Comment.findAll({
         attributes: ['id', 'body', 'user_id', 'created_at'],
-        // THE ISSUE IS HERE - SOMETHING TO DO WITH THE ASSOCIATIONS I THINK - ROUTE WORKS IN THIS STATE 9/23/21, 9:15pm
-        // include: [
-        //     {
-        //         model: 'user',
-        //         attributes: ['username']
-        //     },
-        //     {
-        //         model: 'post',
-        //         attributes: ['title', 'created_at']
-        //     }
-        // ]
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Post,
+                attributes: ['title', 'created_at']
+            }
+        ]
     })
         .then(commentData => {
             if (!commentData) {
@@ -34,22 +33,21 @@ router.get('/', (req, res) => {
 
 // /api/comments/1 - get one comment - findOne()
 // include user's username and post title
-// tested 09/23/21, 9:00pm (NOT WORKING)
+// tested 09/23/21, 9:30pm (WORKING)
 router.get('/:id', (req, res) => {
     Comment.findOne({
         where: { id: req.params.id },
         attributes: ['id', 'body', 'user_id', 'created_at'],
-        // THE ISSUE IS HERE - SOMETHING TO DO WITH THE ASSOCIATIONS I THINK - ROUTE WORKS IN THIS STATE 9/23/21, 9:15pm
-        // include: [
-        //     {
-        //         model: 'user',
-        //         attributes: ['username']
-        //     },
-        //     {
-        //         model: 'post',
-        //         attributes: 'title'
-        //     }
-        // ]
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Post,
+                attributes: ['title']
+            }
+        ]
     })
         .then(commentData => {
             if (!commentData) {
@@ -58,10 +56,7 @@ router.get('/:id', (req, res) => {
             }
             res.json(commentData);
         })
-        .catch(error => {
-            console.log(error);
-            res.status(500).json(error);
-        })
+        .catch(error => res.status(500).json(error))
 });
 
 
@@ -75,10 +70,7 @@ router.post('/', (req, res) => {
         body: req.body.body
     })
         .then(commentData => res.json(commentData))
-        .catch(error => {
-            console.log(error);
-            res.status(500).json(error);
-        })
+        .catch(error => res.status(500).json(error))
 });
 
 // /api/comments/1 - delete post - destroy()
