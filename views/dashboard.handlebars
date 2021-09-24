@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/main-style.css">
     <title>Forge</title>
 </head>
 
 <body>
     <nav>
         <div class="nav-left">
-            <img src="./images/logo.png" alt="Logo">
+            <img src="/assets/images/logo.png" alt="Logo">
             <input type="text" placeholder="Search Mediabook..">
         </div>
 
@@ -45,11 +45,21 @@
             <a href="#">
                 <i class="fa fa-bell"></i>
             </a>
+            <span>
+                <div>
+                    <i class="fas fa-ellipsis-h dropbtn" onclick="dl()"></i>
+                    <div id="myDropdown" class="dropdown-content">
+                        <ul>
+                            <li id="logout" href="#">Logout</li>
+                            <li id="settings" href="#settings">Settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </span>
+            <i class="fas fa-toggle-on dk" onclick="myfunction()"></i>
 
-            <a href="#">
-                <i class="fas fa-ellipsis-h"></i>
-            </a>
         </div>
+
     </nav>
 
 
@@ -121,7 +131,7 @@
 
                 <div class="story create">
                     <div class="dp-image">
-                        <img src="./images/dp.png" alt="Profile pic">
+                        <img src="/assets/images//dp.png" alt="Profile pic">
                     </div>
                     <span class="dp-container">
                         <i class="fa fa-plus"></i>
@@ -131,33 +141,33 @@
 
 
                 <div class="story">
-                    <img src="./images/model.jpg" alt="Story image">
+                    <img src="/assets/images/model.jpg" alt="Story image">
                     <div class="dp-container">
-                        <img src="./images/girl.jpg" alt="">
+                        <img src="/assets/images/girl.jpg" alt="">
                     </div>
                     <p class="name">Audry Ford</p>
                 </div>
 
                 <div class="story">
-                    <img src="./images/bb.jpg" alt="Story image">
+                    <img src="/assets/images/bb.jpg" alt="Story image">
                     <span class="dp-container">
-                        <img src="./images/bb.jpg" alt="Profile pic">
+                        <img src="/assets/images/bb.jpg" alt="Profile pic">
                     </span>
                     <span class="name">Cody MC</span>
                 </div>
 
                 <div class="story">
-                    <img src="./images/b.jpg" alt="Story image">
+                    <img src="/assets/images/b.jpg" alt="Story image">
                     <span class="dp-container">
-                        <img src="./images/dg.jpg" alt="Profile pic">
+                        <img src="/assets/images/dg.jpg" alt="Profile pic">
                     </span>
                     <span class="name">Derimar Gray</span>
                 </div>
 
                 <div class="story">
-                    <img src="./images/f.jpg" alt="Story image">
+                    <img src="/assets/images/f.jpg" alt="Story image">
                     <span class="dp-container">
-                        <img src="./images/fb.jpg" alt="Profile pic">
+                        <img src="/assets/images/fb.jpg" alt="Profile pic">
                     </span>
                     <span class="name">Colleg-Football</span>
                 </div>
@@ -166,11 +176,11 @@
             <div class="post create">
                 <div class="post-top">
                     <div class="dp">
-                        <img src="./images/dp.png" alt="Rob's profile image">
+                        <img src="/assets/images/dp.png" alt="Rob's profile image">
                     </div>
                     <input type="text" placeholder="What's on your mind Rob Atalla ?" />
                 </div>
-                
+
                 <div class="post-bottom">
                     <div class="action">
                         <i class="fa fa-video"></i>
@@ -190,7 +200,7 @@
             <div class="post">
                 <div class="post-top">
                     <div class="dp">
-                        <img src="./images/girl.jpg" alt="">
+                        <img src="/assets/images/girl.jpg" alt="">
                     </div>
                     <div class="post-info">
                         <p class="name">Audry Ford</p>
@@ -200,11 +210,10 @@
                 </div>
 
                 <div class="post-content">
-                    Roses are red <br>
-                    Violets are blue <br>
-                    I'm ugly & you are too😏
+                    “Any fool can write code that a computer can understand. Good programmers write code that humans can
+                    understand.”
                 </div>
-                
+
                 <div class="post-bottom">
                     <div class="action">
                         <i class="far fa-thumbs-up"></i>
@@ -224,7 +233,7 @@
             <div class="post">
                 <div class="post-top">
                     <div class="dp">
-                        <img src="./images/dg.jpg" alt="">
+                        <img src="/assets/images/dg.jpg" alt="">
                     </div>
                     <div class="post-info">
                         <p class="name">Derimar Gray</p>
@@ -233,8 +242,8 @@
                     <i class="fas fa-ellipsis-h"></i>
                 </div>
                 <div class="post-content">
-                    Happy birthday to me!!! 
-                    <img src="./images/b.jpg" alt="Beach">
+                    Happy birthday to me!!!
+                    <img src="/assets/images/b.jpg" alt="Beach">
                 </div>
                 <div class="post-bottom">
                     <div class="action">
@@ -255,7 +264,7 @@
             <div class="post">
                 <div class="post-top">
                     <div class="dp">
-                        <img src="./images/bb.jpg" alt="profile image">
+                        <img src="/assets/images/bb.jpg" alt="profile image">
                     </div>
                     <div class="post-info">
                         <p class="name">Cody MC</p>
@@ -266,9 +275,9 @@
 
                 <div class="post-content">
                     Code is so cool...
-                    <img src="images/c.jpg" />
+                    <img src="/assets/images/c.jpg" />
                 </div>
-                
+
                 <div class="post-bottom">
                     <div class="action">
                         <i class="far fa-thumbs-up"></i>
@@ -285,12 +294,12 @@
                 </div>
             </div>
 
-           
+
 
             <div class="post">
                 <div class="post-top">
                     <div class="dp">
-                        <img src="./images/fb.jpg" alt="profile image">
+                        <img src="/assets/images/fb.jpg" alt="profile image">
                     </div>
                     <div class="post-info">
                         <p class="name">College Football</p>
@@ -300,7 +309,7 @@
                 </div>
                 <div class="post-content">
                     College Football | Bleacher Report| Latest News, Rumors, Score and Highlights...
-                    <img src="./images/f.jpg" alt="">
+                    <img src="/assets/images/f.jpg" alt="">
                 </div>
                 <div class="post-bottom">
                     <div class="action">
@@ -323,14 +332,14 @@
                 <h4>Your pages</h4>
                 <a class='page' href="#">
                     <div class="dp">
-                        <img src="./images/logo.png" alt="">
+                        <img src="/assets/images/logo.png" alt="">
                     </div>
                     <p class="name">Forge</p>
                 </a>
 
                 <a class='page' href="#">
                     <div class="dp">
-                        <img src="./images/ku.jpg" alt="">
+                        <img src="/assets/images/ku.jpg" alt="">
                     </div>
                     <p class="name">KUBootcamp</p>
                 </a>
@@ -340,56 +349,59 @@
                 <h4>Friends</h4>
                 <a class='friend' href="#">
                     <div class="dp">
-                        <img src="./images/aaron.jpg" alt="">
+                        <img src="/assets/images/aaron.jpg" alt="">
                     </div>
                     <p class="name">Aaron Jewell</p>
                 </a>
 
                 <a class='friend' href="#">
                     <div class="dp">
-                        <img src="./images/kelsey.jpg" alt="">
+                        <img src="/assets/images/kelsey.jpg" alt="">
                     </div>
                     <p class="name">kelsey Gasser</p>
                 </a>
 
                 <a class="friend" href="#">
                     <div class="dp">
-                        <img src="./images/calvin.jpg" alt="">
+                        <img src="/assets/images/calvin.jpg" alt="">
                     </div>
                     <p class="name">Calvin Freese</p>
                 </a>
 
                 <a class="friend" href="#">
                     <div class="dp">
-                        <img src="./images/brianw.jpg" alt="">
+                        <img src="/assets/images/brianw.jpg" alt="">
                     </div>
                     <p class="name">Brian Wilde</p>
                 </a>
 
                 <a class="friend" href="#">
                     <div class="dp">
-                        <img src="./images/micah.jpg" alt="">
+                        <img src="/assets/images/micah.jpg" alt="">
                     </div>
                     <p class="name">Micah Duehring</p>
                 </a>
 
                 <a class="friend" href="#">
                     <div class="dp">
-                        <img src="./images/willk.jpg" alt="">
+                        <img src="/assets/images/willk.jpg" alt="">
                     </div>
                     <p class="name">Will Knowles</p>
                 </a>
 
                 <a class="friend" href="#">
                     <div class="dp">
-                        <img src="./images/williamH.jpg" alt="">
+                        <img src="/assets/images/williamH.jpg" alt="">
                     </div>
                     <p class="name">Willian Hass</p>
                 </a>
-                
+
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script src="/javascript/logout.js"></script>
+<script src="/javascript/index.js"></script>

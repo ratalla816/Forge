@@ -260,38 +260,25 @@ footer a {
 
 /* col-sm */
 @media screen and (min-width: 640px) {
-<<<<<<< HEAD
     
     
    
-=======
-	
->>>>>>> ad6a223ca2ad3bdf9f55f3a0adaf818455f85f46
   }
   
   /* col-md */
   @media screen and (min-width: 768px) {
-<<<<<<< HEAD
    
-=======
-	
->>>>>>> ad6a223ca2ad3bdf9f55f3a0adaf818455f85f46
   }
   
   
   /* col-lg */
   @media screen and (min-width: 992px) {
-<<<<<<< HEAD
    
-=======
-
->>>>>>> ad6a223ca2ad3bdf9f55f3a0adaf818455f85f46
   }
   
   
   /* col-xl */
   @media screen and (min-width: 1200px) {
-<<<<<<< HEAD
    
   }
 
@@ -299,24 +286,4 @@ footer a {
   
 
 
-=======
-
-  }
-
-   /* media queries for smaller computer screens and tablets */
-   @media screen and (max-width: 980px) {
-  
-  }
-  
-  /* media queries for tablets and mobile phones */
-  @media screen and (max-width: 768px) {
-  
-  }
-  
-  /* media querys for mobile phones and smaller */
-  @media screen and (max-width: 575px) {
-  
- 
-  }
->>>>>>> ad6a223ca2ad3bdf9f55f3a0adaf818455f85f46
   

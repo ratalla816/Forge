@@ -72,7 +72,7 @@
   
   nav .nav-right .profile,
   .container .left-panel .profile {
-    background: url("./images/dp.png");
+    background: url("/images/dp.png");
     height: 30px;
     width: 30px;
     background-size: cover;
@@ -467,3 +467,49 @@
     display: block;
   }
   
+   /* col-sm */
+@media screen and (max-width: 1160px) {
+    
+  .left-panel {
+      display: block;
+      position: relative !important;
+      flex: none;
+      width: 100%;
+  
+  }
+  
+  .middle-panel {
+      display: block;
+      position: relative !important;
+      flex: none;
+      width: 100%;
+  }
+
+  .right-panel {
+      display: block;
+      position: relative !important;
+      flex: none;
+      width: 100%;
+  }
+  .container {
+      display: block !important;
+  }
+
+  .story {
+      width: 20% !important;
+  }
+}
+
+/* col-md */
+@media screen and (min-width: 768px) {
+
+}
+
+/* col-lg */
+@media screen and (min-width: 992px) {
+}
+
+/* col-xl */
+@media screen and (min-width: 1200px) {
+
+}

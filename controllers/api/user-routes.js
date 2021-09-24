@@ -2,6 +2,8 @@
 
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
+
 
 // get all users - findAll()
 // tested 09/22/21, 6:45pm (works)
@@ -14,9 +16,9 @@ router.get('/', (req, res) => {
       }
       res.json(userData)
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     })
 });
 
@@ -24,12 +26,17 @@ router.get('/', (req, res) => {
 // tested 09/22/21, 6:45pm (works)
 router.get('/:id', (req, res) => {
   User.findOne({
-    where: { id: req.params.id },
     attributes: { exclude: ['password'] },
+    where: { id: req.params.id },
     include: [
       {
         model: Post,
         attributes: ['id', 'title', 'url', 'body', 'created_at']
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'body', 'created_at'],
+        include: { model: Post, attributes: ['title'] }
       }
     ]
   })
@@ -63,9 +70,9 @@ router.post('/', (req, res) => {
         res.json(userData);
       });
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
@@ -106,9 +113,29 @@ router.post('/logout', (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, (req, res) => {
+  User.update(req.body, {
+      individualHooks: true,
+      where: {
+          id: req.params.id
+    }
+  })
+    .then(userData => {
+      if (!userData[0]) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(userData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // DELETE user by id - destroy()
 // tested - 9/22/21, 6:45pm (works)
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth ,(req, res) => {
   User.destroy({ where: { id: req.params.id } })
     .then(userData => {
       if (!userData) {
@@ -117,9 +144,9 @@ router.delete('/:id', (req, res) => {
       }
       res.json(userData);
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
