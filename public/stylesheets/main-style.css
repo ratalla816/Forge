@@ -470,34 +470,25 @@
    /* col-sm */
 @media screen and (max-width: 1160px) {
     
-  .left-panel {
-      display: block;
-      position: relative !important;
-      flex: none;
-      width: 100%;
+  .left-panel { display: block; 
+                position: relative !important; 
+                flex: none; 
+                width: 100%; }
   
-  }
+  .middle-panel { display: block;
+                  position: relative !important;
+                  flex: none;
+                  width: 100%; }
+
+  .right-panel { display: block;
+                 position: relative !important;
+                 flex: none;
+                 width: 100%; }
   
-  .middle-panel {
-      display: block;
-      position: relative !important;
-      flex: none;
-      width: 100%;
-  }
+  .container { display: block !important; }
 
-  .right-panel {
-      display: block;
-      position: relative !important;
-      flex: none;
-      width: 100%;
-  }
-  .container {
-      display: block !important;
-  }
+  .story { width: 20% !important; }
 
-  .story {
-      width: 20% !important;
-  }
 }
 
 /* col-md */
