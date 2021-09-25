@@ -49,6 +49,8 @@ router.get('/:id', (req, res) => {
 // /api/users/ - create user - create()
 // tested 09/23/21, 8:20pm (works)
 router.post('/', (req, res) => {
+  console.log(req.body);
+  
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -72,6 +74,7 @@ router.post('/', (req, res) => {
 // /api/users/login - user login - findOne()
 // tested 09/23/21, 8:30pm (WORKING)
 router.post('/login', (req, res) => {
+
   User.findOne({ where: { username: req.body.username } })
     .then(userData => {
       if (!userData) {
@@ -79,7 +82,7 @@ router.post('/login', (req, res) => {
         return;
       }
 
-      const isPassword = userData.validatePassword(req.body.password);
+      const isPassword = userData.checkPassword(req.body.password);
       if (!isPassword) {
         res.status(404).json({ message: 'Password is incorrect' });
         return;
@@ -92,7 +95,10 @@ router.post('/login', (req, res) => {
         res.json({ user: userData, message: 'Login successful' });
       });
     })
-    .catch(error => res.status(500).json(error));
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error)});
+    
 });
 
 // /api/users/ - logout route findOne()

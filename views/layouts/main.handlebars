@@ -1,4 +1,4 @@
-{{#if loggedIn}}
+{{!-- {{#if loggedIn}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -411,4 +411,42 @@
     <a href="/login" class="">login</a>
   </nav>
 </header>
+//{{/if}} --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+  <div class="wrapper">
+    <header>
+        <nav class="navbar mt-2">
+            {{#if loggedIn}}
+            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
+            <a href="/dashboard" class="navbar-item is-hoverable pt-1">dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
+            <button id="logout" class="button is-danger">logout</button>
+            {{else}}
+            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
+            <a href="/login" class="button is-primary">login</a>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main>
+            {{{ body }}}
+    </main>
+  </div>
+  </div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
 {{/if}}
+</body>
+
+</html>

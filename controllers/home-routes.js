@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     })
       .then(postData => {
         const posts = postData.map(post => post.get({ plain: true }));
-        res.render('homepage', {
+        res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn
           });
@@ -49,7 +49,7 @@ router.get('/post/:id', (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          attributes: ['id', 'body', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -93,4 +93,12 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+  router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('signup');
+  });
 module.exports = router;
