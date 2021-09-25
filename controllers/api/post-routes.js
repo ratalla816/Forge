@@ -1,26 +1,27 @@
 // finalized 09/23/21, 9:00pm - audry
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // /api/posts/ - get all posts - findAll()
 // include user's username and comments with user's username
 // tested 09/22/21, 8:51pm (works)
 router.get('/', (req, res) => {
   Post.findAll({
-    order: [['created_at', 'DESC']],
     attributes: ['id', 'title', 'url', 'body', 'created_at'],
+    order: [['created_at', 'DESC']],
     include: [
       {
-        model: User,
-        attributes: ['username']
-      },
-      {
         model: Comment,
-        attributes: ['id', 'body'],
-        indlude: {
+        attributes: ['id', 'body', 'post_id', 'user_id', 'created_at'],
+        include: {
           model: User,
           attributes: ['username']
         }
+      },
+      {
+        model: User,
+        attributes: ['username']
       }
     ]
   })
@@ -48,8 +49,8 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['id', 'body'],
-        indlude: {
+        attributes: ['id', 'body', 'post_id', 'user_id', 'created_at'],
+        include: {
           model: User,
           attributes: ['username']
         }

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Comment, User, Post } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // /api/comments/ - get all comments - findAll()
 // include user's username

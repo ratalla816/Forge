@@ -1,6 +1,8 @@
 // finalized 09/23/21, 9:00pm - audry
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
+
 
 // /api/users/ - get all users - findAll()
 // tested 09/23/21, 8:25pm (works)
@@ -20,8 +22,8 @@ router.get('/', (req, res) => {
 // tested 09/23/21, 8:45pm (works)
 router.get('/:id', (req, res) => {
   User.findOne({
-    where: { id: req.params.id },
     attributes: { exclude: ['password'] },
+    where: { id: req.params.id },
     include: [
       {
         model: Post,
@@ -29,7 +31,8 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['id', 'body', 'created_at']
+        attributes: ['id', 'body', 'created_at'],
+        include: { model: Post, attributes: ['title'] }
       }
     ]
   })
@@ -60,9 +63,9 @@ router.post('/', (req, res) => {
         res.json(userData);
       });
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
