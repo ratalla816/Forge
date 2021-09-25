@@ -25,12 +25,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
-app.engine('handlebars', hbs.engine);
+
+app.engine('handlebars', exphbs({ helpers }));
 app.set('view engine', 'handlebars');
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Should be listening on port 3001, hopefully'));
 });
