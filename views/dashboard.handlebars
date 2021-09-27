@@ -18,7 +18,8 @@
     <nav>
         <div class="nav-left">
             <img src="/assets/images/logo.png" alt="Logo">
-            <input type="text" placeholder="Search Mediabook..">
+            <input id="search" type="text" placeholder="Search Users..">
+            <button class="button" id="searchButton" type="submit">Search</button>
         </div>
 
         <div class="nav-middle">
@@ -45,10 +46,17 @@
             <a href="#">
                 <i class="fa fa-bell"></i>
             </a>
-
-            <a href="#">
-                <i class="fas fa-ellipsis-h"></i>
-            </a>
+            <span>
+                <div>
+                    <i class="fas fa-ellipsis-h dropbtn" onclick="dl()"></i>
+                    <div id="myDropdown" class="dropdown-content">
+                        <ul>
+                            <li id="logout" href="#">Logout</li>
+                            <li id="settings" href="#settings">Settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </span>
             <i class="fas fa-toggle-on dk" onclick="myfunction()"></i>
 
         </div>
@@ -394,7 +402,8 @@
     </div>
 </body>
 
-
 </html>
+
+<script src="/javascript/search.js"></script>
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/index.js"></script>

@@ -1,72 +1,68 @@
+// finalized 09/23/21, 9:00pm - audry
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-// get all users
+
+// /api/users/ - get all users - findAll()
+// tested 09/23/21, 8:25pm (works)
 router.get('/', (req, res) => {
-  User.findAll({
-    attributes: { exclude: ['password'] }
-  })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  User.findAll({ attributes: { exclude: ['password'] } })
+    .then(userData => {
+      if (!userData) {
+        res.status(404).json({ message: 'No users found' });
+        return;
+      }
+      res.json(userData)
+    })
+    .catch(error => res.status(500).json(error))
 });
 
+// /api/users/1 - get one user by id - findOne()
+// tested 09/23/21, 8:45pm (works)
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
-    where: {
-      id: req.params.id
-    },
+    where: { id: req.params.id },
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_url', 'created_at']
+        attributes: ['id', 'title', 'url', 'body', 'created_at']
       },
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'created_at'],
-        include: {
-          model: Post,
-          attributes: ['title']
-        }
-      },
-      {
-        model: Post,
-        attributes: ['title'],
-        through: Vote,
-        as: 'voted_posts'
+        attributes: ['id', 'body', 'created_at'],
+        include: { model: Post, attributes: ['title'] }
       }
     ]
   })
-    .then(dbUserData => {
-      if (!dbUserData) {
+    .then(userData => {
+      if (!userData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(dbUserData);
+      res.json(userData)
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    .catch(error => res.status(500).json(error))
 });
 
+// /api/users/ - create user - create()
+// tested 09/23/21, 8:20pm (works)
 router.post('/', (req, res) => {
-  // expects {username: 'test', email: 'test@gmail.com', password: 'password1234'}
+  console.log(req.body);
+  
   User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password
   })
-    .then(dbUserData => {
+    .then(userData => {
       req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
         req.session.loggedIn = true;
-  
-        res.json(dbUserData);
+
+        res.json(userData);
       });
     })
     .catch(err => {
@@ -75,86 +71,60 @@ router.post('/', (req, res) => {
     });
 });
 
+// /api/users/login - user login - findOne()
+// tested 09/23/21, 8:30pm (WORKING)
 router.post('/login', (req, res) => {
-  // expects {email: 'test@gmail.com', password: 'password1234'}
-  User.findOne({
-    where: {
-      email: req.body.email
-    }
-  }).then(dbUserData => {
-    if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
-      return;
-    }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
+  User.findOne({ where: { username: req.body.username } })
+    .then(userData => {
+      if (!userData) {
+        res.status(404).json({ message: 'Username not found' });
+        return;
+      }
 
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
-      return;
-    }
+      const isPassword = userData.checkPassword(req.body.password);
+      if (!isPassword) {
+        res.status(404).json({ message: 'Password is incorrect' });
+        return;
+      }
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
 
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-  
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
-    });
-  });
+        res.json({ user: userData, message: 'Login successful' });
+      });
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error)});
+    
 });
 
+// /api/users/ - logout route findOne()
+// tested with insomnia 09/23/21, 8:30pm (works), gives 204 success message
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  }
-  else {
+  } else {
     res.status(404).end();
   }
 });
 
-router.put('/:id', (req, res) => {
-  // expects {username: 'test', email: 'testgmail.com', password: 'password1234'}
-
-  // pass in req.body instead to only update what's passed through
-  User.update(req.body, {
-    individualHooks: true,
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
+// /api/users/1 - delete user by id - destroy()
+// tested - 9/23/21, 8:35pm (works)
 router.delete('/:id', (req, res) => {
-  User.destroy({
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(dbUserData => {
-      if (!dbUserData) {
+  User.destroy({ where: { id: req.params.id } })
+    .then(userData => {
+      if (!userData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(dbUserData);
+      res.json(userData);
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    .catch(error => res.status(500).json(error));
 });
 
 module.exports = router;
