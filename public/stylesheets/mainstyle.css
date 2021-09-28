@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+.logo {
+  width: 60px;
+}
+
 nav {
   height: 70px;
   width: 100%;
@@ -80,7 +84,27 @@ nav .nav-right .profile,
   cursor: pointer;
 }
 
-nav .nav-right a {
+nav .nav-right .logout {
+  text-decoration: none;
+  color: #333;
+  height: 40px;
+  width: 60px;
+  background: #eee;
+  display: grid;
+  place-items: center;
+  margin-left: 1rem;
+}
+
+
+
+nav .nav-right .logout:hover,
+a:focus {
+  background-color: darkgray;
+  color: white;
+}
+
+
+nav .nav-right .a {
   text-decoration: none;
   color: #333;
   height: 40px;
@@ -92,11 +116,31 @@ nav .nav-right a {
   margin-left: 1rem;
 }
 
-nav .nav-right a > i {
+nav .nav-right .a > i {
   font-size: 18px;
 }
 
-nav .nav-right a:hover,
+nav .nav-right .a:hover,
+a:focus {
+  background-color: darkgray;
+  color: white;
+}
+
+nav .nav-right span {
+  text-decoration: none;
+  color: #333;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #eee;
+  display: grid;
+  place-items: center;
+  margin-left: 1rem;
+}
+
+
+
+nav .nav-right .logout:hover,
 a:focus {
   background-color: darkgray;
   color: white;
@@ -503,6 +547,8 @@ nav .nav-right span > i {
     margin-right: 2px;
   }
 
+ 
+
   /* nav .nav-left > input { */
   /* height: 40px; */
   /* **   padding: 5px 110px; ** */
@@ -689,22 +735,12 @@ nav .nav-right span > i {
     z-index: 99;
   }
 
-  nav .nav-left > img {
-    width: 100%;
-    max-width: 57px;
-    margin-left: -15px;
-    margin-right: 2px;
+  .logo {
+    width: 60px;
   }
 
-  a .logo {
-    margin: 5px;
-    width: 50%;
-    height: 40%;
-  }
-
-  a .logo:hover,
-  a .logo:active {
-    background: transparent;
+  nav .nav-left .logo > img {
+    width: 40px
   }
 
   .test {
@@ -826,50 +862,50 @@ nav .nav-right span > i {
     padding: 10px;
     margin: 10px;
   }
-  
+
   .post .post-top {
     display: flex;
     align-items: center;
     padding: 10px;
   }
-  
+
   .post .post-full {
     align-items: center;
     padding: 10px;
   }
-  
+
   .post .post-top .dp {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
   }
-  
+
   .post .post-top .dp > img {
     width: 100%;
     cursor: pointer;
   }
-  
+
   .post .post-top .post-info {
     margin-left: 10px;
     font-weight: bold;
   }
-  
+
   .post .post-top .post-info .name {
     cursor: pointer;
     font-size: 16px;
   }
-  
+
   .post .post-top .post-info .time {
     font-size: 12px;
     cursor: pointer;
   }
-  
+
   .post .post-top i {
     margin-left: auto;
     cursor: pointer;
   }
-  
+
   .post .post-top > input {
     height: 40px;
     padding: 5px 10px;
@@ -880,36 +916,36 @@ nav .nav-right span > i {
     background: #eee;
     margin-left: 10px;
   }
-  
+
   .post .post-content {
     font-size: 16px;
     font-weight: normal;
     padding: 10px;
   }
-  
+
   .post .post-content > img {
     width: 100%;
     margin: 5px 0px;
   }
-  
+
   .post .post-bottom {
     box-shadow: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
     padding: 5px 5px 0px 5px;
   }
-  
+
   .post .post-bottom .action {
     padding: 10px;
     border-radius: 10px;
     transition: 0.3s ease-in;
     cursor: pointer;
   }
-  
+
   .post .post-bottom .action:hover {
     background: #eee;
   }
-  
+
   .post.create .post-bottom > .action {
     color: slateblue;
   }
@@ -918,7 +954,6 @@ nav .nav-right span > i {
     width: 20% !important;
   }
 }
-
 
 /* Pop up section */
 
@@ -991,8 +1026,8 @@ nav .nav-right span > i {
   margin-left: -500px;
 }
 .post-popup header {
-  background: -webkit-linear-gradient(to right,#4C96D7, #A55FC1, #4C96D7);
-	background: linear-gradient(to right,#4C96D7, #A55FC1, #4C96D7);
+  background: -webkit-linear-gradient(to right, #4c96d7, #a55fc1, #4c96d7);
+  background: linear-gradient(to right, #4c96d7, #a55fc1, #4c96d7);
   height: 100%;
   max-height: 60px;
   font-size: 22px;
@@ -1002,7 +1037,7 @@ nav .nav-right span > i {
   border-bottom: 1px solid #bfbfbf;
 }
 
-.close{
+.close {
   background: transparent;
   border: none;
   color: whitesmoke;
@@ -1069,16 +1104,50 @@ form :where(textarea, button) {
   outline: none;
   border: none;
 }
-form textarea {
+
+form .text-label {
   resize: none;
   font-size: 18px;
-  margin-top: 30px;
-  min-height: 100px;
+  margin-top: 25px;
+  min-height: 2px;
 }
-form textarea::placeholder {
+
+form :where(.text-label, button) {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+form .text-label::placeholder {
   color: #858585;
 }
-form textarea:focus::placeholder {
+form .text-label:focus::placeholder {
+  color: #b3b3b3;
+}
+
+form .text-input {
+  resize: none;
+  font-size: 18px;
+  /* margin-top: 15px; */
+  min-height: 100px;
+}
+
+form :where(.text-input, button) {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+form .text-input {
+  resize: none;
+  font-size: 18px;
+  /* margin-top: 30px; */
+  min-height: 100px;
+}
+form .text-input::placeholder {
+  color: #858585;
+}
+form .text-input:focus::placeholder {
   color: #b3b3b3;
 }
 form :where(.theme-emoji, .options) {
@@ -1137,12 +1206,12 @@ form button {
   background: #e2e5e9;
   transition: all 0.3s ease;
 }
-form textarea:valid ~ button {
+form .text-input:valid ~ button {
   color: #fff;
   cursor: pointer;
   background: #4599ff;
 }
-form textarea:valid ~ button:hover {
+form .text-input:valid ~ button:hover {
   background: #1a81ff;
 }
 .container .audience {

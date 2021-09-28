@@ -7,17 +7,17 @@ const withAuth = require('../../utils/auth');
 // tested 09/23/21, 9:30pm (WORKING)
 router.get('/', (req, res) => {
     Comment.findAll({
-        attributes: ['id', 'comment_body', 'user_id', 'created_at'],
-        include: [
-            {
-                model: User,
-                attributes: ['name', 'username']
-            },
-            {
-                model: Post,
-                attributes: ['title', 'created_at']
-            }
-        ]
+        //     attributes: ['id', 'comment_body', 'user_id', 'created_at'],
+        //     include: [
+        //         {
+        //             model: User,
+        //             attributes: ['name', 'username']
+        //         },
+        //         {
+        //             model: Post,
+        //             attributes: ['title', 'created_at']
+        //         }
+        //     ]
     })
         .then(commentData => {
             if (!commentData) {

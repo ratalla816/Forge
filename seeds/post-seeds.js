@@ -4,7 +4,7 @@ const postSeeds = [
     {
         user_id: 1,
         title: 'How do you maintain multiple variations of a github repo?',
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!'
     },
     {
@@ -15,7 +15,7 @@ const postSeeds = [
     {
         user_id: 8,
         title: "I can't figure out how to get the async/await function to work instead of promises.",
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci amet laborum.'
     },
     {
@@ -26,13 +26,13 @@ const postSeeds = [
     {
         user_id: 7,
         title: 'How do I properly parse and filter the following JSON objects?',
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Voluptatem quaerat non architecto ab laudantium modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!'
     },
     {
         user_id: 4,
         title: 'Is there a C# equivalent of JavaScript window object?',
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. '
     },
     {
@@ -43,13 +43,13 @@ const postSeeds = [
     {
         user_id: 5,
         title: 'Number not updating when button is clicked',
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci amet laborum. Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed amet tempora. '
     },
     {
         user_id: 1,
         title: 'Getting the error - array.push not a function',
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Sit laborum ab, eius fugit doloribus tenetur fugiat, temporibus enim commodi iusto libero magni deleniti quod quam consequuntur! Commodi minima excepturi repudiandae velit hic maxime doloremque. '
     },
     {
@@ -60,13 +60,13 @@ const postSeeds = [
     {
         user_id: 3,
         title: 'Help with parallax scrolling!',
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Nulla, placeat. Voluptatem quaerat non architecto ab laudantium modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!'
     },
     {
         user_id: 2,
         title: 'How can I clean up my code?',
-        url: 'github.com',
+        post_url: 'github.com',
         post_body: 'Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? '
     }
 ];
