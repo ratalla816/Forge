@@ -1,29 +1,35 @@
-{{!-- {{#if loggedIn}}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/stylesheets/main-style.css">
-  <title>Forge</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <link rel="stylesheet" href="/stylesheets/mainstyle.css">
+    <title>Forge</title>
 </head>
 
 <body>
-  <nav>
-    <div class="nav-left">
-      <img src="/assets/images/logo.png" alt="Logo">
-      <input type="text" placeholder="Search">
-    </div>
+    <nav>
+        <div class="container">
+            <div class="nav-left">
+                <a href="/"><img class="logo" src="/assets/images/logo.png" alt="Logo"></a>
+                <input id="searchButton" type="text" name="search" placeholder="Search Forge...">
+                <button id="search" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="nav-middle">
+                <a href="/" class="active">
+                    <i class="fa fa-home"></i>
+                </a>
 
-     <div class="nav-middle">
-            <div class="test">
-                <span class="profile"></span>
+                <a href="/people">
+                    <i class="fa fa-users"></i>
+                </a>
             </div>
             
             <a href="#" class="active">
@@ -45,395 +51,148 @@
       </span>
       <i class="fas fa-toggle-on dk" onclick="myfunction()"></i>
 
-    </div>
-
-  </nav>
-
-
-  <div class="container">
-    <div class="left-panel">
-      <ul>
-        <li>
-          <span class="profile"></span>
-          <p>Rob Atalla</p>
-        </li>
-        <li>
-          <i class="fa fa-user-friends"></i>
-          <p>Friends</p>
-        </li>
-        <li>
-          <i class="fa fa-play-circle"></i>
-          <p>Videos</p>
-        </li>
-        <li>
-          <i class="fa fa-flag"></i>
-          <p>Pages</p>
-        </li>
-        <li>
-          <i class="fa fa-users"></i>
-          <p>Groups</p>
-        </li>
-        <li>
-          <i class="fa fa-bookmark"></i>
-          <p>Bookmark</p>
-        </li>
-        <li>
-          <i class="fab fa-facebook-messenger"></i>
-          <p>Inbox</p>
-        </li>
-        <li>
-          <i class="fas fa-calendar-week"></i>
-          <p>Events</p>
-        </li>
-        <li>
-          <i class="fa fa-bullhorn"></i>
-          <p>Ads</p>
-        </li>
-        <li>
-          <i class="fas fa-hands-helping"></i>
-          <p>Offers</p>
-        </li>
-        <li>
-          <i class="fas fa-briefcase"></i>
-          <p>Jobs</p>
-        </li>
-        <li>
-          <i class="fa fa-star"></i>
-          <p>Favorites</p>
-        </li>
-      </ul>
-
-      <div class="footer-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Advance</a>
-        <a href="#">More</a>
-      </div>
-    </div>
-
-
-    <div class="middle-panel">
-
-      <div class="story-section">
-
-        <div class="story create">
-          <div class="dp-image">
-            <img src="/assets/images//dp.png" alt="Profile pic">
-          </div>
-          <span class="dp-container">
-            <i class="fa fa-plus"></i>
-          </span>
-          <span class="name">Create Story</span>
+            <div class="nav-right">
+                <a href="/admin"><i class="fas fa-user a" style="font-size:24px;"></i></a>
+                {{#if loggedIn}}
+                <a href="/splash" id="logout-link" class="logout">Logout</a>
+                {{else}}
+                <a href="/login" class="logout">Login</a>
+                {{/if}}
+            </div>
         </div>
+    </nav>
 
-
-        <div class="story">
-          <img src="/assets/images/model.jpg" alt="Story image">
-          <div class="dp-container">
-            <img src="/assets/images/girl.jpg" alt="">
-          </div>
-          <p class="name">Audry Ford</p>
-        </div>
-
-        <div class="story">
-          <img src="/assets/images/bb.jpg" alt="Story image">
-          <span class="dp-container">
-            <img src="/assets/images/bb.jpg" alt="Profile pic">
-          </span>
-          <span class="name">Cody MC</span>
-        </div>
-
-        <div class="story">
-          <img src="/assets/images/b.jpg" alt="Story image">
-          <span class="dp-container">
-            <img src="/assets/images/dg.jpg" alt="Profile pic">
-          </span>
-          <span class="name">Derimar Gray</span>
-        </div>
-
-        <div class="story">
-          <img src="/assets/images/f.jpg" alt="Story image">
-          <span class="dp-container">
-            <img src="/assets/images/fb.jpg" alt="Profile pic">
-          </span>
-          <span class="name">College-Football</span>
-        </div>
-      </div>
-
-      <div class="post create">
-        <div class="post-top">
-          <div class="dp">
-            <img src="/assets/images/dp.png" alt="Rob's profile image">
-          </div>
-          <input type="text" placeholder="What's on your mind Rob Atalla ?" />
-        </div>
-
-        <div class="post-bottom">
-          <div class="action">
-            <i class="fa fa-video"></i>
-            <span>Live video</span>
-          </div>
-          <div class="action">
-            <i class="fa fa-image"></i>
-            <span>Photo/Video</span>
-          </div>
-          <div class="action">
-            <i class="fa fa-smile"></i>
-            <span>Feeling/Activity</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="post">
-        <div class="post-top">
-          <div class="dp">
-            <img src="/assets/images/girl.jpg" alt="">
-          </div>
-          <div class="post-info">
-            <p class="name">Audry Ford</p>
-            <span class="time">12 hrs ago</span>
-          </div>
-          <i class="fas fa-ellipsis-h"></i>
-        </div>
-
-        <div class="post-content">
-          “Any fool can write code that a computer can understand. Good programmers write code that humans can
-          understand.”
-        </div>
-
-        <div class="post-bottom">
-          <div class="action">
-            <i class="far fa-thumbs-up"></i>
-            <span>Like</span>
-          </div>
-          <div class="action">
-            <i class="far fa-comment"></i>
-            <span>Comment</span>
-          </div>
-          <div class="action">
-            <i class="fa fa-share"></i>
-            <span>Share</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="post">
-        <div class="post-top">
-          <div class="dp">
-            <img src="/assets/images/dg.jpg" alt="">
-          </div>
-          <div class="post-info">
-            <p class="name">Derimar Gray</p>
-            <span class="time">1 week ago</span>
-          </div>
-          <i class="fas fa-ellipsis-h"></i>
-        </div>
-        <div class="post-content">
-          Happy birthday to me!!!
-          <img src="/assets/images/b.jpg" alt="Beach">
-        </div>
-        <div class="post-bottom">
-          <div class="action">
-            <i class="far fa-thumbs-up"></i>
-            <span>Like</span>
-          </div>
-          <div class="action">
-            <i class="far fa-comment"></i>
-            <span>Comment</span>
-          </div>
-          <div class="action">
-            <i class="fa fa-share"></i>
-            <span>Share</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="post">
-        <div class="post-top">
-          <div class="dp">
-            <img src="/assets/images/bb.jpg" alt="profile image">
-          </div>
-          <div class="post-info">
-            <p class="name">Cody MC</p>
-            <span class="time">2 days ago</span>
-          </div>
-          <i class="fas fa-ellipsis-h"></i>
-        </div>
-
-        <div class="post-content">
-          Code is so cool...
-          <img src="/assets/images/c.jpg" />
-        </div>
-
-        <div class="post-bottom">
-          <div class="action">
-            <i class="far fa-thumbs-up"></i>
-            <span>Like</span>
-          </div>
-          <div class="action">
-            <i class="far fa-comment"></i>
-            <span>Comment</span>
-          </div>
-          <div class="action">
-            <i class="fa fa-share"></i>
-            <span>Share</span>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="post">
-        <div class="post-top">
-          <div class="dp">
-            <img src="/assets/images/fb.jpg" alt="profile image">
-          </div>
-          <div class="post-info">
-            <p class="name">College Football</p>
-            <span class="time">5 mins ago</span>
-          </div>
-          <i class="fas fa-ellipsis-h"></i>
-        </div>
-        <div class="post-content">
-          College Football | Bleacher Report| Latest News, Rumors, Score and Highlights...
-          <img src="/assets/images/f.jpg" alt="">
-        </div>
-        <div class="post-bottom">
-          <div class="action">
-            <i class="far fa-thumbs-up"></i>
-            <span>Like</span>
-          </div>
-          <div class="action">
-            <i class="far fa-comment"></i>
-            <span>Comment</span>
-          </div>
-          <div class="action">
-            <i class="fa fa-share"></i>
-            <span>Share</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="right-panel">
-      <div class="pages-section">
-        <h4>Your pages</h4>
-        <a class='page' href="#">
-          <div class="dp">
-            <img src="/assets/images/logo.png" alt="">
-          </div>
-          <p class="name">Forge</p>
-        </a>
-
-        <a class='page' href="#">
-          <div class="dp">
-            <img src="/assets/images/ku.jpg" alt="">
-          </div>
-          <p class="name">KUBootcamp</p>
-        </a>
-      </div>
-
-      <div class="friends-section">
-        <h4>Friends</h4>
-        <a class='friend' href="#">
-          <div class="dp">
-            <img src="/assets/images/aaron.jpg" alt="">
-          </div>
-          <p class="name">Aaron Jewell</p>
-        </a>
-
-        <a class='friend' href="#">
-          <div class="dp">
-            <img src="/assets/images/kelsey.jpg" alt="">
-          </div>
-          <p class="name">kelsey Gasser</p>
-        </a>
-
-        <a class="friend" href="#">
-          <div class="dp">
-            <img src="/assets/images/calvin.jpg" alt="">
-          </div>
-          <p class="name">Calvin Freese</p>
-        </a>
-
-        <a class="friend" href="#">
-          <div class="dp">
-            <img src="/assets/images/brianw.jpg" alt="">
-          </div>
-          <p class="name">Brian Wilde</p>
-        </a>
-
-        <a class="friend" href="#">
-          <div class="dp">
-            <img src="/assets/images/micah.jpg" alt="">
-          </div>
-          <p class="name">Micah Duehring</p>
-        </a>
-
-        <a class="friend" href="#">
-          <div class="dp">
-            <img src="/assets/images/willk.jpg" alt="">
-          </div>
-          <p class="name">Will Knowles</p>
-        </a>
-
-        <a class="friend" href="#">
-          <div class="dp">
-            <img src="/assets/images/williamH.jpg" alt="">
-          </div>
-          <p class="name">Willian Hass</p>
-        </a>
-
-      </div>
-    </div>
-  </div>
-</body>
-
-</html>
-
-<script src="/javascript/logout.js"></script>
-<script src="/javascript/index.js"></script>
-{{else}}
-<header>
-  <nav class="">
-    <a href="/login" class="">login</a>
-  </nav>
-</header>
-//{{/if}} --}}
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
-
-  <div class="wrapper">
-    <header>
-        <nav class="navbar mt-2">
-            {{#if loggedIn}}
-            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/dashboard" class="navbar-item is-hoverable pt-1">dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
-            <button id="logout" class="button is-danger">logout</button>
-            {{else}}
-            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/login" class="button is-primary">login</a>
-            {{/if}}
-        </nav>
-    </header>
 
     <main>
-            {{{ body }}}
-    </main>
-  </div>
-  </div>
+        <div class="scroll" data-rate=".3" data-direction="vertical">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="left-panel">
+                        <ul>
+                            <li>
+                                <span class="profile"></span>
+                                <p>Rob Atalla</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-user-friends"></i>
+                                <p>Friends</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-play-circle"></i>
+                                <p>Videos</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-flag"></i>
+                                <p>Pages</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-users"></i>
+                                <p>Groups</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-bookmark"></i>
+                                <p>Bookmark</p>
+                            </li>
+                            <li>
+                                <i class="fab fa-facebook-messenger"></i>
+                                <p>Inbox</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-calendar-week"></i>
+                                <p>Events</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-bullhorn"></i>
+                                <p>Ads</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-hands-helping"></i>
+                                <p>Offers</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-briefcase"></i>
+                                <p>Jobs</p>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i>
+                                <p>Favorites</p>
+                            </li>
+                        </ul>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+                        <div class="footer-links">
+                            <a href="#">Privacy</a>
+                            <a href="#">Terms</a>
+                            <a href="#">Advance</a>
+                            <a href="#">More</a>
+                        </div>
+                    </div>
+                    <div class="main-panel">
+                        <div class="post create">
+                            <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
+                        </div>
+                        {{{body}}}
+                    </div>
+                    <!-- SCROLL -->
+                    <div class="scroll" data-rate=".1" data-direction="vertical">
+                        <div class="right-panel">
+                            <div class="pages-section">
+                                <h4>Code reviews</h4>
+                                <a class="page" href="#">
+                                    <div class="dp">
+                                        <img src="./assets/images/logo.png" alt="">
+                                    </div>
+                                    <p class="name">Forge</p>
+                                </a>
+                            </div>
+
+                            <div class="friends-section">
+                                <h4>Users</h4>
+                                <a class='friend' href="/user/{{id}}">
+                                    <div class="dp">
+                                        <img src="./images/aaron.jpg" alt="">
+                                    </div>
+                                    <p class="name">{{Alex}}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="scroll" data-rateY="1" data-rateX="-2" data-direction="horizontal">
+                        <div class="dp">
+                            <img src="./assets/images/logo.png" alt="">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </main>
 </body>
 
 </html>
+
+<script src="/javascript/search.js"></script>
+<script src="/javascript/logout.js"></script>
+<script>
+    // SPECIAL THANKS to GARY SIMON - "Vanilla JavaScript Parallax with just a Few Lines of Code" https://youtu.be/Dxm6EwvQIl8 \\
+    window.addEventListener('scroll', function (e) {
+
+        const target = document.querySelectorAll('.scroll');
+        // target.style.transform = 'translate3d(0px, 50px, 0px';
+        // target.style.background = '#b3ff00';
+        // console.log(target.style);
+        // console.log(window.pageYOffset);
+        var scrolled = window.pageYOffset;
+
+        var index = 0, length = target.length;
+        for (index; index < length; index++) {
+            var pos = window.pageYOffset * target[index].dataset.rate;
+
+            if (target[index].dataset.direction === 'vertical') {
+                target[index].style.transform = 'translate3d(0px, ' + pos + 'px, 0px)';
+            } else {
+                var posX = window.pageYOffset * target[index].dataset.ratex;
+                var posY = window.pageYOffset * target[index].dataset.ratey;
+                target[index].style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0px)';
+            }
+        }
+    });
+</script>
