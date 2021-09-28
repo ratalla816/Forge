@@ -31,25 +31,6 @@
                     <i class="fa fa-users"></i>
                 </a>
             </div>
-            
-            <a href="#" class="active">
-                <i class="fa fa-home"></i>
-</a>
-      <a href="#">
-        <i class="fa fa-bell"></i>
-      </a>
-      <span>
-        <div>
-          <i class="fas fa-ellipsis-h dropbtn" onclick="dl()"></i>
-          <div id="myDropdown" class="dropdown-content">
-            <ul>
-              <li id="logout-link" href="#">Logout</li>
-              <li id="settings" href="#settings">Settings</li>
-            </ul>
-          </div>
-        </div>
-      </span>
-      <i class="fas fa-toggle-on dk" onclick="myfunction()"></i>
 
             <div class="nav-right">
                 <a href="/admin"><i class="fas fa-user a" style="font-size:24px;"></i></a>
@@ -64,104 +45,98 @@
 
 
     <main>
-        <div class="scroll" data-rate=".3" data-direction="vertical">
-            <div class="wrapper">
-                <div class="container">
-                    <div class="left-panel">
-                        <ul>
-                            <li>
-                                <span class="profile"></span>
-                                <p>Rob Atalla</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-user-friends"></i>
-                                <p>Friends</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-play-circle"></i>
-                                <p>Videos</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-flag"></i>
-                                <p>Pages</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-users"></i>
-                                <p>Groups</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-bookmark"></i>
-                                <p>Bookmark</p>
-                            </li>
-                            <li>
-                                <i class="fab fa-facebook-messenger"></i>
-                                <p>Inbox</p>
-                            </li>
-                            <li>
-                                <i class="fas fa-calendar-week"></i>
-                                <p>Events</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-bullhorn"></i>
-                                <p>Ads</p>
-                            </li>
-                            <li>
-                                <i class="fas fa-hands-helping"></i>
-                                <p>Offers</p>
-                            </li>
-                            <li>
-                                <i class="fas fa-briefcase"></i>
-                                <p>Jobs</p>
-                            </li>
-                            <li>
-                                <i class="fa fa-star"></i>
-                                <p>Favorites</p>
-                            </li>
-                        </ul>
+        <div class="wrapper">
+            <div class="container">
+                <div class="left-panel">
+                    <ul>
+                        <li>
+                            <span class="profile"></span>
+                            <p>Rob Atalla</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-user-friends"></i>
+                            <p>Friends</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-play-circle"></i>
+                            <p>Videos</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-flag"></i>
+                            <p>Pages</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-users"></i>
+                            <p>Groups</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-bookmark"></i>
+                            <p>Bookmark</p>
+                        </li>
+                        <li>
+                            <i class="fab fa-facebook-messenger"></i>
+                            <p>Inbox</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-calendar-week"></i>
+                            <p>Events</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-bullhorn"></i>
+                            <p>Ads</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-hands-helping"></i>
+                            <p>Offers</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-briefcase"></i>
+                            <p>Jobs</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-star"></i>
+                            <p>Favorites</p>
+                        </li>
+                    </ul>
 
-                        <div class="footer-links">
-                            <a href="#">Privacy</a>
-                            <a href="#">Terms</a>
-                            <a href="#">Advance</a>
-                            <a href="#">More</a>
-                        </div>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Advance</a>
+                        <a href="#">More</a>
                     </div>
-                    <div class="main-panel">
-                        <div class="post create">
-                            <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
-                        </div>
-                        {{{body}}}
+                </div>
+                <div class="middle-panel">
+                    <div class="post create">
+                        <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
                     </div>
-                    <!-- SCROLL -->
-                    <div class="scroll" data-rate=".1" data-direction="vertical">
-                        <div class="right-panel">
-                            <div class="pages-section">
-                                <h4>Code reviews</h4>
-                                <a class="page" href="#">
-                                    <div class="dp">
-                                        <img src="./assets/images/logo.png" alt="">
-                                    </div>
-                                    <p class="name">Forge</p>
-                                </a>
-                            </div>
+                    {{{body}}}
 
-                            <div class="friends-section">
-                                <h4>Users</h4>
-                                <a class='friend' href="/user/{{id}}">
-                                    <div class="dp">
-                                        <img src="./images/aaron.jpg" alt="">
-                                    </div>
-                                    <p class="name">{{Alex}}</p>
-                                </a>
+                </div>
+                <div class="right-panel">
+                    <div class="pages-section">
+                        <h4>Code reviews</h4>
+                        <a class="page" href="#">
+                            <div class="dp">
+                                <img src="./assets/images/logo.png" alt="">
                             </div>
-                        </div>
+                            <p class="name">Forge</p>
+                        </a>
                     </div>
-                    <span class="scroll" data-rateY="1" data-rateX="-2" data-direction="horizontal">
-                        <div class="dp">
-                            <img src="./assets/images/logo.png" alt="">
-                    </span>
+
+                    <div class="friends-section">
+                        <h4>Users</h4>
+                        <a class='friend' href="/user/{{id}}">
+                            <div class="dp">
+                                <img src="./images/aaron.jpg" alt="">
+                            </div>
+                            <p class="name">Aler Tex</p>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
 
     </main>
@@ -171,28 +146,3 @@
 
 <script src="/javascript/search.js"></script>
 <script src="/javascript/logout.js"></script>
-<script>
-    // SPECIAL THANKS to GARY SIMON - "Vanilla JavaScript Parallax with just a Few Lines of Code" https://youtu.be/Dxm6EwvQIl8 \\
-    window.addEventListener('scroll', function (e) {
-
-        const target = document.querySelectorAll('.scroll');
-        // target.style.transform = 'translate3d(0px, 50px, 0px';
-        // target.style.background = '#b3ff00';
-        // console.log(target.style);
-        // console.log(window.pageYOffset);
-        var scrolled = window.pageYOffset;
-
-        var index = 0, length = target.length;
-        for (index; index < length; index++) {
-            var pos = window.pageYOffset * target[index].dataset.rate;
-
-            if (target[index].dataset.direction === 'vertical') {
-                target[index].style.transform = 'translate3d(0px, ' + pos + 'px, 0px)';
-            } else {
-                var posX = window.pageYOffset * target[index].dataset.ratex;
-                var posY = window.pageYOffset * target[index].dataset.ratey;
-                target[index].style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0px)';
-            }
-        }
-    });
-</script>

@@ -1,38 +1,46 @@
-// finalized 09/23/21, 9:00pm - audry
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
-// /api/users/ - get all users - findAll()
-// tested 09/23/21, 8:25pm (works)
 router.get('/', (req, res) => {
-  User.findAll({ attributes: { exclude: ['password'] } })
-    .then(userData => {
-      if (!userData) {
-        res.status(404).json({ message: 'No users found' });
-        return;
-      }
-      res.json(userData)
-    })
-    .catch(error => res.status(500).json(error))
-});
+  User.findAll({
+    attributes: {
+      exclude: ['password']
+    }
+  })
+    .then(userData => res.json(userData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
 
-// /api/users/1 - get one user by id - findOne()
-// tested 09/23/21, 8:45pm (works)
 router.get('/:id', (req, res) => {
   User.findOne({
-    attributes: { exclude: ['password'] },
-    where: { id: req.params.id },
+    attributes: {
+      exclude: ['password']
+    },
+    where: {
+      id: req.params.id
+    },
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_url', 'post_body', 'created_at']
+        attributes: [
+          'id',
+          'title',
+          'post_url',
+          'posts_body',
+          'created_at'
+        ]
       },
       {
         model: Comment,
         attributes: ['id', 'comment_body', 'created_at'],
-        include: { model: Post, attributes: ['title'] }
+        include: {
+          model: Post,
+          attributes: [title]
+        }
       }
     ]
   })
@@ -41,16 +49,16 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(userData)
+      res.json(userData);
     })
-    .catch(error => res.status(500).json(error))
-});
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
 
-// /api/users/ - create user - create()
-// tested 09/23/21, 8:20pm (works)
 router.post('/', (req, res) => {
-  console.log(req.body);
-  
+  // expects {username: 'test', password: 'password1234'}
   User.create({
     name: req.body.name,
     username: req.body.username,
@@ -73,52 +81,76 @@ router.post('/', (req, res) => {
     });
 });
 
-// /api/users/login - user login - findOne()
-// tested 09/23/21, 8:30pm (WORKING)
 router.post('/login', (req, res) => {
+  // expects { password: 'password1234'}
+  User.findOne({
+    where: {
+      email: req.body.email
+    }
+  }).then(userData => {
+    if (!userData) {
+      res.status(400).json({ message: 'No user with that email address  found!' });
+      return;
+    }
 
-  User.findOne({ where: { email: req.body.email } })
-    .then(userData => {
-      if (!userData) {
-        res.status(404).json({ message: 'Email not found' });
-        return;
-      }
+    const validPassword = userData.checkPassword(req.body.password);
 
-      const isPassword = userData.checkPassword(req.body.password);
-      if (!isPassword) {
-        res.status(404).json({ message: 'Password is incorrect' });
-        return;
-      }
-      req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.email = userData.email;
-        req.session.loggedIn = true;
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
 
-        res.json({ user: userData, message: 'Login successful' });
-      });
-    })
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.username = userData.username;
+      req.session.loggedIn = true;
+
+      res.json({ user: userData, message: 'Login successful!' });
+    });
+  })
     .catch(error => {
       console.log(error);
-      res.status(500).json(error)});
-    
+      res.status(500).json(error)
+    });
 });
 
-// /api/users/ - logout route findOne()
-// tested with insomnia 09/23/21, 8:30pm (works), gives 204 success message
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  } else {
+  }
+  else {
     res.status(404).end();
   }
 });
 
-// /api/users/1 - delete user by id - destroy()
-// tested - 9/23/21, 8:35pm (works)
-router.delete('/:id', (req, res) => {
-  User.destroy({ where: { id: req.params.id } })
+router.put('/:id', withAuth, (req, res) => {
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(userData => {
+      if (!userData[0]) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(userData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.delete('/:id', withAuth, (req, res) => {
+  User.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
     .then(userData => {
       if (!userData) {
         res.status(404).json({ message: 'No user found with this id' });
@@ -126,7 +158,10 @@ router.delete('/:id', (req, res) => {
       }
       res.json(userData);
     })
-    .catch(error => res.status(500).json(error));
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
