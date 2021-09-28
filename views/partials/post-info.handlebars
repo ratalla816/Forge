@@ -1,9 +1,37 @@
+<div class="post">
+    <div class="post-top">
+        <div class="dp">
+            {{!-- <img src="/assets/images/girl.jpg" alt=""> --}}
+            <i class="fas fa-user" style="font-size:24px;"></i>
+        </div>
+        <div class="post-info">
+            <p class="name">{{user.username}}</p>
+            <span class="time">{{format_date created_at}}</span>
+        </div>
+    </div>
+    <div>
+        <header class="post-header post-header-title">
+            <a href="/post/{{id}}">{{title}}</a>
+        </header>
 
-{{#each posts as |post|}}
+        <div class="post-content">{{post_body}}</div>
+    </div>
 
-{{> post-info post }}
+    <div class="post-bottom">
+        <div class="action">
+            <i class="far fa-thumbs-up"></i>
+            <span>Like</span>
+        </div>
+        <div class="action">
+            <a href="/post/{{id}}">
+                <i class="far fa-comment"></i>
+                <span class="badge"></span>
+                <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+            </a>
+        </div>
+        <div class="action">
+            <i class="fa fa-share"></i>
+            <span>Share</span>
+        </div>
+    </div>
 </div>
-
-{{else}}
-<h6 class="pb-4 has-text-centered is-italic">there are currently no posts</h6>
-{{/each}}

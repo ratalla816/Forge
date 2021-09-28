@@ -1,5 +1,12 @@
 // Completed by Derimar Gray on 9/22, updated by Rob Atalla on 9/23 @ 1340
 
+const signInButton = document.getElementById('logIn');
+const container = document.getElementById('container');
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
 async function loginFormHandler(event) {
     event.preventDefault();
   
@@ -12,7 +19,7 @@ async function loginFormHandler(event) {
         headers: { 'Content-Type': 'application/json' }
       });
   
-      if (response.ok) { document.location.replace('/dashboard'); } 
+      if (response.ok) { document.location.replace('/'); } 
       else { alert(response.statusText); }
     }}
   

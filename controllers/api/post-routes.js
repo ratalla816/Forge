@@ -6,14 +6,14 @@ const withAuth = require('../../utils/auth');
 // /api/posts/ - get all posts - findAll()
 // include user's username and comments with user's username
 // tested 09/22/21, 8:51pm (works)
-router.get('/', (req, res) => {
+router.get('/', withAuth,(req, res) => {
   Post.findAll({
-    attributes: ['id', 'title', 'url', 'body', 'created_at'],
+    attributes: ['id', 'title', 'url', 'post_body', 'created_at'],
     order: [['created_at', 'DESC']],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'body', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: { id: req.params.id },
-    attributes: ['id', 'title', 'url', 'body', 'user_id', 'created_at'],
+    attributes: ['id', 'title', 'url', 'post_body', 'user_id', 'created_at'],
     include: [
       {
         model: User,
@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['id', 'body', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -75,7 +75,7 @@ router.post('/', (req, res) => {
     user_id: req.body.user_id,
     url: req.body.url,
     title: req.body.title,
-    body: req.body.body
+    post_body: req.body.post_body
   })
     .then(postData => res.json(postData))
     .catch(error => res.status(500).json(error));

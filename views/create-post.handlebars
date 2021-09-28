@@ -1,0 +1,35 @@
+<section class="post-popup">
+    <header>
+        <button data-close-button class="close">&times;</button>
+    </header>
+    <form id="new-post-form">
+        <div class="content">
+            <img src="/assets/images/dp.png" alt="logo">
+            <div class="details">
+                <p>{{user.username}}</p>
+                <div class="privacy">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Friends</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+        <input class="" type="text" id="post-title" name="post-title" placeholder="Insert title here..." />
+        <textarea id="post-body" placeholder="Insert text here!" spellcheck="true" required></textarea>
+        <div class="theme-emoji">
+            <img src="icons/theme.svg" alt="theme">
+            <img src="icons/smile.svg" alt="smile">
+        </div>
+        <div class="options">
+            <p>Add to Your Post</p>
+            <ul class="list">
+                <li><img src="icons/gallery.svg" alt="gallery"></li>
+                <li><img src="icons/tag.svg" alt="gallery"></li>
+                <li><img src="icons/emoji.svg" alt="gallery"></li>
+                <li><img src="icons/mic.svg" alt="gallery"></li>
+                <li><img src="icons/more.svg" alt="gallery"></li>
+            </ul>
+        </div>
+        <button type="submit"> Create your Post</button>
+    </form>
+</section>
