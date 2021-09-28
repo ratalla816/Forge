@@ -630,6 +630,35 @@ nav .nav-right span > i {
   display: block;
 }
 
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.mx-10 {
+  margin-left: 10px;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.h-200 {
+  height: 200px;
+  max-height: 300px;
+}
+
+.p {
+  padding: 5px;
+}
+
+.btn-s {
+  background-color: var(--primary);
+}
+
 /* mobile phones up to iphone 13 */
 @media screen and (max-width: 500px) {
   nav {
@@ -1213,17 +1242,39 @@ form .content .details p {
   font-size: 13px;
   margin-left: 1px;
 }
-form :where(textarea, button) {
+form :where(.textarea, button) {
   width: 100%;
   outline: none;
   border: none;
 }
 
-form .text-label {
+form .textarea {
   resize: none;
   font-size: 18px;
   margin-top: 25px;
   min-height: 2px;
+}
+
+form :where(.textarea, button) {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+form .textarea::placeholder {
+  color: #858585;
+}
+form .textarea:focus::placeholder {
+  color: #b3b3b3;
+}
+
+form .textarea:valid ~ button {
+  color: #fff;
+  cursor: pointer;
+  background: #4599ff;
+}
+form .text-area:valid ~ button:hover {
+  background: #1a81ff;
 }
 
 form :where(.text-label, button) {
@@ -1307,6 +1358,22 @@ form .options .list {
 }
 .options .list li img {
   width: 23px;
+}
+
+.b {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+}
+.p-5 {
+  padding: 5px;
+}
+
+.ml-3 {
+  margin-left: 5px;
+}
+
+.ml-5 {
+  margin-left: 5px;
 }
 
 .btn {
