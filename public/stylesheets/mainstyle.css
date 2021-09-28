@@ -1,3 +1,28 @@
+:root {
+  --blue: #007bff;
+  --indigo: #0059b3;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #ff6666;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #b3b3b3;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #00e600;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --border-radius: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -468,6 +493,92 @@ nav .nav-right span > i {
 .dark-mode {
   background-color: black;
   color: white;
+}
+
+
+
+.btm-small {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+}
+
+.btn:hover {
+  background-color: var(--indigo);
+}
+
+.btn-small {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 20%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  align: left;
+}
+
+.btn-small:hover {
+  background-color: var(--indigo);
+}
+
+.btn-up {
+  font-size: 1rem; 
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    /* display: block; */
+    color: var(--light);
+    /* border: none; */
+    outline: none;
+    background-color: var(--indigo);
+}
+
+.btn-up:hover, .btn-save {
+  background-color: var(--success);
+}
+.btn-save, .btn-del {
+  display: inline-block;
+  font-size: 1.3rem;
+  text-decoration: none;
+  /* padding: 6px 5px; */
+  width: 49%;
+  /* margin: 5px; */
+  margin-top: 20px;
+  margin-bottom:0;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  border: none;
+  outline: none;
+}
+
+.btn-save:hover {
+  background-color: var(--green);
+
+}
+
+.btn-del {
+  background-color: var(--red);
+}
+
+.btn-del:hover {
+  background-color: var(--danger);
+}
+
+.btn-inline {
+  display: inline;
 }
 
 .dk {
@@ -1047,7 +1158,7 @@ nav .nav-right span > i {
 }
 
 .post-popup form {
-  margin: 20px 25px;
+  /* margin: 20px 25px; */
 }
 
 .post-popup form .content,
