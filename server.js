@@ -39,6 +39,10 @@ app.get('/splash', (req, res) => {
   res.render('splashpage', { layout: 'splash' });
 });
 
+app.get('/review', (req, res) => {
+  res.render('reviewpage', { layout: 'review' });
+});
+
 app.use(require('./controllers/'));
 
 // turn on connection to db and server
