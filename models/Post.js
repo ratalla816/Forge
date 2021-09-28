@@ -16,7 +16,7 @@ Post.init(
     user_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'user', key: 'id' }},
     title: { type: DataTypes.STRING, allowNull: false },
     url: { type: DataTypes.STRING, allowNull: true, validate: { isURL: true }},
-    body: { type: DataTypes.TEXT, allowNull: false}
+    post_body: { type: DataTypes.TEXT, allowNull: false}
   },
 
   {

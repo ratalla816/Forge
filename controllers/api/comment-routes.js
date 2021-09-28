@@ -7,7 +7,7 @@ const withAuth = require('../../utils/auth');
 // tested 09/23/21, 9:30pm (WORKING)
 router.get('/', (req, res) => {
     Comment.findAll({
-        attributes: ['id', 'body', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_body', 'user_id', 'created_at'],
         include: [
             {
                 model: User,
@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     Comment.findOne({
         where: { id: req.params.id },
-        attributes: ['id', 'body', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_body', 'user_id', 'created_at'],
         include: [
             {
                 model: User,
@@ -68,7 +68,7 @@ router.post('/', (req, res) => {
     Comment.create({
         post_id: req.body.post_id,
         user_id: req.body.user_id,
-        body: req.body.body
+        comment_body: req.body.comment_body
     })
         .then(commentData => res.json(commentData))
         .catch(error => res.status(500).json(error))

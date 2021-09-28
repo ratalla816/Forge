@@ -1,4 +1,10 @@
 // Completed by Derimar Gray on 9/22, updated by Rob Atalla on 9/23 @ 1338
+const container = document.getElementById('container');
+
+const signUpButton = document.getElementById('signUp');
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
 
 async function signupFormHandler(event) {
     event.preventDefault();
@@ -15,7 +21,7 @@ async function signupFormHandler(event) {
         });
 
         if (response.ok) 
-        { document.location.replace('/dashboard'); } 
+        { document.location.replace('/'); } 
         else { alert(response.statusText); }
     }}
 
