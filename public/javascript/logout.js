@@ -7,7 +7,11 @@ async function logout() {
   if (response.ok) {
     document.location.replace('/splash');
   } else {
-    alert(response.statusText);
+    if (response.status === 404) {
+      alert("You aren't logged in, dummy");
+    } else {
+      alert("Something went wrong.");
+    }
   }
 }
 
