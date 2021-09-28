@@ -1,0 +1,27 @@
+<div class="post create">
+    <div class="post-full">
+        <div class="wrapper-post">
+            <section class="post-popup">
+                <form id="edit-post-form">
+                    <input type="text" class="text-label" name="post-title" placeholder="Insert title here"
+                        spellcheck="true" required />
+                    <input type="url" class="text-label" name="post-url" id="url" placeholder="https://example.com"
+                        pattern="https://.*">
+                    <input class="text-input" name="post-body" placeholder="Ask a question..."
+                        required />
+                    <div class="theme-emoji">
+                        <img src="/assets/icons/theme.svg" alt="theme">
+                        <img src="/assets/icons/smile.svg" alt="smile">
+                    </div>
+    <button type="submit" class="btn-save">Save post</button>
+    <button id="delete-post" type="button" class="btn-del">Delete post</button
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src=" /javascript/edit-post.js">
+</script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
