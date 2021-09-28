@@ -8,6 +8,7 @@ router.get('/', withAuth, (req, res) => {
   User.findAll({
     attributes: [
       'id',
+      'user_id',
       'name',
       'username',
     ],
@@ -27,6 +28,7 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
+      
       'name',
       'username',
     ]
