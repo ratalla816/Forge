@@ -2,10 +2,9 @@ const router = require('express').Router();
 // const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-// get all posts for homepage and render
+// get all posts for homepage
 router.get('/', (req, res) => {
-  console.log(req.session);
-
+  console.log('======================');
   Post.findAll({
     attributes: [
       'id',
@@ -16,20 +15,27 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
+        attributes: [
+          'id',
+          'comment_body',
+          'post_id',
+          'user_id',
+          'created_at'
+        ],
         include: {
           model: User,
-          attributes: ['name','username']
+          attributes: ['name', 'username']
         }
       },
       {
         model: User,
-        attributes: ['name','username']
+        attributes: ['name', 'username']
       }
     ]
   })
     .then(postData => {
       const posts = postData.map(post => post.get({ plain: true }));
+
       res.render('homepage', {
         layout: 'main',
         posts,
@@ -42,23 +48,36 @@ router.get('/', (req, res) => {
     });
 });
 
-// get single post for single post page
+// get single post
 router.get('/post/:id', (req, res) => {
   Post.findOne({
-    where: { id: req.params.id },
-    attributes: ['id', 'title', 'created_at', 'body'],
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_body'
+    ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'body', 'post_id', 'user_id', 'created_at'],
+        attributes: [
+          'id',
+          'comment_body',
+          'post_id',
+          'user_id',
+          'created_at'
+        ],
         include: {
           model: User,
-          attributes: ['name','username']
+          attributes: ['name', 'username']
         }
       },
       {
         model: User,
-        attributes: ['name','username']
+        attributes: ['name', 'username']
       }
     ]
   })
@@ -68,10 +87,8 @@ router.get('/post/:id', (req, res) => {
         return;
       }
 
-      // serialize the data
       const post = postData.get({ plain: true });
 
-      // pass data to template
       res.render('single-post', {
         post,
         loggedIn: req.session.loggedIn
@@ -83,14 +100,25 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
-// get login page and single user info and render
-// login router is for singup too
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-  res.render('loginpage', { layout: 'signinup' })
+
+  res.render('loginpage',
+    {
+      layout: 'signinup'
+    });
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('signup');
 });
 
 module.exports = router;
