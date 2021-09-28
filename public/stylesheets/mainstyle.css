@@ -644,7 +644,7 @@ nav .nav-right span > i {
 }
 
 /* tablet */
-@media screen and (max-width: 1668px) {
+@media screen and (max-width: 1160px) {
   nav {
     display: block !important;
     flex-wrap: wrap;
