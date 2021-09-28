@@ -28,7 +28,6 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      
       'name',
       'username',
     ]
