@@ -29,6 +29,7 @@
     "mysql2": "^2.3.0",
     "node": "^16.10.0",
     "node.js": "^0.0.1-security",
+    "puzzy-search": "^1.0.20",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
