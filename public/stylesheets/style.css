@@ -252,17 +252,16 @@ footer a {
     text-decoration: none;
 }
 
-<<<<<<< HEAD
 .logo {
 	margin: 40px;
 	width: 40%;
 	height: 25%;
-=======
+}
+
 a.logo {
 	margin: 20px;
 	width: 80%;
 	height: 50%;
->>>>>>> e3fe4287d8a8fa6c046100f167286fb111cc84a5
 }
 
 /* mobile phones up to iphone 13 */
