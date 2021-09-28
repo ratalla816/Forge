@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {{!--
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> --}}
     <link rel="stylesheet" href="/stylesheets/mainstyle.css">
     <title>Forge</title>
 </head>
@@ -20,50 +18,28 @@
         <div class="container">
             <div class="nav-left">
                 <a href="/"><img src="/assets/images/logo.png" alt="Logo" class="logo"></a>
-                <input type="text" placeholder="Search Forge...">
+                <input id="searchButton" type="text" name="search" placeholder="Search Forge...">
+                <button id="search" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div class="nav-middle">
-                <a href="#" class="active">
+                <a href="/" class="active">
                     <i class="fa fa-home"></i>
                 </a>
 
-                <a href="#">
-                    <i class="fa fa-user-friends"></i>
-                </a>
-
-                <a href="#">
-                    <i class="fa fa-play-circle"></i>
-                </a>
-
-                <a href="#">
+                <a href="/users">
                     <i class="fa fa-users"></i>
                 </a>
             </div>
 
-
             <div class="nav-right">
-                <span class="profile"></span>
-
-                <a href="#">
-                    <i class="fa fa-bell"></i>
-                </a>
-                <span>
-                    <div>
-                        <i class="fas fa-ellipsis-h dropbtn" onclick="dl()"></i>
-                        <div id="myDropdown" class="dropdown-content">
-                            <ul>
-                                <li id="logout-link">Logout</li>
-                                <li id="settings" href="/">Settings</li>
-                            </ul>
-                        </div>
-                    </div>
-                </span>
-                <i class="fas fa-toggle-on dk" onclick=""></i>
-
+                <a href="/admin"><span class="profile"></span></a>
+                {{#if loggedIn}}
+                <a href="/splash" id="logout-link">Logout</a>
+                {{else}}
+                <a href="/login">Login</a>
+                {{/if}}
             </div>
         </div>
-
-
     </nav>
 
 
@@ -131,6 +107,31 @@
                         </div>
                     </div>
                     <div class="main-panel">
+                        <div class="post create">
+                            <div class="post-full">
+                                <div class="wrapper-post">
+                                    <section class="post-popup">
+                                        <form action="#">
+                                            <div class="content">
+                                                <img src="/assets/images/dp.png" alt="logo">
+                                                <div class="detail info-post">
+                                                    {{#with user}}
+                                                    <p>{{user.username}}</p>
+                                                    {{/with}}
+                                                </div>
+                                            </div>
+                                            <textarea placeholder="Ask a question..." spellcheck="false"
+                                                required></textarea>
+                                            <div class="theme-emoji">
+                                                <img src="/assets/icons/theme.svg" alt="theme">
+                                                <img src="/assets/icons/smile.svg" alt="smile">
+                                            </div>
+                                            <button>Post</button>
+                                        </form>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
                         {{{body}}}
                     </div>
                     <!-- SCROLL -->
@@ -159,49 +160,7 @@
                                     <div class="dp">
                                         <img src="./assets/images/aaron.jpg" alt="">
                                     </div>
-                                    <p class="name">Aaron Jewell</p>
-                                </a>
-
-                                <a class="friend" href="#">
-                                    <div class="dp">
-                                        <img src="./assets/images/kelsey.jpg" alt="">
-                                    </div>
-                                    <p class="name">kelsey Gasser</p>
-                                </a>
-
-                                <a class="friend" href="#">
-                                    <div class="dp">
-                                        <img src="./assets/images/calvin.jpg" alt="">
-                                    </div>
-                                    <p class="name">Calvin Freese</p>
-                                </a>
-
-                                <a class="friend" href="#">
-                                    <div class="dp">
-                                        <img src="./assets/images/brianw.jpg" alt="">
-                                    </div>
-                                    <p class="name">Brian Wilde</p>
-                                </a>
-
-                                <a class="friend" href="#">
-                                    <div class="dp">
-                                        <img src="./assets/images/micah.jpg" alt="">
-                                    </div>
-                                    <p class="name">Micah Duehring</p>
-                                </a>
-
-                                <a class="friend" href="#">
-                                    <div class="dp">
-                                        <img src="./assets/images/willk.jpg" alt="">
-                                    </div>
-                                    <p class="name">Will Knowles</p>
-                                </a>
-
-                                <a class="friend" href="#">
-                                    <div class="dp">
-                                        <img src="./assets/images/williamH.jpg" alt="">
-                                    </div>
-                                    <p class="name">Willian Hass</p>
+                                    <p class="name">{{user.username}}</p>
                                 </a>
 
                             </div>
@@ -221,8 +180,8 @@
 </html>
 
 
+<script src="/javascript/search.js"></script>
 <script src="/javascript/logout.js"></script>
-<script src="/javascript/index.js"></script>
 <script>
     // SPECIAL THANKS to GARY SIMON - "Vanilla JavaScript Parallax with just a Few Lines of Code" https://youtu.be/Dxm6EwvQIl8 \\
     window.addEventListener('scroll', function (e) {

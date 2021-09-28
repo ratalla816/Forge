@@ -206,6 +206,3 @@ SOFTWARE.
 [issues-shield]: https://img.shields.io/github/issues/ratalla816/Forge.svg?style=for-the-badge
 [issues-url]: https://github.com/ratalla816/Forge/issues
 [license-shield]: https://img.shields.io/static/v1?label=license&message=MIT&color=yellowgreen.svg&style=for-the-badge
-
-
-test
