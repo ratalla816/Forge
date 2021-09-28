@@ -1,30 +1,29 @@
 async function userFormHandler(event) {
-    event.preventDefault();
-  
-    const name = document.querySelector('textarea[name="name"]').value.trim();
-  
-    const user_id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
-  
-    if (name) {
-        const response = await fetch('/api/users', {
-          method: 'POST',
-          body: JSON.stringify({
-            user_id,
-            name
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-      
-        if (response.ok) {
-          document.location.reload();
-        } else {
-          alert(response.statusText);
-        }
-      }
+  event.preventDefault();
+
+  const name = document.querySelector('input[name="user-name"]').value;
+  const username = document.querySelector('input[name="user-username"]').value;
+  const email = document.querySelector('input[name="user-email"]').value;
+  const password = document.querySelector('input[name="user-password"]').value;
+
+  const response = await fetch(`/api/users`, {
+    method: 'POST',
+    body: JSON.stringify({
+      name,
+      username, 
+      email, 
+      password
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    document.location.replace('/adminpage');
+  } else {
+    alert(response.statusText);
   }
-  
-  document.querySelector('#user-link').addEventListener('submit', userFormHandler);
+}
+
+document.querySelector('#user-update-form').addEventListener('submit', userFormHandler);

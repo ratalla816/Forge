@@ -27,7 +27,7 @@
                     <i class="fa fa-home"></i>
                 </a>
 
-                <a href="/users">
+                <a href="/people">
                     <i class="fa fa-users"></i>
                 </a>
             </div>
@@ -109,32 +109,7 @@
                     </div>
                     <div class="main-panel">
                         <div class="post create">
-                            <div class="post-full">
-                                <div class="wrapper-post">
-                                    <section class="post-popup">
-                                        <form id="#new-post-form">
-                                            <div class="content">
-                                                {{!-- <img src="/assets/images/dp.png" alt="logo"> --}}
-                                                <i class="fas fa-user" style="font-size:24px;"></i>
-                                                <div class="detail info-post">
-                                                    <p>Rob Atalla</p>
-                                                </div>
-                                            </div>
-                                            <input type="text" class="text-label" name="post-title"
-                                                placeholder="Insert title here" spellcheck="true" required />
-                                            <input type="url" class="text-label" name="post-url" id="url"
-                                                placeholder="https://example.com" pattern="https://.*" size="" required>
-                                            <input class="text-input" name="post-body" placeholder="Ask a question..."
-                                                spellcheck="true" required />
-                                            <div class="theme-emoji">
-                                                <img src="/assets/icons/theme.svg" alt="theme">
-                                                <img src="/assets/icons/smile.svg" alt="smile">
-                                            </div>
-                                            <button type="submit">Post</button>
-                                        </form>
-                                    </section>
-                                </div>
-                            </div>
+                            <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
                         </div>
                         {{{body}}}
                     </div>
@@ -152,7 +127,13 @@
                             </div>
 
                             <div class="friends-section">
-                                <h4>User</h4>
+                                <h4>Users</h4>
+                                <a class='friend' href="/user/{{id}}">
+                                    <div class="dp">
+                                        <img src="./images/aaron.jpg" alt="">
+                                    </div>
+                                    <p class="name">{{Alex}}</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -170,7 +151,6 @@
 </html>
 
 <script src="/javascript/search.js"></script>
-<script src="/javascript/add-post.js"></script>
 <script src="/javascript/logout.js"></script>
 <script>
     // SPECIAL THANKS to GARY SIMON - "Vanilla JavaScript Parallax with just a Few Lines of Code" https://youtu.be/Dxm6EwvQIl8 \\
