@@ -942,10 +942,15 @@ nav .nav-right span > i {
     width: 100%;
   }
 
-  .container {
+  .wrapper {
     display: block !important;
     flex: grow;
   }
+  
+  /* .container {
+    display: block !important;
+    flex: grow;
+  } */
 
   .story {
     width: 20% !important;
@@ -1157,9 +1162,9 @@ nav .nav-right span > i {
   cursor: pointer;
 }
 
-.post-popup form {
-  /* margin: 20px 25px; */
-}
+/* .post-popup form {
+  margin: 20px 25px;
+} */
 
 .post-popup form .content,
 .audience .list li .column {
