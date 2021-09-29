@@ -8,7 +8,7 @@ async function logout() {
     document.location.replace('/splash');
   } else {
     if (response.status === 404) {
-      alert("You aren't logged in, dummy");
+      alert("You aren't logged in");
     } else {
       alert("Something went wrong.");
     }

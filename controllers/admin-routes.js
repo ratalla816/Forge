@@ -5,12 +5,8 @@ const withAuth = require('../utils/auth');
 
 // get all posts for admin
 router.get('/', withAuth, (req, res) => {
-  console.log(req.session);
-  console.log('======================');
   Post.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
+    where: { user_id: req.session.user_id },
     attributes: [
       'id',
       'title',
@@ -18,6 +14,10 @@ router.get('/', withAuth, (req, res) => {
       'post_body'
     ],
     include: [
+      {
+        model: User,
+        attributes: ['name', 'username']
+      },
       {
         model: Comment,
         attributes: [
@@ -30,10 +30,6 @@ router.get('/', withAuth, (req, res) => {
           model: User,
           attributes: ['name', 'username']
         }
-      },
-      {
-        model: User,
-        attributes: ['name', 'username']
       }
     ]
   })
@@ -46,17 +42,57 @@ router.get('/', withAuth, (req, res) => {
           loggedIn: true
         });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
 router.get('/create/', withAuth, (req, res) => {
   Post.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
+    where: { user_id: req.session.user_id },
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_body'
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['name', 'username']
+      },
+      {
+        model: Comment,
+        attributes: [
+          'id',
+          'comment_body',
+          'post_id',
+          'user_id',
+          'created_at'
+        ],
+        include: {
+          model: User,
+          attributes: ['name', 'username']
+        }
+      }
+    ]
+  })
+    .then(postData => {
+      const posts = postData.map(post => post.get({ plain: true }));
+      res.render('create-post', {
+        posts,
+        loggedIn: true
+      });
+    }).catch(error => {
+      console.log(error);
+      res.status(500).json(error);
+    });
+});
+
+router.get('/edit/:id', withAuth, (req, res) => {
+  Post.findOne({
+    where: { id: req.params.id },
     attributes: [
       'id',
       'title',
@@ -84,50 +120,6 @@ router.get('/create/', withAuth, (req, res) => {
       }
     ]
   })
-  .then(postData => {
-    const posts = postData.map(post => post.get({ plain: true }));
-    res.render('create-post', {
-    posts,
-    loggedIn: true
-    });
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-});
-
-router.get('/edit/:id', withAuth, (req, res) => {
-  Post.findOne({
-    where: {
-      id: req.params.id
-    }, 
-      attributes: [
-        'id', 
-        'title',
-        'created_at',
-        'post_body'
-      ],
-      include: [
-        {
-          model: Comment,
-          attributes: [
-            'id',
-            'comment_body',
-            'post_id',
-            'user_id',
-            'created_at'
-          ],
-          include: {
-            model: User,
-            attributes: ['name', 'username']
-          }
-        },
-        {
-          model: User,
-          attributes: ['name', 'username']
-        }
-      ]
-  })
     .then(postData => {
       if (postData) {
         const post = postData.get({ plain: true });
@@ -140,9 +132,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
         res.status(404).end();
       }
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
