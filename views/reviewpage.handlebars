@@ -20,8 +20,12 @@
 
 <div class="col-12 col-md-8">
     <h2 class="subtitle">Showing requests for: <span id="repo-search-term"></span></h2>
+        {{#each posts as |post|}}
     <div id="repos-container" class="list-group">
-
+        {{> post-info-review post }}
+        {{else}}
+        <h6 class="">there are currently no posts</h6>
+        {{/each}}
     </div>
 </div>
 <script src="/javascript/homepage.js"></script>
