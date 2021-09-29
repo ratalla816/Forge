@@ -3,8 +3,6 @@ const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-  console.log(req.session);
-  console.log('======================');
   User.findAll({
     attributes: [
       'id',
@@ -15,17 +13,15 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(userData =>
       res.json(userData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
 router.get('/:id', (req, res) => {
   User.findOne({
-    where: {
-      id: req.params.id
-    },
+    where: { id: req.params.id },
     attributes: [
       'id',
       'name',
@@ -39,9 +35,9 @@ router.get('/:id', (req, res) => {
       }
       res.json(userData);
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 })
 

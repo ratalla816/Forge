@@ -2,27 +2,26 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// get all users
 router.get('/', (req, res) => {
-  User.findAll({
-    attributes: {
-      exclude: ['password']
-    }
-  })
-    .then(userData => res.json(userData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+  User.findAll({ attributes: { exclude: ['password'] } })
+    .then(userData => {
+      if (!userData) {
+        res.status(404).json({ message: 'No users found' })
+      }
+      res.json(userData)
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 })
 
+// get one user by id
 router.get('/:id', (req, res) => {
   User.findOne({
-    attributes: {
-      exclude: ['password']
-    },
-    where: {
-      id: req.params.id
-    },
+    attributes: { exclude: ['password'] },
+    where: { id: req.params.id },
     include: [
       {
         model: Post,
@@ -51,14 +50,14 @@ router.get('/:id', (req, res) => {
       }
       res.json(userData);
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 })
 
+// create user
 router.post('/', (req, res) => {
-  // expects {username: 'test', password: 'password1234'}
   User.create({
     name: req.body.name,
     username: req.body.username,
@@ -75,45 +74,43 @@ router.post('/', (req, res) => {
         res.json(userData);
       });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
+// user login
 router.post('/login', (req, res) => {
-  // expects { password: 'password1234'}
-  User.findOne({
-    where: {
-      email: req.body.email
-    }
-  }).then(userData => {
-    if (!userData) {
-      res.status(400).json({ message: 'No user with that email address  found!' });
-      return;
-    }
+  User.findOne({ where: { email: req.body.email } })
+    .then(userData => {
+      if (!userData) {
+        res.status(400).json({ message: 'No user with that email address found!' });
+        return;
+      }
 
-    const validPassword = userData.checkPassword(req.body.password);
+      const validPassword = userData.checkPassword(req.body.password);
 
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
-      return;
-    }
+      if (!validPassword) {
+        res.status(400).json({ message: 'Incorrect password!' });
+        return;
+      }
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.username = userData.username;
-      req.session.loggedIn = true;
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
 
-      res.json({ user: userData, message: 'Login successful!' });
-    });
-  })
+        res.json({ user: userData, message: 'Login successful!' });
+      });
+    })
     .catch(error => {
       console.log(error);
       res.status(500).json(error)
     });
 });
 
+// user logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -121,16 +118,15 @@ router.post('/logout', (req, res) => {
     });
   }
   else {
-    res.status(404).end();
+    alert("You are not logged in!").end();
   }
 });
 
+// update user by id
 router.put('/:id', withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
-    where: {
-      id: req.params.id
-    }
+    where: { id: req.params.id }
   })
     .then(userData => {
       if (!userData[0]) {
@@ -145,12 +141,9 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+// delete user by id
 router.delete('/:id', withAuth, (req, res) => {
-  User.destroy({
-    where: {
-      id: req.params.id
-    }
-  })
+  User.destroy({ where: { id: req.params.id } })
     .then(userData => {
       if (!userData) {
         res.status(404).json({ message: 'No user found with this id' });

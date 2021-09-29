@@ -4,7 +4,6 @@ const { Post, User, Comment } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
-  console.log('======================');
   Post.findAll({
     attributes: [
       'id',
@@ -14,6 +13,10 @@ router.get('/', (req, res) => {
       'post_url'
     ],
     include: [
+      {
+        model: User,
+        attributes: ['name', 'username']
+      },
       {
         model: Comment,
         attributes: [
@@ -27,10 +30,6 @@ router.get('/', (req, res) => {
           model: User,
           attributes: ['name', 'username']
         }
-      },
-      {
-        model: User,
-        attributes: ['name', 'username']
       }
     ]
   })
@@ -43,18 +42,16 @@ router.get('/', (req, res) => {
         loggedIn: req.session.loggedIn
       });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
 // get single post
 router.get('/post/:id', (req, res) => {
   Post.findOne({
-    where: {
-      id: req.params.id
-    },
+    where: { id: req.params.id },
     attributes: [
       'id',
       'title',
@@ -63,6 +60,10 @@ router.get('/post/:id', (req, res) => {
       'post_url'
     ],
     include: [
+      {
+        model: User,
+        attributes: ['name', 'username']
+      },
       {
         model: Comment,
         attributes: [
@@ -76,10 +77,6 @@ router.get('/post/:id', (req, res) => {
           model: User,
           attributes: ['name', 'username']
         }
-      },
-      {
-        model: User,
-        attributes: ['name', 'username']
       }
     ]
   })
@@ -96,9 +93,9 @@ router.get('/post/:id', (req, res) => {
         loggedIn: req.session.loggedIn
       });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+    .catch(error => {
+      console.log(error);
+      res.status(500).json(error);
     });
 });
 
