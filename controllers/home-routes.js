@@ -123,4 +123,48 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/review', (req, res) => {
+  Post.findAll({
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_body',
+      'post_url'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: [
+          'id',
+          'comment_body',
+          'post_id',
+          'user_id',
+          'created_at'
+        ],
+        include: {
+          model: User,
+          attributes: ['name', 'username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['name', 'username']
+      }
+    ]
+  })
+    .then(postData => {
+      const posts = postData.map(post => post.get({ plain: true }));
+
+      res.render('reviewpage', {
+        layout: 'review',
+        posts,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
 module.exports = router;
