@@ -41,6 +41,10 @@ main {
   width: 94%;
 }
 
+.col-12 {
+  margin: auto;
+}
+
 p {
   font-size: 1.2rem;
 }
