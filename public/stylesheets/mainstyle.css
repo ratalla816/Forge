@@ -894,6 +894,7 @@ nav .nav-right {
     display: block !important;
     flex-wrap: wrap;
     height: 115px;
+    width: 129%;
   }
 
   nav .nav-left > img {
@@ -932,6 +933,10 @@ nav .nav-right {
     position: sticky;
     top: 0;
     z-index: 99;
+  }
+
+  .wrapper {
+    width: 130%;
   }
 
   .logo {
