@@ -192,11 +192,17 @@ nav .nav-right span > i {
   background-color: #eee;
 }
 
+.resize {
+  width: 100px;
+  height: auto;
+}
+
+
 .container {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* margin-left: auto; */
+  margin-left: auto;
   margin-right: auto;
   max-width: 1400px;
 }
