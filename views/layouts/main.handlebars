@@ -180,6 +180,20 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         {{!-- var ismobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
             if (ismobile){ bypass parallax effect } --}}
 });
+
+function clickCounter() {
+    id = true; 
+  if (typeof(Storage) !== "session") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = (localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
 </script>
 </html>
 <script src="/javascript/search.js"></script>
