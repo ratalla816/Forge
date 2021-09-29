@@ -777,10 +777,20 @@ nav .nav-right {
     /* padding-right: 5px; */
   }
 
+ .wrapper {
+    overflow: scroll;
+    /* scroll-snap-align: end; */
+    scroll-behavior: smooth;
+}
+
   .logo {
     width: 60px;
     margin-top: 5px;
  }
+
+  .dp {
+    display: none;
+  }
 
   nav .nav-middle a.active {
     color: royalblue;
@@ -804,23 +814,43 @@ nav .nav-right {
   .left-panel {
     display: block;
     position: relative !important;
+   }
+
+  .container .left-panel {
+    top: 50px;
     flex: none;
     width: 100%;
-    
-  }
+    top: 50px;
+    width: 213px;
+    height: calc(100vh - 70px);
+    margin-left: 139px;
+    scroll-snap-align: start;
+  }  
 
   .middle-panel {
     display: block;
     position: relative !important;
     width: 75%;
+    margin-left: 40px;
     
   }
+
+  .container .right-panel {
+    /* position: sticky; */
+    top: 50px;
+    width: 213px;
+    height: calc(100vh - 70px);
+    margin-left: 139px;
+    scroll-snap-align: start;
+ }
 
   .right-panel {
     display: block;
     position: relative !important;
     flex: none;
     width: 100%;
+    margin: -27px;
+    margin-left: 211px;
     
   }
 
@@ -829,13 +859,13 @@ nav .nav-right {
     flex: grow;
   }
 
-  .story {
+  /* .story {
     width: 20% !important;
     height: 200px;
     position: relative;
     flex-direction: row;
     overflow: visible;
-  }
+  } */
 
   .post {
     width: 94% !important;
@@ -845,15 +875,18 @@ nav .nav-right {
     width: 20% !important;
   }
 
-  /* .parallax {
+  .parallax {
     background-attachment: inherit;
-  } */
+  }
 
   .parallax {
     background-attachment: scroll;
-     background-size: 100% 100%;
+     background-size: 200% 200%;
    }
 }
+
+
+
 
 /* tablet */
 @media screen and (max-width: 1160px) {
@@ -861,6 +894,7 @@ nav .nav-right {
     display: block !important;
     flex-wrap: wrap;
     height: 115px;
+    width: 129%;
   }
 
   nav .nav-left > img {
@@ -899,6 +933,10 @@ nav .nav-right {
     position: sticky;
     top: 0;
     z-index: 99;
+  }
+
+  .wrapper {
+    width: 130%;
   }
 
   .logo {
