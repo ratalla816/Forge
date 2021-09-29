@@ -5,8 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, (req, res) => {
   User.findAll({
     attributes: [
-      'id',
-      'user_id',
+      'id',,
       'name',
       'username',
     ],
