@@ -680,6 +680,25 @@ nav .nav-right span > i {
     z-index: 99;
   }
 
+  nav .nav-left, nav .nav-right {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+nav .nav-left {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 12px !important;
+}
+
+nav .nav-right {
+  display: flex;
+  justify-content: right;
+  margin-bottom: -26px !important;
+}
+
   nav .nav-left > img {
     width: 100%;
     max-width: 57px;
@@ -687,26 +706,13 @@ nav .nav-right span > i {
     margin-right: 2px;
   }
 
-  /* nav .nav-left > input { */
-  /* height: 40px; */
-  /* **   padding: 5px 110px; ** */
-  /* border: none; */
-  /* border-radius: 25px; */
-  /* outline: none; */
-  /* background-color: #eee; */
-  /* margin-left: 10px; */
-  /* **  width: 100%; } ** */
+   .wrapper {
+    overflow: hidden;
+   }
 
-  .test {
-    /* background: black; */
-    /* background: url(./images/dp.png); */
-    /* margin: auto; */
-    margin-left: -37px;
-    margin-bottom: 1px;
-    display: flex;
-    padding: 0px;
-    margin-right: 20px;
-  }
+  .middle-panel {
+    margin-left: 40px;
+}
 
   .profile {
     background: url(./images/dp.png);
@@ -750,6 +756,8 @@ nav .nav-right span > i {
     outline: none;
     background-color: #eee;
     margin-left: 10px;
+    margin-top: 9px;
+    margin-right: 3px;
   }
 
   nav .nav-middle a {
@@ -761,11 +769,18 @@ nav .nav-right span > i {
 
   nav .nav-middle {
     /* display: flex; */
-    /* padding-bottom: 5px; */
-    margin-left: 67px;
-    /* margin-bottom: 0; */
+    padding-bottom: 5px;
+    /* margin-left: 67px; */
+    align-items: flex-end;
+    margin-bottom: -41px;
+    padding-top: 13px;
     /* padding-right: 5px; */
   }
+
+  .logo {
+    width: 60px;
+    margin-top: 5px;
+ }
 
   nav .nav-middle a.active {
     color: royalblue;
@@ -791,11 +806,14 @@ nav .nav-right span > i {
     position: relative !important;
     flex: none;
     width: 100%;
+    
   }
 
   .middle-panel {
     display: block;
     position: relative !important;
+    width: 75%;
+    
   }
 
   .right-panel {
@@ -803,6 +821,7 @@ nav .nav-right span > i {
     position: relative !important;
     flex: none;
     width: 100%;
+    
   }
 
   .container {
@@ -825,6 +844,15 @@ nav .nav-right span > i {
   .action {
     width: 20% !important;
   }
+
+  /* .parallax {
+    background-attachment: inherit;
+  } */
+
+  .parallax {
+    background-attachment: scroll;
+     background-size: 100% 100%;
+   }
 }
 
 /* tablet */
@@ -1096,6 +1124,17 @@ nav .nav-right span > i {
   .action {
     width: 20% !important;
   }
+
+  /* .parallax {
+    background-attachment: inherit;
+  } */
+
+  .parallax {
+    background-attachment: scroll;
+     background-size: 100% 100%;
+   }
+
+
 }
 
 /* Pop up section */

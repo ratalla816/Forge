@@ -146,7 +146,7 @@
            <img src="/assets/images/logo.png" alt="">
     </span>          
  </body>
- </main>
+ 
 
 <script src="/javascript/search.js"></script>
 <script src="/javascript/logout.js"></script>
@@ -175,6 +175,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
           var posY = window.pageYOffset * target[index].dataset.ratey;
           target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)'; } 
         }
+
+        {{!-- var ismobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+            if (ismobile){ bypass parallax effect } --}}
 });
 </script>
 </html>
