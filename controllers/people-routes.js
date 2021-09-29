@@ -6,13 +6,19 @@ router.get('/', withAuth, (req, res) => {
   User.findAll({
     attributes: [
       'id',
-      'user_id',
       'name',
       'username',
     ],
   })
-    .then(userData =>
-      res.json(userData))
+  .then(userData => {
+    const users = userData.map(user => user.get({ plain: true }));
+
+    res.render('userspage', {
+      layout: 'main',
+      users,
+      loggedIn: req.session.loggedIn
+    });
+  })
     .catch(error => {
       console.log(error);
       res.status(500).json(error);
