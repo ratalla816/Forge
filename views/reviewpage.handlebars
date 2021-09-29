@@ -1,4 +1,4 @@
- {{!-- <div class="col-12 col-md-4">
+{{!-- <div class="col-12 col-md-4">
     <div class="card">
         <h3 class="card-header text-uppercase">Search By User</h3>
         <form id="user-form" class="card-body">
@@ -20,16 +20,14 @@
 
 <div class="col-12 col-md-8">
     <h2 class="subtitle">Review some code for other developers<span id="repo-search-term"></span></h2>
-   
-        {{#each posts as |post|}}
-         {{#if post_url}}
+
+    {{#each posts as |post|}}
+    {{#if post_url}}
     <div id="repos-container" class="list-group">
         {{> post-info-review post }}
-        {{else}}
-        <h6 class="">there are currently no posts</h6>
-           {{/if}}
+        {{/if}}
         {{/each}}
     </div>
- 
+
 </div>
 <script src="/javascript/homepage.js"></script>
