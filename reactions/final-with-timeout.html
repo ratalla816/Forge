@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook Reactions</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+
+    	body{margin:40px;}
+		.btn-circle.btn-lg {
+		  width: 50px;
+		  height: 50px;
+		  padding: 10px 16px;
+		  font-size: 18px;
+		  line-height: 1.33;
+		  border-radius: 25px;
+		}
+		.hideIt{
+			visibility:hidden;
+			}
+    </style>
+
+</head>
+<body>
+<div class="container">
+<div class="col-md-4 col-md-offset-5">
+	<h3>Facebook Reactions</h3>
+<div id="app">
+	
+	<div @mouseleave="hideIt" class="reactionContainer" style="display: inline-block;">
+		<div class="button-squad" :class="{hideIt:isHidden}">
+		<button @click="likeIt" type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+		<button @click="loveIt" type="button" class="btn btn-danger btn-circle btn-lg"><i class="glyphicon glyphicon-heart"></i></button>
+		<button @click="dislikeIt" type="button" class="btn btn-info btn-circle btn-lg"><i class="glyphicon glyphicon-thumbs-down"></i></button>
+   </div>
+   <button @mouseenter="showIt" @click="likeIt" type="button" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+	</div>
+	
+<br>
+<br>
+   <div class="well">
+	   	<ol>
+	   		<li>Likes:{{likes}}</li>
+	   		<li>Love:{{love}}</li>
+	   		<li>Dislike:{{dislikes}}</li>
+	   	</ol>
+   </div>
+</div>
+
+</div>
+</div>
+	
+    
+<script src="https://unpkg.com/vue@2.0.7/dist/vue.js"></script> 
+<script>
+	new Vue({
+		el:'#app',
+		data:{
+			isHidden:true,
+			likes:0,
+			love:0,
+			dislikes:0
+		},
+		methods:{
+			showIt:function(){
+				var self=this;
+				setTimeout(function(){
+					self.isHidden=false;
+				},400);
+				
+			},
+			hideIt:function(){
+				var self=this;
+				setTimeout(function(){
+					self.isHidden=true;
+				},200);
+			},
+			likeIt:function(){
+				this.likes++;
+			},
+			loveIt:function(){
+				this.love++;
+			},
+			dislikeIt:function(){
+				this.dislikes++;
+			}
+		}
+	});
+</script>
+</body>
+</html>
