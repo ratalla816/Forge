@@ -43,6 +43,11 @@ a {
 	margin: 15px 0;
 }
 
+.resize {
+	width: 140px;
+	height: auto;
+  }
+
 button {
 	border-radius: 20px;
 	border: 1px solid #74D14C;
