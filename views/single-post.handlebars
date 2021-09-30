@@ -1,20 +1,31 @@
-<!-- displaying articles -->
-{{> post-info post}}
+<div class="container">
+
+  {{>left-panel}}
+
+  <div class="middle-panel">
+
+    {{> post-info post}}
+
+    <div class="post">
+
+      {{#if loggedIn}}
+      <form id="comment-link">
+
+        <textarea class="textarea" name="comment-body" placeholder="Insert comment here..."></textarea>
+        <button class="" type="submit">add comment</button>
+
+      </form>
+      {{/if}}
+      <div {{> comments post.comments}}</div>
 
 
-<div class="post">
+    </div>
+  </div>
 
-  {{#if loggedIn}}
-  <form id="comment-link">
+  {{>right-panel user}}
 
-    <textarea class="textarea" name="comment-body" placeholder="Insert comment here..."></textarea>
-    <button class="" type="submit">add comment</button>
-
-  </form>
-  {{/if}}
-  <div {{> comments post.comments}}</div>
-
-  {{#if loggedIn}}
-  <script src="/javascript/comment.js"></script>
-  {{/if}}
 </div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
