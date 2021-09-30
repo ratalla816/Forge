@@ -1,10 +1,35 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User, Post, Comment, Like } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
-  User.findAll({ attributes: { exclude: ['password'] } })
+  User.findAll({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {
+        model: Post,
+        attributes: ['id', 'title', 'post_url', 'post_body', 'created_at']
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_body', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title']
+        }
+      },
+      {
+        model: Post,
+        attributes: ['title'],
+        through: Like,
+        as: 'liked_posts'
+      }
+    ]
+  })
     .then(userData => {
       if (!userData) {
         res.status(404).json({ message: 'No users found' })
@@ -38,8 +63,14 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'comment_body', 'created_at'],
         include: {
           model: Post,
-          attributes: [title]
+          attributes: ['title']
         }
+      },
+      {
+        model: Post,
+        attributes: ['title'],
+        through: Like,
+        as: 'liked_posts'
       }
     ]
   })

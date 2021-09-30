@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
+const { Post, User, Comment, Like } = require('../../models');
 const withAuth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 // get all posts
 router.get('/', withAuth, (req, res) => {
@@ -12,6 +13,7 @@ router.get('/', withAuth, (req, res) => {
       'created_at',
       'post_url',
       'post_body'
+      [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
     ],
     include: [
       {
@@ -54,7 +56,8 @@ router.get('/:id', (req, res) => {
       'title',
       'created_at',
       'post_url',
-      'post_body'
+      'post_body',
+      [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
     ],
     include: [
       {
@@ -129,6 +132,16 @@ router.put('/:id', withAuth, (req, res) => {
     .catch(error => {
       console.log(error);
       res.status(500).json(error);
+    });
+});
+
+router.put('/like', withAuth, (req, res) => {
+  // custom static method created in models/Post.js
+  Post.like({ ...req.body, user_id: req.session.user_id }, { Like, Comment, User })
+    .then(updatedLikeData => res.json(updatedLikeData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
