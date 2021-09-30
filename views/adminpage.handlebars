@@ -1,11 +1,6 @@
-
+<div class="container">
 
     {{>left-panel}}
-        
-  
-{{#if posts.length}}
-<div>
-    {{#each posts as |post|}}
 
     <div class="middle-panel">
 
@@ -34,7 +29,7 @@
                 <div class="post-bottom">
                     <div class="action">
                         <i class="far fa-thumbs-up" id={{id}}></i>
-                       
+                        {{!-- {{likes}} --}}
                         <span>{{likes}}</span>
                     </div>
                     <div class="action">
@@ -49,33 +44,15 @@
                     </div>
                 </div>
 
-        <div class="post-bottom">
-            <div class="action">
-                 <i class="far fa-thumbs-up" id={{id}}></i> 
-               
-                <span>{{likes}}</span>
-            </div>
-            <div class="action">
-                <a href="/post/{{id}}">
-                    <i class="far fa-comment"></i>
-                    <span class="badge"></span>
-                    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-                </a>
-            </div>
-            <div class="action">
-                <a href="/admin/edit/{{post.id}}"><button class="btn-up">Edit post</button></a>
             </div>
 
         </div>
         {{/each}}
 
-{{else}}
-<h6 class="">There are no currently posts!</h6>
-{{/if}}
-
-
-
-
+        {{else}}
+        <h6 class="">There are no currently posts!</h6>
+        {{/if}}
+    </div>
 
     {{>right-panel user}}
 </div>
