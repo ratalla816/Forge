@@ -1,28 +1,37 @@
-<form id="edit-user-form" class="form-signin">
-    <div id="signup" role="tabpanel">
-        <div class="mb-3 card-header text-center">
-            <h2>Update Account</h2>
-        </div>
-        <div>
-            <label for="user-name">Name</label>
-            <input type="text" name="user-username" placeholder="{{name}}" autocomplete="off" required autofocus>
-        </div>
-        <div>
-            <label for="user-username">Username</label>
-            <input type="text" name="user-username" id="username-input-signup" placeholder="{{username}}" autocomplete="off"
-                required autofocus>
-        </div>
-        <div>
-            <label for="user-email">Email</label>
-            <input type="email" placeholder="terry@example.com" autocomplete="off" required autofocus>
-        </div>
-        <div>
-            <label for="user-password">Password</label>
-            <input type="password" placeholder="Password" autocomplete="off" required>
-        </div>
-        <button type="submit" id="signup-btn" class="btn">Save</button>
-        <a href="/admin">Cancel</a>
+    {{>left-panel}}
+
+    <div class="middle-panel">
+
+        <form id="edit-user-form" class="form-signin">
+            <div id="signup" role="tabpanel">
+                <div class="mb-3 card-header text-center">
+                    <h2>Update Account</h2>
+                </div>
+                <div>
+                    <label for="user-name">Name</label>
+                    <input type="text" name="user-username" placeholder="{{name}}" autocomplete="off" required
+                        autofocus>
+                </div>
+                <div>
+                    <label for="user-username">Username</label>
+                    <input type="text" name="user-username" id="username-input-signup" placeholder="{{username}}"
+                        autocomplete="off" required autofocus>
+                </div>
+                <div>
+                    <label for="user-email">Email</label>
+                    <input type="email" placeholder="terry@example.com" autocomplete="off" required autofocus>
+                </div>
+                <div>
+                    <label for="user-password">Password</label>
+                    <input type="password" placeholder="Password" autocomplete="off" required>
+                </div>
+                <button type="submit" id="signup-btn" class="btn">Save</button>
+                <a href="/admin">Cancel</a>
+            </div>
+        </form>
     </div>
-</form>
+
+    {{>right-panel user}}
+<
 
 <script src="/javascript/user.js"></script>
