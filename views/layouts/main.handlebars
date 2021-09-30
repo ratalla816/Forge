@@ -20,7 +20,9 @@
             <div class="nav-left">
                 <a href="/"><img class="logo" src="/assets/images/logo.png" alt="Logo"></a>
                 <input id="searchButton" type="text" name="search" placeholder="Search Forge...">
-                <button id="search" type="submit" style="border:none;background:transparent;margin:5px;font-size:18px;"><i class="fa fa-search"></i></button>
+                <button id="search" type="submit"
+                    style="border:none;background:transparent;margin:5px;font-size:18px;"><i
+                        class="fa fa-search"></i></button>
             </div>
             <div class="nav-middle">
                 <a href="/" class="active">
@@ -43,116 +45,20 @@
             </div>
         </div>
     </nav>
- <main> 
-     
-   <!-- SCROLL -->
-       {{!-- <div class="scroll" data-rate = ".3" data-direction="vertical"> --}}
+    <main>
         <div class="wrapper">
             <div class="container">
-                <div class="left-panel">
-                    <ul>
-                        <li>
-                            <span class="profile"></span>
-                            <p>Welcome back!</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-user-friends"></i>
-                            <p>Friends</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-play-circle"></i>
-                            <p>Videos</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-flag"></i>
-                            <p>Pages</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-users"></i>
-                            <p>Groups</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-bookmark"></i>
-                            <p>Bookmark</p>
-                        </li>
-                        <li>
-                            <i class="fab fa-facebook-messenger"></i>
-                            <p>Inbox</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-calendar-week"></i>
-                            <p>Events</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-bullhorn"></i>
-                            <p>Ads</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-hands-helping"></i>
-                            <p>Offers</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-briefcase"></i>
-                            <p>Jobs</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-star"></i>
-                            <p>Favorites</p>
-                        </li>
-                    </ul>
-
-                    <div class="footer-links">
-                        <a href="#">Privacy</a>
-                        <a href="#">Terms</a>
-                        <a href="#">Advance</a>
-                        <a href="#">More</a>
-                    </div>
-                </div>
-                <div class="middle-panel">
-                    <div class="post create">
-                        <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
-                    </div>
                     {{{body}}}
-
-                </div>
-
-           <!-- SCROLL -->
-            {{!-- <div class="scroll" data-rate = ".1" data-direction="vertical"> --}}
-                <div class="right-panel">
-                    <div class="pages-section">
-                        <h4>Code reviews</h4>
-                        <a class="page" href="/review">
-                            <div class="dp">
-                                <img src="./assets/images/logo.png" alt="">
-                            </div>
-                            <p class="name">Review Page</p>
-                        </a>
-                    </div>
-
-                    <div class="friends-section">
-                        <h4></h4>
-                        <a class='friend' href="/user/{{id}}">
-                            <div class="dp">
-                                <img src="./images/aaron.jpg" alt="">
-                            </div>
-                            <p class="name">{{user.name}}</p>
-                        </a>
-
-                    </div>
-                </div>
             </div>
-              
-    {{!-- <span class="scroll" data-rateY="1" data-rateX="-2" data-direction="horizontal">
-       <div class="dp">
-           <img class="resize" src="/assets/images/logo.png" alt="">
-    </span>           --}}
- </body>
- 
-{{!--<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js" 
-integrity="sha512-PNXCBnFH9wShbV+mYnrfo0Gf3iSREgBWmYAoMIfc+Z83vVq3Nu4yxBk6j+BZ40ZIhtW3WlTQdBvW3AYLAnlgpA==" 
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>   --}}
+        </div>
+    </main>
+</body>
+
+{{!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"
+    integrity="sha512-PNXCBnFH9wShbV+mYnrfo0Gf3iSREgBWmYAoMIfc+Z83vVq3Nu4yxBk6j+BZ40ZIhtW3WlTQdBvW3AYLAnlgpA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
 
 </html>
 <script src="/javascript/search.js"></script>
 <script src="/javascript/logout.js"></script>
-<script src="/javascript/profile.js"></script>
