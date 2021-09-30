@@ -46,7 +46,7 @@
  <main> 
      
    <!-- SCROLL -->
-       <div class="scroll" data-rate = ".3" data-direction="vertical">
+       {{!-- <div class="scroll" data-rate = ".3" data-direction="vertical">
         <div class="wrapper">
             <div class="container">
                 <div class="left-panel">
@@ -107,17 +107,16 @@
                         <a href="#">Advance</a>
                         <a href="#">More</a>
                     </div>
-                </div>
+                </div> --}}
                 <div class="middle-panel">
                     <div class="post create">
                         <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
                     </div>
-                    {{{body}}}
-
-                </div>
+                    {{{body}}};
+                    </div>
 
            <!-- SCROLL -->
-            <div class="scroll" data-rate = ".1" data-direction="vertical">
+            {{!-- <div class="scroll" data-rate = ".1" data-direction="vertical">
                 <div class="right-panel">
                     <div class="pages-section">
                         <h4>Code reviews</h4>
@@ -138,14 +137,14 @@
                             <p class="name">Aler Tex</p>
                         </a>
 
-                    </div>
+                    </div> --}}
                 </div>
             </div>
               
-    <span class="scroll" data-rateY="1" data-rateX="-2" data-direction="horizontal">
+    {{!-- <span class="scroll" data-rateY="1" data-rateX="-2" data-direction="horizontal">
        <div class="dp">
            <img class="resize" src="/assets/images/logo.png" alt="">
-    </span>          
+    </span>           --}}
  </body>
  
 
@@ -156,46 +155,71 @@ integrity="sha512-PNXCBnFH9wShbV+mYnrfo0Gf3iSREgBWmYAoMIfc+Z83vVq3Nu4yxBk6j+BZ40
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
 <script>
     // SPECIAL THANKS to GARY SIMON - "Vanilla JavaScript Parallax with just a Few Lines of Code" https://youtu.be/Dxm6EwvQIl8 \\
-    window.addEventListener ('scroll', function (e) {
+    
+    // window.addEventListener ('scroll', function (e) { \\
 
-    const target = document.querySelectorAll('.scroll');
+    //const target = document.querySelectorAll('.scroll'); \\
+
      // target.style.transform = 'translate3d(0px, 50px, 0px';
      // target.style.background = '#b3ff00';
      // console.log(target.style);
      // console.log(window.pageYOffset);
-    var scrolled = window.pageYOffset;
-       
-    var index = 0, length = target.length; 
-    for ( index; index < length; index++ ) {
-        var pos = window.pageYOffset * target[index].dataset.rate;
 
-    if(target[index].dataset.direction === 'vertical'){
-        target[index].style.transform = 'translate3d(0px, '+pos+'px, 0px)';
-    } else 
-        { var posX = window.pageYOffset * target[index].dataset.ratex;
-          var posY = window.pageYOffset * target[index].dataset.ratey;
-          target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)'; } 
+    // var scrolled = window.pageYOffset; \\
+       
+  //  var index = 0, length = target.length; 
+  //  for ( index; index < length; index++ ) {
+    //    var pos = window.pageYOffset * target[index].dataset.rate;
+
+  //  if(target[index].dataset.direction === 'vertical'){
+    //    target[index].style.transform = 'translate3d(0px, '+pos+'px, 0px)';
+    // } else 
+       // { var posX = window.pageYOffset * target[index].dataset.ratex;
+         // var posY = window.pageYOffset * target[index].dataset.ratey;
+          // target[index].style.transform = 'translate3d('+posX+'px, '+posY+'px, 0px)'; } 
         }
 
-        {{!-- var ismobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-            if (ismobile){ bypass parallax effect } --}}
-});
+     //   var ismobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      //      if (ismobile){ bypass parallax effect } 
+// });
 
-function clickCounter() {
-    id = true; 
-  if (typeof(Storage) !== "session") {
-    if (localStorage.clickcount) {
-      localStorage.clickcount = (localStorage.clickcount)+1;
-    } else {
-      localStorage.clickcount = 1;
-    }
-    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-  } else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+
+
+requestAnimationFrame(() => {
+  const boxes = document.querySelectorAll(".post");
+
+  function getIntersectionRatio(i) {
+    const a = [window.scrollY, window.scrollY + window.innerHeight];
+    const b = [boxes[i].offsetTop, boxes[i].offsetTop + boxes[i].clientHeight];
+
+    const max = Math.max(a[0], b[0]);
+    const min = Math.min(a[1], b[1]);
+
+    return Math.max(0, (min - max) / (b[1] - b[0]));
   }
-}
+
+  function onScroll() {
+    const boxes = document.querySelectorAll(".post");
+    for (let i = 0; i < boxes.length; i += 1) {
+      const intersection = getIntersectionRatio(i);
+      const top = boxes[i].offsetTop - window.pageYOffset < 0;
+      boxes[i].firstChild.style.cssText = `
+        transform-origin: ${top ? "center center" : "top center"};
+        position: ${top ? "fixed" : "absolute"};
+        transform: scale(${intersection});
+        opacity: ${intersection};
+      `;
+    }
+    requestAnimationFrame(onScroll);
+  }
+
+  onScroll();
+});
 </script>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js" 
+integrity="sha512-PNXCBnFH9wShbV+mYnrfo0Gf3iSREgBWmYAoMIfc+Z83vVq3Nu4yxBk6j+BZ40ZIhtW3WlTQdBvW3AYLAnlgpA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
 <script src="/javascript/search.js"></script>
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/profile.js"></script>
