@@ -178,8 +178,6 @@ DB_PW='your_MySQL_password'
 
 [Back To Demo](#example)
 
-[Back To Top](#forge)
-
 ---
 
 ## Usage
