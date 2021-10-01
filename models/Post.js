@@ -3,8 +3,8 @@ const sequelize = require('../config/connection');
 
 // create our Post model
 class Post extends Model {
-  static like(body, models) {
-    return models.like.create({
+  static upreact(body, models) {
+    return models.React.create({
       user_id: body.user_id,
       post_id: body.post_id
     }).then(() => {
@@ -14,11 +14,11 @@ class Post extends Model {
         },
         attributes: [
           'id',
-          'title',
           'post_url',
+          'title',
           'post_body',
           'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
         ],
         include: [
           {
@@ -26,7 +26,7 @@ class Post extends Model {
             attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
             include: {
               model: models.User,
-              attributes: ['name','username']
+              attributes: ['name', 'username']
             }
           }
         ]

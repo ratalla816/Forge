@@ -12,14 +12,15 @@
         <header class="post-header post-header-title ml-5">
             <a href="/post/{{id}}">{{title}}</a>
         </header>
-        <div class="post-content"><a target="_blank" href="{{post_url}}">{{post_url}}</a></div>
+        {{!-- <div class="post-content"><a target="_blank" href="{{post_url}}">({{format_url post_url}})</a></div> --}}
         <div class="post-content">{{post_body}}</div>
     </div>
 
     <div class="post-bottom">
         <div class="action">
             <button id="likes-btn" style="background:transparent;border:none;"><i class="far fa-thumbs-up"></i>
-                <span>Like</span></button>
+                <span>{{react_count}} {{format_plural "like" react_count}} by {{user.username}} on {{format_date
+                    created_at}}</span></button>
         </div>
         <div class="action">
             <a href="/post/{{id}}">
@@ -34,4 +35,4 @@
         </div>
     </div>
 </div>
-<script src="/javascript/likes.js"></script>
+<script src="/javascript/upreact.js"></script>

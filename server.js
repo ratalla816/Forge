@@ -28,12 +28,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
+
 
 app.set('view engine', 'handlebars');
-app.engine('handlebars', exphbs({
-  defaultLayout: 'main',
-  helpers
-}));
+// app.engine('handlebars', exphbs({
+//   defaultLayout: 'main',
+//   helpers
+// }));
+app.engine('handlebars', hbs.engine);
 
 app.get('/splash', (req, res) => {
   res.render('splashpage', { layout: 'splash' });
