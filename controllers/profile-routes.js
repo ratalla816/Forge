@@ -49,7 +49,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
       if (userData) {
         const user = userData.get({ plain: true });
 
-        res.render("edit-user", {
+        res.render('edit-profile', {
           user,
           loggedIn: true,
         });
