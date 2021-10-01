@@ -819,7 +819,7 @@ nav .nav-right span > i {
   }
 
   .dp {
-    display: none;
+    display: inline-flex;
   }
 
   nav .nav-middle a.active {
@@ -850,10 +850,10 @@ nav .nav-right span > i {
     top: 50px;
     flex: none;
     width: 100%;
-    top: 50px;
+    top: 10px;
     width: 213px;
-    height: calc(100vh - 70px);
-    margin-left: 139px;
+    height: calc(20vh - 70px);
+    margin-left: 100px;
     scroll-snap-align: start;
   }
 
@@ -869,7 +869,7 @@ nav .nav-right span > i {
     top: 50px;
     width: 213px;
     height: calc(100vh - 70px);
-    margin-left: 139px;
+    margin-left: 100px;
     scroll-snap-align: start;
   }
 
@@ -1128,6 +1128,7 @@ nav .nav-right span > i {
   .middle-panel {
     display: block;
     position: relative !important;
+    margin-left: 3px;
   }
 
   .right-panel {
