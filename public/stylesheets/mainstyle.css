@@ -983,6 +983,7 @@ nav .nav-right span > i {
   }
 }
 
+
 /* tablet */
 @media screen and (max-width: 1160px) {
   nav {
@@ -1031,28 +1032,20 @@ nav .nav-right span > i {
   }
 
   .wrapper {
-    width: 130%;
+    width: 100%;
+    overflow: hidden;
   }
 
   .logo {
-    width: 60px;
+    width: 90px;
+    margin-top: 28px;
   }
 
-  nav .nav-left .logo > img {
+  /* nav .nav-left .logo > img {
     width: 40px;
-  }
-
-  .test {
-    /* background: black; */
-    /* background: url(./images/dp.png); */
-    /* margin: auto; */
-    margin-left: -37px;
-    margin-bottom: 1px;
-    display: flex;
-    padding: 0px;
-    margin-right: 20px;
-  }
-
+  } */
+ 
+  
   .profile {
     background: url(./images/dp.png);
     height: 30px;
@@ -1123,20 +1116,50 @@ nav .nav-right span > i {
     position: relative !important;
     flex: none;
     width: 100%;
+    display:contents;
   }
+
+  /* .container .left-panel {
+    top: 50px;
+    flex: none;
+    width: 100%;
+    top: 10px;
+    width: 213px;
+    height: calc(20vh - 70px);
+    margin-left: 100px;
+    scroll-snap-align: start;
+  } */
+
 
   .middle-panel {
     display: block;
     position: relative !important;
-    margin-left: 3px;
+    top: 50px;
+    margin-left: 40px;
+  }
+
+  .container .right-panel {
+    /* position: sticky;  */
+    top: 50px;
+    width: 235px;
+    height: calc(100vh - 70px);
+    /* margin-left: 100px; */
+    /* scroll-snap-align: start; */
+    margin-right: 19px;
   }
 
   .right-panel {
-    display: block;
+    display: contents;
     position: relative !important;
     flex: none;
     width: 100%;
+    margin: -27px;
+    margin-left: 211px;
   }
+  
+  .right-panel .pages-section, .right-panel .friends-section {
+    margin: 1rem 36px !important;
+}
 
   .wrapper {
     display: block !important;
@@ -1148,11 +1171,11 @@ nav .nav-right span > i {
     flex: grow;
   } */
 
-  .middle-panel {
+  /* .middle-panel {
     margin-left: -40px;
     display: block;
     position: relative !important;
-}
+} */
 
   .story {
     width: 20% !important;
@@ -1167,7 +1190,7 @@ nav .nav-right span > i {
   } */
 
   .post {
-    width: 550px;
+    width: 412px;
     background: #fff;
     border-radius: 10px;
     padding: 10px;
