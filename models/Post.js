@@ -1,24 +1,38 @@
-
-// completed by Rob on 9/21 @ 1540
-
-// WHEN I choose to share an experience
-// THEN I am able to post some text with a title to my page – MODEL: EXPERIENCE (ID TITLE TEXT) 
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// create our Post model
+class Post extends Model { }
 
-class Post extends Model {}
-
+// create fields/columns for Post model
 Post.init(
   {
-    id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true, autoIncrement: true },
-    user_id: { type: DataTypes.INTEGER, allowNull: true, references: { model: 'user', key: 'id' }},
-    title: { type: DataTypes.STRING, allowNull: false },
-    url: { type: DataTypes.STRING, allowNull: true, validate: { isURL: true }},
-    body: { type: DataTypes.TEXT, allowNull: false}
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    post_url: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    post_body: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   },
-
   {
     sequelize,
     freezeTableName: true,

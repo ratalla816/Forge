@@ -1,0 +1,31 @@
+<div class="container">
+
+  {{>left-panel}}
+
+  <div class="middle-panel">
+
+    {{> post-info post}}
+
+    <div class="post">
+
+      {{#if loggedIn}}
+      <form id="comment-link">
+
+        <textarea class="textarea" name="comment-body" placeholder="Insert comment here..."></textarea>
+        <button class="" type="submit">add comment</button>
+
+      </form>
+      {{/if}}
+      <div {{> comments post.comments}}</div>
+
+
+    </div>
+  </div>
+
+  {{>right-panel user}}
+
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

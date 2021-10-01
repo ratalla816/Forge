@@ -43,6 +43,11 @@ a {
 	margin: 15px 0;
 }
 
+.resize {
+	width: 170px;
+	height: auto;
+  }
+
 button {
 	border-radius: 20px;
 	border: 1px solid #74D14C;
@@ -256,6 +261,12 @@ footer a {
 	margin: 40px;
 	width: 40%;
 	height: 25%;
+}
+
+a.logo {
+	margin: 20px;
+	width: 80%;
+	height: 50%;
 }
 
 /* mobile phones up to iphone 13 */

@@ -1,0 +1,51 @@
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form id="signup-form" action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input id="name-input-signup" type="text" placeholder="Full Name" />
+			<input id="username-input-signup" type="text" placeholder="Username" />
+			<input id="email-input-signup" type="text" placeholder="Email" />
+			<input id="password-input-signup" type="password" placeholder="Password" />
+			<button type="submit">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="login-form" action="#">
+			<h1>Login</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input id="email-input-login" type="email" placeholder="Email" />
+			<input id="password-input-login" type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button id="login-btn" type="submit">Login</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<a href="/splash"><img class="resize" src="/assets/images/logo.png" alt="" /></a>
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="logIn">Login</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<a href="/splash"><img class="resize" src="/assets/images/logo.png" alt="" /></a>
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/javascript/login.js"></script>
+<script src="/javascript/signup.js"></script>
