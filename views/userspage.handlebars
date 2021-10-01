@@ -1,11 +1,24 @@
-<div class="container">
+{{>nav-panel}}
+<main>
 
-    {{>left-panel}}
+    <!-- SCROLL -->
+    <div class="scroll" data-rate=".3" data-direction="vertical">
+        <div class="wrapper">
+            <div class="container">
+                <div class="container">
 
-    <div class="middle-panel">
-        {{>users-panel}}
+                    {{>left-panel}}
+
+                    <div class="middle-panel">
+                        {{>users-panel}}
+                    </div>
+
+                    {{>right-panel}}
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    {{>right-panel}}
-
-</div>
+</main>
