@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -11,7 +11,8 @@ router.get('/', withAuth, (req, res) => {
       'id',
       'title',
       'created_at',
-      'post_body'
+      'post_body',
+      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
     ],
     include: [
       {
@@ -97,7 +98,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'id',
       'title',
       'created_at',
-      'post_body'
+      'post_body',
+      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
     ],
     include: [
       {
