@@ -841,7 +841,7 @@ nav .nav-right span > i {
     display: block;
     position: relative !important;
     width: 75%;
-    margin-left: 40px;
+    margin-left: 7px;
   }
 
   .container .right-panel {
@@ -1126,6 +1126,12 @@ nav .nav-right span > i {
     display: block !important;
     flex: grow;
   } */
+
+  .middle-panel {
+    margin-left: -40px;
+    display: block;
+    position: relative !important;
+}
 
   .story {
     width: 20% !important;
