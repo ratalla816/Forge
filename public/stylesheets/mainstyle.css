@@ -105,7 +105,7 @@ nav .nav-middle a.active::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: royalblue;
+  /* background: royalblue; */
 }
 
 nav .nav-middle a > i {
@@ -838,7 +838,7 @@ nav .nav-right span > i {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: royalblue;
+    /* background: royalblue; */
   }
 
   .left-panel {
@@ -1115,7 +1115,7 @@ nav .nav-right span > i {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: royalblue;
+    /* background: royalblue; */
   }
 
   .left-panel {
