@@ -23,4 +23,4 @@ async function upreactClickHandler(event) {
   }
 }
 
-document.querySelector('#upreact-btn').addEventListener('click', upreactClickHandler);
+document.querySelector('.react-btn').addEventListener('click', upreactClickHandler);

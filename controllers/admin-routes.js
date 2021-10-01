@@ -92,7 +92,7 @@ router.get('/create/', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-  Post.findByPk({
+  Post.findOne({
     where: { id: req.params.id },
     attributes: [
       'id',

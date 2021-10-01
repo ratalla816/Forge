@@ -14,7 +14,7 @@
         <textarea class="textarea" name="comment-body" placeholder="Insert comment here..."></textarea>
         <button class="" type="submit">add comment</button>
 
-        <button type="button" id="upreact-btn">add a like</button>
+        <button type="button" class="react-btn">add a like</button>
       </form>
       {{/if}}
       <div {{> comments post.comments}}</div>
@@ -29,5 +29,5 @@
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
+<script src="/javascript/upreact.js"></script>
 {{/if}}
