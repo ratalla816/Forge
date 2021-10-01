@@ -1,22 +1,29 @@
 
-const home = document.getElementById('home');
-const containerHome = document.getElementById('container-icon');
-/*const containerPeople = document.getElementById('container-people');*/
+// const home = document.getElementById('home');
+// const people = document.getElementById('people');
+// /*const containerPeople = document.getElementById('container-people');*/
 
 
-const people = document.getElementById('people');
+// home.addEventListener('click', () => {
+// 	containerHome.classList.add("hidden");
+// });
 
-home.addEventListener('click', () => {
-	containerHome.classList.add("active");
-});
+// people.addEventListener('click', () => {
+// 	containerPeople.classList.remove("active");
+// });
 
-people.addEventListener('click', () => {
-	containerPeople.classList.remove("active");
-});
 
-// async function loginFormHandler(event) {
-//     event.preventDefault();
 
-// if (click)
-// const sign
-// }}
+type="image">
+            $(document).ready(function () {
+                $("nav-middle").click(
+                  function (e) {
+                    $("nav-middle > home").removeClass(
+                      "active");
+                    $("nav-middle > home").css(
+                      "color", "");
+ 
+                    $(this).addClass("active");
+                    $(this).css("color", "blue");
+                });
+            });
