@@ -1,101 +1,66 @@
-const router = require('express').Router();
-const { User, Post, Comment, React } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { User, Post, Comment, React } = require("../../models");
 
 // get all users
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   User.findAll({
-    attributes: { exclude: ['password'] },
-    where: {
-      id: req.params.id
-    },
-    include: [
-      {
-        model: Post,
-        attributes: ['id', 'title', 'post_url', 'post_body', 'created_at']
-      },
-      {
-        model: Comment,
-        attributes: ['id', 'comment_body', 'created_at'],
-        include: {
-          model: Post,
-          attributes: ['title']
-        }
-      },
-      {
-        model: Post,
-        attributes: ['title'],
-        through: React,
-        as: 'reacted_posts'
-      }
-    ]
+    attributes: { exclude: ["password"] },
   })
-    .then(userData => {
-      if (!userData) {
-        res.status(404).json({ message: 'No users found' })
-      }
-      res.json(userData)
-    })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .then((userData) => res.json(userData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-})
+});
 
 // get one user by id
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   User.findOne({
-    attributes: { exclude: ['password'] },
+    attributes: { exclude: ["password"] },
     where: { id: req.params.id },
     include: [
       {
         model: Post,
-        attributes: [
-          'id',
-          'title',
-          'post_url',
-          'posts_body',
-          'created_at'
-        ]
+        attributes: ["id", "title", "post_url", "posts_body", "created_at"],
       },
       {
         model: Comment,
-        attributes: ['id', 'comment_body', 'created_at'],
+        attributes: ["id", "comment_body", "created_at"],
         include: {
           model: Post,
-          attributes: ['title']
-        }
+          attributes: ["title"],
+        },
       },
       {
         model: Post,
-        attributes: ['title'],
-        through: Like,
-        as: 'liked_posts'
-      }
-    ]
+        attributes: ["title"],
+        through: React,
+        as: "reacted_posts",
+      },
+    ],
   })
-    .then(userData => {
+    .then((userData) => {
       if (!userData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(userData);
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
       res.status(500).json(error);
     });
-})
+});
 
 // create user
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   User.create({
     name: req.body.name,
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   })
-    .then(userData => {
+    .then((userData) => {
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.name = userData.name;
@@ -105,25 +70,27 @@ router.post('/', (req, res) => {
         res.json(userData);
       });
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
       res.status(500).json(error);
     });
 });
 
 // user login
-router.post('/login', (req, res) => {
+router.post("/login", (req, res) => {
   User.findOne({ where: { email: req.body.email } })
-    .then(userData => {
+    .then((userData) => {
       if (!userData) {
-        res.status(400).json({ message: 'No user with that email address found!' });
+        res
+          .status(400)
+          .json({ message: "No user with that email address found!" });
         return;
       }
 
       const validPassword = userData.checkPassword(req.body.password);
 
       if (!validPassword) {
-        res.status(400).json({ message: 'Incorrect password!' });
+        res.status(400).json({ message: "Incorrect password!" });
         return;
       }
 
@@ -132,57 +99,59 @@ router.post('/login', (req, res) => {
         req.session.username = userData.username;
         req.session.loggedIn = true;
 
-        res.json({ user: userData, message: 'Login successful!' });
+        res.json({ user: userData, message: "Login successful!" });
       });
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
-      res.status(500).json(error)
+      res.status(500).json(error);
     });
 });
 
 // user logout
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  }
-  else {
+  } else {
     alert("You are not logged in!").end();
   }
 });
 
 // update user by id
-router.put('/:id', withAuth, (req, res) => {
-  User.update(req.body, {
-    individualHooks: true,
-    where: { id: req.params.id }
-  })
-    .then(userData => {
-      if (!userData[0]) {
-        res.status(404).json({ message: 'No user found with this id' });
+router.put("/:id", (req, res) => {
+  User.update(
+    req.body,
+    {
+      individualHooks: true,
+      where: { id: req.params.id }
+    }
+  )
+    .then((userData) => {
+      if (!userData) {
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(userData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 // delete user by id
-router.delete('/:id', withAuth, (req, res) => {
+router.delete("/:id", (req, res) => {
   User.destroy({ where: { id: req.params.id } })
-    .then(userData => {
+    .then((userData) => {
       if (!userData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(userData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });

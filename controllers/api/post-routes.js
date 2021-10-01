@@ -4,7 +4,7 @@ const { Post, User, Comment, React } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all posts
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
   Post.findAll({
     order: ['created_at', 'DESC'],
     attributes: [

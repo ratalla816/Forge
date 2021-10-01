@@ -12,6 +12,7 @@ router.get('/', withAuth, (req, res) => {
       'title',
       'created_at',
       'post_body',
+      'post_url',
       [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
     ],
     include: [

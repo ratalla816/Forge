@@ -38,6 +38,15 @@
   background:transparent;border:none;
 }
 
+.upreact-btn {
+  background-color: #197d0f !important;
+  transition: background-color .1s;
+}
+
+.upreact-btn:hover {
+  background-color: #1f9c13;
+}
+
 nav {
   height: 70px;
   width: 100%;
