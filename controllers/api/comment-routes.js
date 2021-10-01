@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 // get all comments
 router.get('/', withAuth, (req, res) => {
-  Comment.findAll({})
+  Comment.findAll()
     .then(commentData => {
       if (!commentData) {
         res.status(404).json({ message: 'No comments found' });
