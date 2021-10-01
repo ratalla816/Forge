@@ -30,6 +30,10 @@
   font-family: sans-serif;
 }
 
+.icon{
+  
+}
+
 .logo {
   width: 60px;
 }
@@ -91,6 +95,10 @@ nav .nav-middle a {
   color: #333;
   padding: 10px;
   margin: 0px 10px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 nav .nav-middle a.active {

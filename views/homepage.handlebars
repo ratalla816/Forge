@@ -1,25 +1,36 @@
-<div class="container">
+{{>nav-active-panel}}
+<main>
 
-    {{>left-panel}}
+    <!-- SCROLL -->
+    <div class="scroll" data-rate=".3" data-direction="vertical">
+        <div class="wrapper">
+            <div class="container">
+                <div class="container">
 
-    <div class="middle-panel">
-        <div class="post create">
-            <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
+                    {{>left-panel}}
+
+                    <div class="middle-panel">
+                        <div class="post create">
+                            <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
+                        </div>
+
+                        {{#each posts as |post|}}
+
+                        {{> post-info post }}
+
+
+                        {{else}}
+                        <h6 style="margin-top: 20px;fonct-size:30px;">there are currently no posts</h6>
+                        {{/each}}
+
+                    </div>
+
+                    {{>right-panel}}
+
+                </div>
+            </div>
         </div>
 
-        {{#each posts as |post|}}
-
-        {{> post-info post }}
-
-
-        {{else}}
-        <h6 style="margin-top: 20px;fonct-size:30px;">there are currently no posts</h6>
-        {{/each}}
-
-    </div>
-
-    {{>right-panel}}
-
-</div>
+</main>
 
 <script src="/javascript/profile.js"></script>

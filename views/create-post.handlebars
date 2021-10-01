@@ -1,28 +1,39 @@
+{{>nav-active-panel}}
+<main>
 
-  {{>left-panel}}
+    <!-- SCROLL -->
+    <div class="scroll" data-rate=".3" data-direction="vertical">
+        <div class="wrapper">
+            <div class="container">
+                {{>left-panel}}
 
-    <div class="middle-panel">
-<div class="post create">
-    <div class="post-full">
-        <div class="wrapper-post">
-            <section class="post-popup">
-                <form id="new-post-form">
-                    <input type="text" class="text-label" name="post-title" placeholder="Insert title here"
-                        spellcheck="true" required />
-                    <input type="url" class="text-label" name="post-url" id="url" placeholder="https://example.com"
-                        pattern="https://.*">
-                    <input class="text-input" name="post-body" placeholder="Ask a question..."
-                        required />
-                    <div class="theme-emoji">
-                        <img src="/assets/icons/theme.svg" alt="theme">
-                        <img src="/assets/icons/smile.svg" alt="smile">
+                <div class="middle-panel">
+                    <div class="post create">
+                        <div class="post-full">
+                            <div class="wrapper-post">
+                                <section class="post-popup">
+                                    <form id="new-post-form">
+                                        <input type="text" class="text-label" name="post-title"
+                                            placeholder="Insert title here" spellcheck="true" required />
+                                        <input type="url" class="text-label" name="post-url" id="url"
+                                            placeholder="https://example.com" pattern="https://.*">
+                                        <input class="text-input" name="post-body" placeholder="Ask a question..."
+                                            required />
+                                        <div class="theme-emoji">
+                                            <img src="/assets/icons/theme.svg" alt="theme">
+                                            <img src="/assets/icons/smile.svg" alt="smile">
+                                        </div>
+                                        <button type="submit">Post</button>
+                                    </form>
+                                </section>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit">Post</button>
-                </form>
-            </section>
+                </div>
+                {{>right-panel user}}
+            </div>
         </div>
     </div>
-</div>
-</div>
-{{>right-panel user}}
+
+</main>
 <script src="/javascript/add-post.js"></script>

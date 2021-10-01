@@ -1,57 +1,69 @@
-<div class="container">
+{{>nav-active-panel}}
+<main>
 
-    {{>left-panel}}
+    <!-- SCROLL -->
+    <div class="scroll" data-rate=".3" data-direction="vertical">
+        <div class="wrapper">
+            <div class="container">
 
-    <div class="middle-panel">
+                {{>left-panel}}
 
-        {{#if posts.length}}
-        <div>
-            {{#each posts as |post|}}
+                <div class="middle-panel">
 
-            <div class="post">
-                <div class="post-top">
-                    <div class="">
-                        <i class="fas fa-user" style="font-size:24px;"></i>
+                    {{#if posts.length}}
+                    <div>
+                        {{#each posts as |post|}}
+
+                        <div class="post">
+                            <div class="post-top">
+                                <div class="">
+                                    <i class="fas fa-user" style="font-size:24px;"></i>
+                                </div>
+                                <div class="post-info">
+                                    <p class="name">{{user.name}}</p>
+                                    <span class="time">{{format_date created_at}}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <header class="post-header post-header-title">
+                                    <a href="/post/{{id}}">{{title}}</a>
+                                </header>
+                                <div class="post-content"><a href="{{post_url}}">{{format_url post_url}}</a></div>
+                                <div class="post-content">{{post_body}}</div>
+                            </div>
+
+                            <div class="post-bottom">
+                                <div class="action">
+                                    <i class="far fa-thumbs-up" id={{id}}></i>
+                                    <span>likes</span>
+                                </div>
+                                <div class="action">
+                                    <a href="/post/{{id}}">
+                                        <i class="far fa-comment"></i>
+                                        <span class="badge"></span>
+                                        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment"
+                                            comments.length}}</a>
+                                    </a>
+                                </div>
+                                <div class="action">
+                                    <a href="/admin/edit/{{post.id}}"><button class="btn-up">Edit post</button></a>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
-                    <div class="post-info">
-                        <p class="name">{{user.name}}</p>
-                        <span class="time">{{format_date created_at}}</span>
-                    </div>
+                    {{/each}}
+
+                    {{else}}
+                    <h6 class="">There are no currently posts!</h6>
+                    {{/if}}
                 </div>
-                <div>
-                    <header class="post-header post-header-title">
-                        <a href="/post/{{id}}">{{title}}</a>
-                    </header>
-                    <div class="post-content"><a href="{{post_url}}">{{format_url post_url}}</a></div>
-                    <div class="post-content">{{post_body}}</div>
-                </div>
 
-                <div class="post-bottom">
-                    <div class="action">
-                        <i class="far fa-thumbs-up" id={{id}}></i>
-                        <span>likes</span>
-                    </div>
-                    <div class="action">
-                        <a href="/post/{{id}}">
-                            <i class="far fa-comment"></i>
-                            <span class="badge"></span>
-                            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-                        </a>
-                    </div>
-                    <div class="action">
-                        <a href="/admin/edit/{{post.id}}"><button class="btn-up">Edit post</button></a>
-                    </div>
-                </div>
+                {{>right-panel user}}
 
             </div>
-
         </div>
-        {{/each}}
-
-        {{else}}
-        <h6 class="">There are no currently posts!</h6>
-        {{/if}}
     </div>
 
-    {{>right-panel user}}
-</div>
+</main>
