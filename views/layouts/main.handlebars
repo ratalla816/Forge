@@ -24,14 +24,15 @@
                     style="border:none;background:transparent;margin:5px;font-size:18px;"><i
                         class="fa fa-search"></i></button> --}}
             </div>
-            <div class="nav-middle">
-                <a href="/" class="active">
-                    <i class="fa fa-home"></i>
-                </a>
+            <div class="nav-middle" id="container-icon">
+                <div id="container-home"><a href="/" id="home">
+                        <i class="fa fa-home"></i>
+                    </a></div>
 
-                <a href="/people">
-                    <i class="fa fa-users"></i>
-                </a>
+                <div id="container-people"><a href="/people" id="people">
+                        <i class="fa fa-users"></i>
+                    </a></div>
+
             </div>
 
             <div class="nav-right">
@@ -46,24 +47,25 @@
         </div>
     </nav>
     <main>
-       
-       <!-- SCROLL -->
-            <div class="scroll" data-rate = ".3" data-direction="vertical">
-        <div class="wrapper">
-            <div class="container">
+
+        <!-- SCROLL -->
+        <div class="scroll" data-rate=".3" data-direction="vertical">
+            <div class="wrapper">
+                <div class="container">
                     {{{body}}}
+                </div>
             </div>
-        </div>
-  
+
     </main>
 
 </body>
 
 
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js" 
-integrity="sha512-PNXCBnFH9wShbV+mYnrfo0Gf3iSREgBWmYAoMIfc+Z83vVq3Nu4yxBk6j+BZ40ZIhtW3WlTQdBvW3AYLAnlgpA==" 
-crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"
+    integrity="sha512-PNXCBnFH9wShbV+mYnrfo0Gf3iSREgBWmYAoMIfc+Z83vVq3Nu4yxBk6j+BZ40ZIhtW3WlTQdBvW3AYLAnlgpA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/javascript/search.js"></script>
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/scroll.js"></script>
+<script src="/javascript/nav-bar.js"></script>

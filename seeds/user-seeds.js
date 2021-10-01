@@ -8,9 +8,9 @@ const userSeeds = [
     password: "password",
   },
   {
-    name: "Jwillogh Way",
-    username: "jwilloughway1",
-    email: "rmebes1@sogou.com",
+    name: "Tom Tom",
+    username: "tomtom1",
+    email: "tom@tom.com",
     password: "password",
   },
   {
