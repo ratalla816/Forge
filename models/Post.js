@@ -61,14 +61,9 @@ Post.init(
     },
     post_url: {
       type: DataTypes.STRING,
-      allowNull: true,
-      // validate: {
-      //   isURL: true,
-      // },
+      allowNull: true
     },
     post_body: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: true,
       type: DataTypes.STRING,
       allowNull: true,
     },
