@@ -1,0 +1,38 @@
+{
+  "name": "forge",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "seeds": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratalla816/Forge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ratalla816/Forge/issues"
+  },
+  "homepage": "https://github.com/ratalla816/Forge#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "heroku": "^7.59.0",
+    "mysql2": "^2.3.0",
+    "node": "^16.10.0",
+    "node.js": "^0.0.1-security",
+    "puzzy-search": "^1.0.20",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "jest": "^27.2.4"
+  }
+}

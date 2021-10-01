@@ -1,0 +1,25 @@
+<div class="container">
+
+    {{>left-panel}}
+
+    <div class="middle-panel">
+        <div class="post create">
+            <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
+        </div>
+
+        {{#each posts as |post|}}
+
+        {{> post-info post }}
+
+
+        {{else}}
+        <h6 class="">there are currently no posts</h6>
+        {{/each}}
+
+    </div>
+
+    {{>right-panel user}}
+
+</div>
+
+<script src="/javascript/profile.js"></script>
