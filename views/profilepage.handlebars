@@ -1,40 +1,23 @@
+<div class="container">
 
-{{>left-panel}}
+    {{>left-panel}}
 
-<div class="middle-panel">
+    <div class="middle-panel">
 
-    <div class="post">
-        <div class="post-full">
-            <div class="wrapper-post">
-                <section class="post-popup">
-                    <form id="edit-user-form">
-                        <h2 class="">Update Account</h2>
-                        <div>
-                            <label for="user-name">Full Name</label>
-                            <input id="user-name" name="user-name" type="text" value="{{user.name}}" />
-                        </div>
-                        <div>
-                            <label for="user-username">Username</label>
-                            <input id="user-username" name="user-username" class="text-label" type="text"
-                                value="{{user.username}}" />
-                        </div>
-                        <div>
-                            <label for="user-email">Email</label>
-                            <input id="user-email" name="user-email" class="text-label" type="text"
-                                value="{{user.email}}" />
-                        </div>
-                        <div>
-                            <label for="user-password">Password</label>
-                            <input id="user-password" name="user-password" class="text-label" type="password"
-                                value="{{user.password}}" />
-                        </div>
-                        <button type="submit" class="btn-save">Update</button>
-                        <a href="/admin"><button id="delete-post" type="button" class="btn-del">Cancel</button></a>
-                    </form>
-                </section>
-            </div>
+        <div class="post">
+            <div class="post-content">{{name}}</div>
+            <div class="post-content">{{username}}</div>
+            <div class="post-content">{{email}}</div>
+            <div class="post-content">{{password}}</div>
         </div>
-    </div>
-</div>
 
-{{>right-panel user}}
+
+        <div class="action">
+            <a href="/profile/edit/{{user.id}}"><button class="btn-up">Edit Profile</button></a>
+        </div>
+
+
+    </div>
+
+    {{>right-panel user}}
+</div>

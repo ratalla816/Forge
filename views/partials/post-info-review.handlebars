@@ -21,10 +21,10 @@
 
         <div class="post-bottom">
             <div class="action">
-                <i class="far fa-thumbs-up"></i>
-                <span>{{react_count}} {{format_plural "like" react_count}} by {{user.username}} on {{format_date
-                    created_at}}</span>
+                <button type="button" class="react-btn"><i class="far fa-thumbs-up"></i></button>
             </div>
+            <span>{{react_count}} {{format_plural "like" react_count}} by {{user.username}} on {{format_date
+                created_at}}</span>
             <div class="action">
                 <a href="/post/{{id}}">
                     <i class="far fa-comment"></i>

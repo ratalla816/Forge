@@ -34,6 +34,10 @@
   width: 60px;
 }
 
+.react-btn {
+  background:transparent;border:none;
+}
+
 nav {
   height: 70px;
   width: 100%;
@@ -436,6 +440,13 @@ nav .nav-right span > i {
   border-radius: 10px;
   transition: 0.3s ease-in;
   cursor: pointer;
+}
+
+.post .post-bottom .text-r {
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease-in;
+  margin-left: -40px;
 }
 
 .post .post-bottom .action:hover {

@@ -264,6 +264,13 @@ post .post-top .post-info {
   cursor: pointer;
 }
 
+.post .post-bottom .text-r {
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
 .post .post-bottom .action:hover {
   background: #eee;
 }
