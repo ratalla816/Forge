@@ -10,20 +10,25 @@
                     {{>left-panel}}
 
                     <div class="middle-panel">
+                        {{#each users as |user|}}
                         <div class="post">
-                            <div class="post-content">{{user.name}}</div>
-                            <div class="post-content">{{user.username}}</div>
-                            <div class="post-content">{{user.email}}</div>
-                            <div class="post-content">{{user.password}}</div>
+                            <div class="input-update">{{name}}</div>
+                            <div class="input-update">{{username}}</div>
+                            <div class="input-update">{{email}}</div>
+                            <div class="input-update">{{password}}</div>
+                            {{!-- <div class="action">
+                                <a href="/profile/user/{{id}}"><button class="btn-up">Edit Profile</button></a>
+                            </div> --}}
                         </div>
-
 
                         <div class="action">
-                            <a href="/profile/edit/{{user.id}}"><button class="btn-up">Edit Profile</button></a>
+                            <a href="profile/edit/{{user.id}}"><button class="btn-up">Edit Profile</button></a>
                         </div>
+                        {{/each}}
+
                     </div>
 
-                    {{>right-panel user}}
+                    {{>right-panel}}
                 </div>
             </div>
         </div>

@@ -30,12 +30,38 @@
   font-family: sans-serif;
 }
 
+.form-update {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
 .header-update {
   height: 100%;
   max-height: 60px;
   font-size: 22px;
   font-weight: 600;
   padding: 17px 0;
+}
+
+.input-update {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  /* width: 100%; */
+  width: 450px;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.btn-update {
+  overflow: visible;
 }
 
 .logo {

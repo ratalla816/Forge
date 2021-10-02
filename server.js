@@ -32,19 +32,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
-// app.engine('handlebars', exphbs({
-//   defaultLayout: 'main',
-//   helpers
-// }));
-
 app.get('/splash', (req, res) => {
   res.render('splashpage', { layout: 'splash' });
 });
 
-// app.get('/review', (req, res) => {
-//   res.render('reviewpage', { layout: 'review' });
-// });
 
 app.use(require('./controllers/'));
 
