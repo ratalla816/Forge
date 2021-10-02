@@ -1218,33 +1218,35 @@ nav .nav-right .logout {
   }
 
   .left-panel {
-    display: block;
-    position: relative !important;
+    display: block !important;
+    /* position: relative !important; */
+    margin-left: -77px;
+    margin-top: -104px;
+    padding-left: 151px;
   }
 
-  .container .left-panel {
-    top: 50px;
+  .container .left-panel ul li {
+    display: block !important;
     flex: none;
-    width: 100%;
     top: 10px;
-    width: 213px;
+    width: 13px;
     height: calc(20vh - 70px);
-    margin-left: 100px;
+    margin-left: -84px;
     scroll-snap-align: start;
   }
 
-  .middle-panel {
+   .middle-panel {
     display: block;
     position: relative !important;
-    width: 75%;
+    width: 55%;
     margin-left: 7px;
-    margin-top: 0px;
     margin-bottom: 75px;
     margin-left: 7px;
+    margin-top: 144px; 
     }
 
   .container .right-panel {
-    position: sticky;
+    /* position: sticky; */
     top: 50px;
     width: 213px;
     height: calc(100vh - 70px);
@@ -1252,19 +1254,95 @@ nav .nav-right .logout {
     scroll-snap-align: start;
   }
 
+  .post .post-bottom .action {
+    box-shadow: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 0px 5px;
+    margin-right: 15px;
+}
+
   .right-panel {
-    display: block;
-    position: relative !important;
+    display: block !important;
+    /* position: relative !important; */
+    display: contents !important;
+    /* position: relative !important; */
+    flex: none !important;
+    width: 100% !important;
+    margin: -27px !important;
+    margin-left: 211px !important;
     flex: none;
-    width: 100%;
     margin: -27px;
-    margin-left: 211px;
+    /* margin-left: 211px; */
   }
+
+  .right-panel .pages-section .name, .right-panel .friends-section .name {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: -6px;
+}
+
+.right-panel .pages-section .page > .dp > img, .right-panel .friends-section .friend > .dp > img {
+  width: 100%;
+}
+
+  .right-panel .pages-section {
+    margin: 2rem 58px !important;
+    width: 470px !important;
+    padding-left: 65px !important;
+}
+
+  .right-panel .pages-section h4, .right-panel .friends-section h4 {
+    margin-bottom: -6px;
+    margin-top: -30px;
+}
+
+  .right-panel .pages-section .page, .right-panel .friends-section .friend {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    padding: 7px 10px;
+    color: #333;
+}
+
+.post .post-top {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: calc(20vh - 131px);
+  padding-top: 20px !important;
+}
+
+.post-header-title {
+  padding-top: 15px;
+}
+
+  /* .container .right-panel {
+    /* position: sticky;  */
+    /* top: 50px; */
+    /* width: 235px; */
+    /* height: calc(100vh - 70px); */
+    /* margin-left: 100px; */
+    /* scroll-snap-align: start; */
+    /* margin-right: 19px; */
+  /* } */ 
+
+  
+  /* .right-panel .pages-section, .right-panel .friends-section {
+    margin: 2rem 58px !important;
+    width: 470px !important;
+    padding-left: 117px !important;
+} */
 
   .container {
     /* display:contents; */
     display: block;
-    flex: grow;
+    flex: auto;
+    padding-left: 0px;
   }
 
   /*Account profile*/
@@ -1572,8 +1650,8 @@ nav .nav-right .logout {
 
   .right-panel .pages-section, .right-panel .friends-section {
     margin: 2rem 58px !important;
-    width: 470px !important;
-    padding-left: 117px !important;
+    width: 470px;
+    padding-left: 117px;
 }
 
 
