@@ -1,3 +1,5 @@
+// for future development
+
 // Post pop up section
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')

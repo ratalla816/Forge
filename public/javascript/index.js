@@ -1,3 +1,5 @@
+// Dropdown for future development
+
 /* hiding and showing the dropdown content */
  function dl() {
     console.log("test");

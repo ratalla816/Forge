@@ -74,7 +74,10 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
+  console.log(req.session);
+  
   User.findAll({
+        where: { username: req.session.username },
     attributes: [
       'id',
       'name',

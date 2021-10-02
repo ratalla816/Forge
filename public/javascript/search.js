@@ -1,3 +1,4 @@
+// for future development
 const searchButton = document.getElementById('searchButton');
 
 const searchClick = async (event) => {    

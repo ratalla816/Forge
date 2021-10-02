@@ -52,6 +52,7 @@ router.get('/post/:id', (req, res) => {
       'id',
       'post_url',
       'title',
+      'post_body',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'likes_count']
     ],
