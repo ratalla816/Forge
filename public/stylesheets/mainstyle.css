@@ -46,10 +46,11 @@
   width: 108px;
 }
 
+/* Like button */
 .react-btn {
   background: transparent;
   border: none;
-  color: white;
+  color: blue; 
 }
 
 .upreact-btn {
@@ -479,6 +480,7 @@ nav .nav-right span > i {
   
 }
 
+/* like counter */
 .post .post-bottom .text-r {
   padding: 10px;
   border-radius: 10px;
@@ -486,7 +488,7 @@ nav .nav-right span > i {
   margin-left: -40px;
   background: transparent;
   border: none;
-  color: white;
+  color: blue;
 }
 
 .post .post-bottom .action:hover {

@@ -229,9 +229,9 @@ post .post-top .post-info {
 }
 
 button {
-  border-radius: 0;
+  border-radius: 25%;
   border: none;
-  color: white;
+  color: blue;
 }
 
 .name {
