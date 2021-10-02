@@ -1130,6 +1130,18 @@ nav .nav-right span > i {
     margin-left: 1rem;
 }
 
+nav .nav-right .logout {
+  text-decoration: none;
+  color: #333;
+  height: 40px;
+  width: 60px;
+  background: #eee;
+  display: grid;
+  place-items: center;
+  margin-left: 1rem;
+  height: calc(20vh - 70px);
+}
+
   .wrapper {
     overflow: scroll;
     scroll-snap-align: end;
@@ -1190,7 +1202,7 @@ nav .nav-right span > i {
     position: relative !important;
     width: 75%;
     margin-left: 7px;
-    margin-top: -54px;
+    margin-top: 0px;
     margin-bottom: 75px;
     margin-left: 7px;
     }
@@ -1214,8 +1226,8 @@ nav .nav-right span > i {
   }
 
   .container {
-    display:contents;
-    /* display: block !important; */
+    /* display:contents; */
+    display: block;
     flex: grow;
   }
 
