@@ -30,9 +30,9 @@
   font-family: sans-serif;
 }
 
-.icon{
+/* .icon{
   
-}
+} */
 
 .logo {
   width: 60px;
@@ -40,6 +40,7 @@
 
 .react-btn {
   background:transparent;border:none;
+  color:whitesmoke;
 }
 
 .upreact-btn {
@@ -457,6 +458,7 @@ nav .nav-right span > i {
   border-radius: 10px;
   transition: 0.3s ease-in;
   cursor: pointer;
+  background-color: white;
 }
 
 .post .post-bottom .text-r {
@@ -717,24 +719,24 @@ nav .nav-right span > i {
     z-index: 99;
   }
 
-  nav .nav-left,
+  /* nav .nav-left,
   nav .nav-right {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
-  }
+  } */
 
   nav .nav-left {
     display: flex;
     align-items: stretch;
-    margin-bottom: 12px !important;
+    margin-bottom: -20px !important;
   }
 
   nav .nav-right {
     display: flex;
     justify-content: right;
-    margin-bottom: -26px !important;
+    /* margin-bottom: -26px !important; */
   }
 
   nav .nav-left > img {
@@ -786,18 +788,7 @@ nav .nav-right span > i {
     display: none;
   }
 
-  nav .nav-left > input {
-    height: 40px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 25px;
-    outline: none;
-    background-color: #eee;
-    margin-left: 10px;
-    margin-top: 9px;
-    margin-right: 3px;
-  }
-
+  
   nav .nav-middle a {
     text-decoration: none;
     color: #333;
@@ -822,7 +813,7 @@ nav .nav-right span > i {
   }
 
   .logo {
-    width: 60px;
+    width: 83px;
     margin-top: 5px;
   }
 
@@ -866,10 +857,12 @@ nav .nav-right span > i {
   }
 
   .middle-panel {
-    display: block;
-    position: relative !important;
+    /* display: block; */
+    /* position: relative !important; */
     width: 75%;
     margin-left: 7px;
+    margin-top: -54px;
+    margin-bottom: 75px; 
   }
 
   .container .right-panel {
@@ -985,10 +978,10 @@ nav .nav-right span > i {
     background-attachment: inherit;
   }
 
-  .parallax {
+  /* .parallax {
     background-attachment: scroll;
     background-size: 200% 200%;
-  }
+  } */
 }
 
 
@@ -1209,6 +1202,7 @@ nav .nav-right span > i {
     display: flex;
     align-items: center;
     padding: 10px;
+    height: calc(20vh - 131px);
   }
 
   .post .post-full {
@@ -1300,10 +1294,10 @@ nav .nav-right span > i {
     background-attachment: inherit;
   } */
 
-  .parallax {
+  /* .parallax {
     background-attachment: scroll;
     background-size: 100% 100%;
-  }
+  } */
 }
 
 /* Pop up section */
