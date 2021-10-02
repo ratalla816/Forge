@@ -30,6 +30,7 @@
   font-family: sans-serif;
 }
 
+
 .logo {
   width: 60px;
 }
@@ -449,6 +450,7 @@ nav .nav-right span > i {
   border-radius: 10px;
   transition: 0.3s ease-in;
   cursor: pointer;
+  background-color: white;
 }
 
 .post .post-bottom .text-r {
@@ -1192,6 +1194,7 @@ nav .nav-right span > i {
     display: flex;
     align-items: center;
     padding: 10px;
+    height: calc(20vh - 131px);
   }
 
   .post .post-full {
