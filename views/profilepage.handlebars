@@ -10,19 +10,51 @@
                     {{>left-panel}}
 
                     <div class="middle-panel">
-                        {{#each users as |user|}}
-                        <div class="post">
-                            <div class="input-update">{{name}}</div>
-                            <div class="input-update">{{username}}</div>
-                            <div class="input-update">{{email}}</div>
-                            <div class="input-update">{{password}}</div>
-                            {{!-- <div class="action">
-                                <a href="/profile/user/{{id}}"><button class="btn-up">Edit Profile</button></a>
-                            </div> --}}
-                        </div>
 
-                        <div class="action">
-                            <a href="profile/edit/{{user.id}}"><button class="btn-up">Edit Profile</button></a>
+
+
+
+
+
+
+
+                        <div class="post">
+                            {{#each users as |user|}}
+                            <div class="post-full">
+                                <div class="wrapper-post">
+                                    <section class="post-popup">
+                                        <form id="edit-user-form" class="form-update">
+                                            <h2 style="margin:15px;">Your Account</h2>
+                                            <div>
+                                                <label for="user-name">Full Name</label>
+                                                <div class="input-update">{{name}}</div>
+
+                                            </div>
+                                            <div>
+                                                <label for="user-username">Username</label>
+                                                <div class="input-update">{{username}}</div>
+
+                                            </div>
+                                            <div>
+                                                <label for="user-email">Email</label>
+                                                <div class="input-update">{{email}}</div>
+
+                                            </div>
+                                            <div>
+                                                <label for="user-password">Password</label>
+                                                <div class="input-update" style="overflow: hidden; margin: right 5px;">{{password}}</div>
+
+                                            </div>
+
+                                            <div class="action" style="width: 100%;">
+                                                <a href="profile/edit/{{user.id}}"><button class="btn">Edit
+                                                        Profile</button></a>
+                                            </div>
+
+                                        </form>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         {{/each}}
 
