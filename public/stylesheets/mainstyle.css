@@ -1571,6 +1571,8 @@ nav .nav-right .logout {
     padding-left: 117px !important;
 }
 
+
+
   .wrapper {
     display: block !important;
     flex: grow;
@@ -2225,10 +2227,16 @@ form .text-area:valid ~ button:hover {
 }
 
 form :where(.text-label, button) {
-  width: 100%;
   outline: none;
   border: none;
-}
+  width: 86%;
+  height: 74%;
+  max-height: 80px;
+  font-size: 18px;
+  /* font-weight: 500; */
+  padding: 17px 0;
+  }
+
 
 form .text-label::placeholder {
   color: #858585;
