@@ -5,37 +5,34 @@
     <div class="scroll" data-rate=".3" data-direction="vertical">
         <div class="wrapper">
             <div class="container">
-                <div class="container">
 
-                    {{>left-panel}}
+                {{>left-panel}}
 
-                    <div class="middle-panel">
+                <div class="middle-panel">
 
-                        {{#each users as |user|}}
+                    {{#each users as |user|}}
 
-                        <div class="post" style="width:400px">
-                            <h2>Your Account Information</h2>
-                            <div class="input-update"><b>Name: </b> {{name}}</div>
-                            <div class="input-update"><b>Username: </b> {{username}}</div>
-                            <div class="input-update"><b>Email: </b> {{email}}</div>
-                            <div class="input-update" style="overflow: hidden" id="pwd"><b>Password: </b> <span
-                                    style="width=50px" pattern=".{8,}" id="pwd">{{password}}</span>
-                            </div>
-                            <div class="action">
-                                <a href="profile/edit/{{user.id}}"><button class="block-update">Edit your
-                                        profile</button></a>
-                            </div>
+                    <div class="post" style="width:400px">
+                        <h2>Your Account Information</h2>
+                        <div class="input-update"><b>Name: </b> {{name}}</div>
+                        <div class="input-update"><b>Username: </b> {{username}}</div>
+                        <div class="input-update"><b>Email: </b> {{email}}</div>
+                        <div class="input-update" style="overflow: hidden" id="pwd"><b>Password: </b> <span
+                                style="width=50px" pattern=".{8,}" id="pwd">{{password}}</span>
                         </div>
-
-                        {{/each}}
+                        <div class="action">
+                            <a href="profile/edit/{{user.id}}"><button class="block-update">Edit your
+                                    profile</button></a>
+                        </div>
                     </div>
-                </div>
 
+                    {{/each}}
+                </div>
+                {{>right-panel}}
             </div>
 
-            {{>right-panel}}
+
         </div>
-    </div>
     </div>
 
 </main>
