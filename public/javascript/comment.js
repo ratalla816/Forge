@@ -22,8 +22,10 @@ async function commentFormHandler(event) {
         if (response.ok) {
           document.location.reload();
         } else {
-          alert(response.statusText);
+          alert("Sorry, something went wrong");
         }
+      } else {
+        alert('Comment cannot be empty')
       }
   }
   

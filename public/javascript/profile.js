@@ -6,6 +6,8 @@ async function profile() {
 
     if (response.ok) {
         document.location.replace('/profile');
+    } else {
+        alert("Sorry, something went wrong")
     }
 }
 document.querySelector('#profile-link').addEventListener('click', profile);

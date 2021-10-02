@@ -19,6 +19,9 @@ async function signupFormHandler(event) {
         if (response.ok) 
         { document.location.replace('/'); } 
         else { alert(response.statusText); }
-    }}
+    } else {
+        alert('Please fill out all fields')
+    }
+}
 
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);

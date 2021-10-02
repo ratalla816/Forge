@@ -22,7 +22,7 @@ async function userFormHandler(event) {
   if (response.ok) {
     document.location.replace('/adminpage');
   } else {
-    alert(response.statusText);
+    alert("Something went wrong");
   }
 }
 

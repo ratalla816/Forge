@@ -21,7 +21,7 @@ async function editFormHandler(event) {
     if (response.ok) {
       document.location.replace('/admin/');
     } else {
-      alert(response.statusText);
+      alert("Sorry, something went wrong");
     }
 }
 

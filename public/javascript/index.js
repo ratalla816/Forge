@@ -1,7 +1,4 @@
-
-
-
- /* hiding and showing the dropdown content */
+/* hiding and showing the dropdown content */
  function dl() {
     console.log("test");
     document.getElementById("myDropdown").classList.add("show");

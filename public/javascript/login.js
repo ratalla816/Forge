@@ -24,7 +24,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) { document.location.replace('/'); } 
-      else { alert(response.statusText); }
+      else { alert('Invalid credentials'); }
     }}
   
   document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
