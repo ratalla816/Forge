@@ -3,8 +3,8 @@ const { User } = require("../models");
 const userSeeds = [
   {
     name: "Derimar Gray",
-    username: "derig",
-    email: "deri@email.com",
+    username: "derimarg",
+    email: "derimarg@email.com",
     password: "password",
   },
   {

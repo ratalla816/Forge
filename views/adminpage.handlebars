@@ -9,6 +9,9 @@
                 {{>left-panel}}
 
                 <div class="middle-panel">
+                    <div class="post create">
+                        <a href="admin/create"><button class="btn" type="submit">Create a post</button></a>
+                    </div>
                     {{#if posts.length}}
                     {{#each posts as |post|}}
 
@@ -23,8 +26,8 @@
                             </div>
                         </div>
                         <div>
-                            <header class="post-header post-header-title">
-                                <a href="/post/{{id}}">{{title}}</a>
+                            <header class="post-header post-header-title" style="margin-left: 10px;>
+                                <a href=" /post/{{id}}">{{title}}</a>
                             </header>
                             <div class="post-content"><a href="{{post_url}}">{{format_url post_url}}</a>
                             </div>

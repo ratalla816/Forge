@@ -30,22 +30,27 @@
   font-family: sans-serif;
 }
 
-/* .icon{
-  
-} */
+.header-update {
+  height: 100%;
+  max-height: 60px;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 17px 0;
+}
 
 .logo {
   width: 60px;
 }
 
 .react-btn {
-  background:transparent;border:none;
-  color:whitesmoke;
+  background: transparent;
+  border: none;
+  color: whitesmoke;
 }
 
 .upreact-btn {
   background-color: #197d0f !important;
-  transition: background-color .1s;
+  transition: background-color 0.1s;
 }
 
 .upreact-btn:hover {
@@ -696,8 +701,6 @@ nav .nav-right span > i {
 
 /* Scroll style */
 
-
-
 /* mobile phones up to iphone 13 */
 @media screen and (max-width: 500px) {
   nav {
@@ -788,7 +791,6 @@ nav .nav-right span > i {
     display: none;
   }
 
-  
   nav .nav-middle a {
     text-decoration: none;
     color: #333;
@@ -862,7 +864,7 @@ nav .nav-right span > i {
     width: 75%;
     margin-left: 7px;
     margin-top: -54px;
-    margin-bottom: 75px; 
+    margin-bottom: 75px;
   }
 
   .container .right-panel {
@@ -888,75 +890,74 @@ nav .nav-right span > i {
     flex: grow;
   }
 
-/*Account profile*/
-.card-header {
-  color: var(--primary);
-  background-color: var(--info);
-  padding: 1%;
-}
-.text-center {
-  text-align: center !important;
-}
-.mb-3 {
-  margin-bottom: 1rem !important;
-}
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
+  /*Account profile*/
+  .card-header {
+    color: var(--primary);
+    background-color: var(--info);
+    padding: 1%;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .mb-3 {
+    margin-bottom: 1rem !important;
+  }
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
 
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 0;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+  .label {
+    font-size: 1.5rem;
+    margin: 0 0 0 5px;
+    display: block;
+    color: var(--dark);
+    font-weight: bold;
+  }
 
-.label {
-  font-size: 1.5rem;
-  margin: 0 0 0 5px;
-  display: block;
-  color: var(--dark);
-  font-weight: bold;
-}
+  .form-label,
+  .form-input,
+  .form-textarea {
+    display: block;
+  }
 
-.form-label,
-.form-input,
-.form-textarea {
-  display: block;
-}
+  .form-label {
+    font-size: 1.1rem;
+    margin: 0 0 0 5px;
+  }
 
-.form-label {
-  font-size: 1.1rem;
-  margin: 0 0 0 5px;
-}
-
-.form-input {
-  width: 100%;
-  padding: 1%;
-  margin: 5px 0;
-  font-size: 1.2rem;
-  border: 1px solid var(--dark);
-  border-radius: var(--border-radius);
-}
+  .form-input {
+    width: 100%;
+    padding: 1%;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    border: 1px solid var(--dark);
+    border-radius: var(--border-radius);
+  }
 
   /* .story {
     width: 20% !important;
@@ -983,7 +984,6 @@ nav .nav-right span > i {
     background-size: 200% 200%;
   } */
 }
-
 
 /* tablet */
 @media screen and (max-width: 1160px) {
@@ -1045,8 +1045,7 @@ nav .nav-right span > i {
   /* nav .nav-left .logo > img {
     width: 40px;
   } */
- 
-  
+
   .profile {
     background: url(./images/dp.png);
     height: 30px;
@@ -1117,7 +1116,7 @@ nav .nav-right span > i {
     position: relative !important;
     flex: none;
     width: 100%;
-    display:contents;
+    display: contents;
   }
 
   /* .container .left-panel {
@@ -1130,7 +1129,6 @@ nav .nav-right span > i {
     margin-left: 100px;
     scroll-snap-align: start;
   } */
-
 
   .middle-panel {
     display: block;
@@ -1157,10 +1155,11 @@ nav .nav-right span > i {
     margin: -27px;
     margin-left: 211px;
   }
-  
-  .right-panel .pages-section, .right-panel .friends-section {
+
+  .right-panel .pages-section,
+  .right-panel .friends-section {
     margin: 1rem 36px !important;
-}
+  }
 
   .wrapper {
     display: block !important;

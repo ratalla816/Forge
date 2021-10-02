@@ -2,7 +2,8 @@
     <div class="post">
         <div class="post-top">
             <div class="">
-                <i class="fas fa-user" style="font-size:24px;color:black;"></i>
+                <i class="fas fa-user" style="font-size:24px;color:black;margin-bottom: 24px;
+    margin-left: -2px;"></i>
             </div>
             <div class="post-info">
                 <p class="name" style="font-size:24px;color:black;">{{user.name}}</p>
@@ -10,7 +11,7 @@
             </div>
         </div>
         <div>
-            <header class="post-header post-header-title ml-5">
+            <header class="post-header post-header-title" style="margin-left: 0.6875rem;">
                 <a href="/post/{{id}}">{{title}}</a>
             </header>
 
@@ -21,10 +22,9 @@
 
         <div class="post-bottom">
             <div class="action">
-                <button type="button" class="react-btn"><i class="far fa-thumbs-up"></i></button>
+                <button type="button" class="react-btn" style="background:transparent;"><i class="far fa-thumbs-up"></i></button>
             </div>
-            <span>{{react_count}} {{format_plural "like" react_count}} by {{user.username}} on {{format_date
-                created_at}}</span>
+            <span>{{react_count}} {{format_plural "like" react_count}}</span>
             <div class="action">
                 <a href="/post/{{id}}">
                     <i class="far fa-comment"></i>

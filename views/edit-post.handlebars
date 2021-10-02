@@ -9,16 +9,22 @@
 
                 <div class="middle-panel">
 
-                    <div class="post create">
+                    <div class="post">
                         <div class="post-full">
                             <div class="wrapper-post">
                                 <section class="post-popup">
                                     <form id="edit-post-form">
-                                        <input type="text" class="text-label" name="post-title"
-                                            value="{{post.title}}" />
-                                        <input type="url" class="text-label" name="post-url" id="url"
-                                            value="{{post.post_url}}" pattern="https://.*">
-                                        <input class="text-input" name="post-body" value="{{post.post_body}}" />
+                                        <div class="header-update" style="margin-left: 10px;"><input type="text"
+                                                class="text-label" name="post-title" value="{{post.title}}"
+                                                placeholder="Insert title here..." /></div>
+
+                                        <div class="post-content"><input type="url" class="text-label" name="post-url"
+                                                id="url" value="{{post.post_url}}" placeholder="Insert URL here..."
+                                                pattern="https://.*"></div>
+
+                                        <div class="post-content"><input class="text-input" name="post-body"
+                                                value="{{post.post_body}}" placeholder="Insert content here..." /></div>
+
                                         <div class="theme-emoji">
                                             <img src="/assets/icons/theme.svg" alt="theme">
                                             <img src="/assets/icons/smile.svg" alt="smile">
@@ -31,6 +37,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 {{>right-panel}}
             </div>
