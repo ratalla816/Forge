@@ -252,7 +252,10 @@ nav .nav-right span > i {
 
 .wrapper {
   background-color: #eee;
-}
+  width: 100%;
+  overflow: hidden;
+  }
+
 
 .resize {
   width: 100px;
@@ -798,6 +801,7 @@ nav .nav-right span > i {
   }
 
   .wrapper {
+    width: 100%;
     overflow: hidden;
   }
 
@@ -1094,6 +1098,7 @@ nav .nav-right span > i {
   }
 
   .wrapper {
+    width: 100%;
     overflow: hidden;
   }
 
@@ -2153,6 +2158,7 @@ nav .nav-middle {
 .audience .list li .column {
   display: flex;
   align-items: center;
+  
 }
 .post-popup form .content img {
   cursor: default;
@@ -2161,6 +2167,7 @@ nav .nav-middle {
   border-radius: 50%;
   overflow: hidden;
   max-width: 52px;
+  
 }
 .post-popup form .content .details {
   margin: -3px 0 0 12px;
@@ -2251,6 +2258,7 @@ form .text-input {
   /* margin-top: 15px; */
   min-height: 100px;
 }
+
 
 form :where(.text-input, button) {
   width: 100%;
