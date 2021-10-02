@@ -3,36 +3,28 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all comments
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
   Comment.findAll()
-    .then(commentData => {
-      if (!commentData) {
-        res.status(404).json({ message: 'No comments found' });
-        return;
-      }
-      res.json(commentData)
-    })
-    .catch(error => {
-      console.log(error);
-      res.status(400).json(error);
+    .then(commentData => res.json(commentData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-})
+});
 
 // create comment
 router.post('/', withAuth, (req, res) => {
-  // check session
-  if (req.session) {
-    Comment.create({
-      comment_body: req.body.comment_body,
-      post_id: req.body.post_id,
-      user_id: req.session.user_id
-    })
-      .then(commentData => res.json(commentData))
-      .catch(error => {
-        console.log(error);
-        res.status(400).json(error);
-      });
-  }
+    // check session
+  Comment.create({
+    comment_body: req.body.comment_body,
+    user_id: req.session.user_id,
+    post_id: req.body.post_id
+  })
+    .then(commentData => res.json(commentData))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 // delete comment
@@ -44,14 +36,14 @@ router.delete('/:id', withAuth, (req, res) => {
   })
     .then(commentData => {
       if (!commentData) {
-        res.status(404).json({ message: 'No comment found with this id' });
+        res.status(404).json({ message: 'No comment found with this id!' });
         return;
       }
       res.json(commentData);
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 

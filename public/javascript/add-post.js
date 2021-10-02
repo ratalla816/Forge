@@ -18,7 +18,7 @@ async function newFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/admin');
     } else {
       alert("Please fill out required fields");
     }
