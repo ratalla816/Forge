@@ -40,7 +40,6 @@ so we can ask/answer coding questions and share experiences.
 <li><a href="#how-to-download">Download</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#test">Test</a></li>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#roadmap">Roadmap</a></li>
 <li><a href="#contributing">Contributing</a></li>
@@ -116,6 +115,7 @@ GIVEN an authenticated user:
 - <p><a href="https://www.npmjs.com/package/express-session">Express-session</a></p>
 - <p><a href="https://www.npmjs.com/package/connect-session-sequelize">Connect-session-sequelize</a></p>
 - <p><a href="https://www.npmjs.com/package/express-handlebars">Express Handlebars</a></p>
+- <p><a href="#">Parallax</a></p>
 
 [Back To Top](#forge)
 
