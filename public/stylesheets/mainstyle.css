@@ -511,7 +511,7 @@ nav .nav-right span > i {
   padding: 10px;
   border-radius: 10px;
   transition: 0.3s ease-in;
-  margin-left: -40px;
+  /* margin-left: -40px; */
   background: transparent;
   border: none;
   color: blue;
