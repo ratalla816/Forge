@@ -22,18 +22,18 @@
       </button>
 
     </div>
-    <span class="text-r">{{likes_count}}
-      {{format_plural "like" likes_count}}</span>
-    <div class="action">
-      <a href="/post/{{id}}">
-        <i class="far fa-comment"></i>
-        <a href="/post/{{id}}">{{comments.length}}
-          {{format_plural "comment" comments.length}}</a>
-      </a>
+      <span class="text-r">{{likes_count}}
+        {{format_plural "like" likes_count}}</span>
+      <div class="action">
+        <a href="/post/{{id}}">
+          <i class="far fa-comment"></i>
+          <a href="/post/{{id}}">{{comments.length}}
+            {{format_plural "comment" comments.length}}</a>
+        </a>
     </div>
     <div class="action">
-      <i class="fa fa-share"></i>
-      <span>Share</span>
+      {{!-- <i class="fa fa-share"></i> --}}
+      <span></span>
     </div>
   </div>
 </div>

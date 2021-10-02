@@ -502,8 +502,8 @@ nav .nav-right span > i {
   background: transparent;
   border: none;
   color: white;
-  flex: auto;
-  
+  flex: none;
+  margin-right: -91px;
 }
 
 /* like counter */
@@ -625,14 +625,17 @@ nav .nav-right span > i {
 .btn-up {
   font-size: 1rem;
   text-decoration: none;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
-  /* display: block; */
+  display: block;
   color: var(--light);
-  /* border: none; */
+  border: none;
   outline: none;
   background-color: var(--indigo);
+  margin-left: 49px;
+  margin-right: 122px;
 }
+
 
 .btn-up:hover,
 .btn-save {
