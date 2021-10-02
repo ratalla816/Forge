@@ -230,6 +230,9 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
+	background: transparent;
+    border: none;
+    color: white;
 }
 
 footer {
@@ -270,7 +273,7 @@ a.logo {
 }
 
 /* mobile phones up to iphone 13 */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 500px) {
 
     .sign-up-container {
         left: 0;
@@ -309,8 +312,24 @@ a.logo {
         padding: 0 50px;
         height: 97%;
         text-align: center;
+		margin-top: 18px; 
+		margin: -37px;
     }
 
+	.resize {
+		margin-top: -97px !important;
+		width: 102px !important;
+		height: 61px !important;
+		margin-bottom: -36px !important;
+		padding-bottom: -12px !important;
+	}
+
+	button.ghost {
+		background-color: transparent;
+		border-color: #FFFFFF;
+		margin-bottom: 39px;
+	}
+	
     .logo {
         margin: 40px;
         width: 105%;
@@ -324,23 +343,89 @@ a.logo {
 
 }
 
-
-
- /* tablet */
- @media screen and (max-width: 1160px) {
+/* Tablet Standard iPad */
+@media screen and (max-width: 800px) {
     
-    .sign-up-container {
+    .form-container {
+		position: absolute;
+		top: 0px;
+		height: 123%;
+		transition: all 0.6s ease-in-out;
+	}
+	
+	.sign-up-container {
         left: 0;
         width: 50%;
         opacity: 0;
         z-index: 1;
     }
-    .form-container {
+    
+
+    .overlay-panel {
         position: absolute;
-        top: 0px;
-        height: 100%;
-        transition: all 0.6s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        top: 0;
+        height: 88% !important;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
     }
+
+    form {
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        height: 128%;
+        text-align: center;
+		margin-top: -321px;
+    }
+
+	.resize {
+		width: 259px;
+		height: 178px;
+		margin-bottom: 70px;
+		padding-bottom: -12px;
+	}
+
+    .logo {
+        margin: 40px;
+        width: 105%;
+        height: 16%;
+    }
+
+    .h1, h1 {
+        font-size: 1.5rem;
+    }
+
+ }
+
+
+
+ /* tablet iPad PRO*/
+ @media screen and (max-width: 1160px) {
+    
+    .form-container {
+		position: absolute;
+		top: 0px;
+		height: 123%;
+		transition: all 0.6s ease-in-out;
+	}
+	
+	.sign-up-container {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+    
 
     .overlay-panel {
         position: absolute;
@@ -364,7 +449,7 @@ a.logo {
         justify-content: center;
         flex-direction: column;
         padding: 0 50px;
-        height: 97%;
+        height: 128%;
         text-align: center;
     }
 

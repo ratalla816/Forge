@@ -40,12 +40,16 @@
 
 .logo {
   width: 60px;
+  margin-bottom: 32px;
+  margin-left: 10px;
+  margin-top: 33px;
+  width: 108px;
 }
 
 .react-btn {
   background: transparent;
   border: none;
-  color: whitesmoke;
+  color: white;
 }
 
 .upreact-btn {
@@ -74,6 +78,8 @@ nav .nav-left,
 nav .nav-right {
   display: flex;
   align-items: center;
+  padding-bottom: 5px;
+  padding-right: 31px;
 }
 
 nav .nav-left > img {
@@ -92,8 +98,9 @@ nav .nav-left > input {
 
 nav .nav-middle {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-bottom: 5px;
+  width: 164px; 
 }
 
 nav .nav-middle a {
@@ -101,6 +108,7 @@ nav .nav-middle a {
   color: #333;
   padding: 10px;
   margin: 0px 10px;
+  padding-top: 11px;
 }
 
 .hidden {
@@ -464,6 +472,11 @@ nav .nav-right span > i {
   transition: 0.3s ease-in;
   cursor: pointer;
   background-color: white;
+  background: transparent;
+  border: none;
+  color: white;
+  flex: auto;
+  
 }
 
 .post .post-bottom .text-r {
@@ -471,6 +484,9 @@ nav .nav-right span > i {
   border-radius: 10px;
   transition: 0.3s ease-in;
   margin-left: -40px;
+  background: transparent;
+  border: none;
+  color: white;
 }
 
 .post .post-bottom .action:hover {
@@ -732,14 +748,15 @@ nav .nav-right span > i {
 
   nav .nav-left {
     display: flex;
-    align-items: stretch;
-    margin-bottom: -20px !important;
-  }
+    margin-bottom: -93px !important;
+    margin-inline-start: -32px;
+    }
 
   nav .nav-right {
     display: flex;
     justify-content: right;
-    /* margin-bottom: -26px !important; */
+    margin-bottom: -26px !important;
+    padding-right: 0px; 
   }
 
   nav .nav-left > img {
@@ -815,8 +832,8 @@ nav .nav-right span > i {
   }
 
   .logo {
-    width: 83px;
-    margin-top: 5px;
+    margin-bottom: 60px;
+    
   }
 
   .dp {
