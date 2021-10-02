@@ -20,7 +20,7 @@ so we can ask/answer coding questions and share experiences.
 <a href="#how-to-download"><strong>Explore the docs »</strong></a>
 <br />
 <br />
-<a href="#example">View Demo</a>
+<a href="https://drive.google.com/file/d/1thYNm7TqOy0dbokHF0U0qxG8HWQPxIIz/view?usp=sharing">View Demo</a>
 .
 <a href="https://github.com/ratalla816/Forge/issues">Report Bug</a>
 ·
@@ -102,7 +102,6 @@ GIVEN an authenticated user:
 
 ![Demo](/public/assets/images/demo-3.gif)
 
-![Demo](/public/assets/images/demo-4.gif)
 
 ## Technologies
 
@@ -226,7 +225,7 @@ For additional help or questions about collaboration, contact us at:
 
 - Project Repository Link: https://github.com/ratalla816/Forge
 - Live application Link: https://forge-team.herokuapp.com/splash
-- Video demo link: 
+- Video demo link: https://drive.google.com/file/d/1thYNm7TqOy0dbokHF0U0qxG8HWQPxIIz/view?usp=sharing
 
 [Back To Top](#forge)
 
