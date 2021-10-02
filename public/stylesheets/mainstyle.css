@@ -748,14 +748,15 @@ nav .nav-right span > i {
 
   nav .nav-left {
     display: flex;
-    align-items: stretch;
-    margin-bottom: -20px !important;
-  }
+    margin-bottom: -93px !important;
+    margin-inline-start: -32px;
+    }
 
   nav .nav-right {
     display: flex;
     justify-content: right;
-    /* margin-bottom: -26px !important; */
+    margin-bottom: -26px !important;
+    padding-right: 0px; 
   }
 
   nav .nav-left > img {
@@ -831,8 +832,8 @@ nav .nav-right span > i {
   }
 
   .logo {
-    width: 83px;
-    margin-top: 5px;
+    margin-bottom: 60px;
+    
   }
 
   .dp {

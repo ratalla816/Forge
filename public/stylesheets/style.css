@@ -273,7 +273,7 @@ a.logo {
 }
 
 /* mobile phones up to iphone 13 */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 500px) {
 
     .sign-up-container {
         left: 0;
@@ -312,6 +312,8 @@ a.logo {
         padding: 0 50px;
         height: 97%;
         text-align: center;
+		margin-top: 18px; 
+		margin: -37px;
     }
 
     .logo {
@@ -332,18 +334,20 @@ a.logo {
  /* tablet */
  @media screen and (max-width: 1160px) {
     
-    .sign-up-container {
+    .form-container {
+		position: absolute;
+		top: 0px;
+		height: 123%;
+		transition: all 0.6s ease-in-out;
+	}
+	
+	.sign-up-container {
         left: 0;
         width: 50%;
         opacity: 0;
         z-index: 1;
     }
-    .form-container {
-        position: absolute;
-        top: 0px;
-        height: 100%;
-        transition: all 0.6s ease-in-out;
-    }
+    
 
     .overlay-panel {
         position: absolute;
@@ -367,7 +371,7 @@ a.logo {
         justify-content: center;
         flex-direction: column;
         padding: 0 50px;
-        height: 97%;
+        height: 128%;
         text-align: center;
     }
 
