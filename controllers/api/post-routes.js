@@ -1,82 +1,67 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User, Comment, React } = require('../../models');
+const { Post, User, Comment, Likes } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all posts
 router.get('/', (req, res) => {
   Post.findAll({
-    order: ['created_at', 'DESC'],
     attributes: [
       'id',
-      'title',
-      'created_at',
       'post_url',
+      'title',
       'post_body',
-      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'likes_count']
     ],
     include: [
       {
-        model: User,
-        attributes: ['name', 'username']
-      },
-      {
         model: Comment,
-        attributes: [
-          'id',
-          'comment_body',
-          'post_id',
-          'user_id',
-          'created_at'],
+        attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['name', 'username']
         }
+      },
+      {
+        model: User,
+        attributes: ['name', 'username']
       }
     ]
   })
-    .then(postData => {
-      if (!postData) {
-        res.status(404).json({ message: 'No posts found' })
-      }
-      res.json(postData)
-    })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .then(postData => res.json(postData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
 // get 1 post by id
 router.get('/:id', (req, res) => {
   Post.findOne({
-    where: { id: req.params.id },
+    where: {
+      id: req.params.id
+    },
     attributes: [
       'id',
-      'title',
-      'created_at',
       'post_url',
+      'title',
       'post_body',
-      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'likes_count']
     ],
     include: [
       {
-        model: User,
-        attributes: ['name', 'username']
-      },
-      {
         model: Comment,
-        attributes: [
-          'id',
-          'comment_body',
-          'post_id',
-          'user_id',
-          'created_at'
-        ],
+        attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['name', 'username']
         }
+      },
+      {
+        model: User,
+        attributes: ['name', 'username']
       }
     ]
   })
@@ -87,11 +72,11 @@ router.get('/:id', (req, res) => {
       }
       res.json(postData);
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-})
+});
 
 // create post
 router.post('/', withAuth, (req, res) => {
@@ -102,9 +87,19 @@ router.post('/', withAuth, (req, res) => {
     user_id: req.session.user_id
   })
     .then(postData => res.json(postData))
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.put('/uplikes', withAuth, (req, res) => {
+  // custom static method created in models/Post.js
+  Post.uplikes({ ...req.body, user_id: req.session.user_id }, { Likes, Comment, User })
+    .then(updatedLikesData => res.json(updatedLikesData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
@@ -129,16 +124,6 @@ router.put('/:id', withAuth, (req, res) => {
       }
       res.json(postData);
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
-    });
-});
-
-router.put('/upreact', withAuth, (req, res) => {
-  // custom static method created in models/Post.js
-  Post.upreact({ ...req.body, user_id: req.session.user_id }, { React, Comment, User })
-    .then(updatedReactData => res.json(updatedReactData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -160,9 +145,9 @@ router.delete('/:id', withAuth, (req, res) => {
       }
       res.json(postData);
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 

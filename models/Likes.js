@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class React extends Model {}
+class Likes extends Model {}
 
-React.init(
+Likes.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -30,8 +30,8 @@ React.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'react'
+    modelName: 'likes'
   }
 );
 
-module.exports = React;
+module.exports = Likes;

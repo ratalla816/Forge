@@ -1,36 +1,30 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Likes } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'title',
-      'created_at',
-      'post_body',
       'post_url',
-      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
+      'title',
+      'post_body',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'likes_count']
     ],
     include: [
       {
-        model: User,
-        attributes: ['name', 'username']
-      },
-      {
         model: Comment,
-        attributes: [
-          'id',
-          'comment_body',
-          'post_id',
-          'user_id',
-          'created_at'
-        ],
+        attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['name', 'username']
         }
+      },
+      {
+        model: User,
+        attributes: ['name', 'username']
       }
     ]
   })
@@ -38,47 +32,41 @@ router.get('/', (req, res) => {
       const posts = postData.map(post => post.get({ plain: true }));
 
       res.render('homepage', {
-        layout: 'main',
         posts,
         loggedIn: req.session.loggedIn
       });
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
 // get single post
 router.get('/post/:id', (req, res) => {
   Post.findOne({
-    where: { id: req.params.id },
+    where: {
+      id: req.params.id
+    },
     attributes: [
       'id',
+      'post_url',
       'title',
       'created_at',
-      'post_body',
-      'post_url',
-      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'likes_count']
     ],
     include: [
       {
-        model: User,
-        attributes: ['name', 'username']
-      },
-      {
         model: Comment,
-        attributes: [
-          'id',
-          'comment_body',
-          'post_id',
-          'user_id',
-          'created_at'
-        ],
+        attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['name', 'username']
         }
+      },
+      {
+        model: User,
+        attributes: ['name', 'username']
       }
     ]
   })
@@ -95,9 +83,9 @@ router.get('/post/:id', (req, res) => {
         loggedIn: req.session.loggedIn
       });
     })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
@@ -112,6 +100,5 @@ router.get('/login', (req, res) => {
       layout: 'signinup'
     });
 });
-
 
 module.exports = router;

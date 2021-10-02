@@ -1,6 +1,3 @@
-// Completed by Derimar Gray on 9/22, updated by Rob Atalla on 9/23 @ 1338
-
-
 async function signupFormHandler(event) {
     event.preventDefault();
 

@@ -12,7 +12,7 @@
     <header class="post-header post-header-title" style="margin-left: 10px;">
       <a href="/post/{{id}}">{{title}}</a>
     </header>
-    <div class="post-content"><a href="{{post_url}}">{{format_url post_url}}</a></div>
+    <div class="post-content"><a href="{{post_url}}" target="_blank">{{format_url post_url}}</a></div>
     <div class="post-content">{{post_body}}</div>
   </div>
 
@@ -22,8 +22,8 @@
       </button>
 
     </div>
-    <span class="text-r">{{react_count}}
-      {{format_plural "like" react_count}}</span>
+    <span class="text-r">{{likes_count}}
+      {{format_plural "like" likes_count}}</span>
     <div class="action">
       <a href="/post/{{id}}">
         <i class="far fa-comment"></i>
