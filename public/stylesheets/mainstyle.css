@@ -1002,7 +1002,359 @@ nav .nav-right span > i {
   } */
 }
 
-/* tablet */
+/* tablet up to standard iPad*/
+@media screen and (max-width: 800px) {
+  nav {
+    display: block !important;
+    flex-wrap: wrap;
+    height: 115px;
+    width: 129%;
+  }
+
+  nav .nav-left > img {
+    width: 51px;
+  }
+
+  nav .nav-left > input {
+    /* padding: 5px 110px; */
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  nav .nav-left > input {
+    height: 40px;
+    padding: 7px 30px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: #eee;
+    margin-left: 10px;
+  }
+
+  /* nav .nav-left > input {
+      padding: 5px 110px; 
+      width: 100%
+      }   */
+
+  nav {
+    /* height: 185px; */
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0px 1px 3px #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+
+  .wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .logo {
+    width: 100px !important;
+    margin-top: 30px !important;
+    margin-right: -41px;
+    margin-left: -8px;
+}
+
+  /* nav .nav-left .logo > img {
+    width: 40px;
+  } */
+
+  .profile {
+    background: url(./images/dp.png);
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    /* background: black; */
+    margin-left: 0px;
+  }
+
+  .dk {
+    border: none !important;
+    background: transparent;
+    width: 7px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 24px;
+    margin-bottom: 3px;
+  }
+
+  nav .nav-left > input {
+    height: 40px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: #eee;
+    margin-left: 10px;
+  }
+
+  nav .nav-left {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-right: 31px;
+}
+
+  nav .nav-middle a {
+    text-decoration: none;
+    color: #333;
+    padding: 7px;
+    margin: 0px 10px;
+  }
+
+  nav .nav-middle {
+    /* display: flex; */
+    /* padding-bottom: 5px; */
+    margin-left: 67px;
+    /* margin-bottom: 0; */
+    /* padding-right: 5px; */
+  }
+
+  nav .nav-middle a.active {
+    color: royalblue;
+    position: relative;
+    /* padding: 4px; */
+    padding-right: 1px;
+    padding-left: 3px;
+    padding-bottom: 5px;
+  }
+
+  nav .nav-middle a.active::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background: royalblue; */
+  }
+
+   nav .nav-right {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-right: 4px;
+}
+
+  .left-panel {
+    display: block;
+    position: relative !important;
+    flex: none;
+    width: 100%;
+    display: contents;
+  }
+
+  .container .left-panel ul li {
+    list-style: cjk-earthly-branch;
+    display: flex;
+    padding: 1.65rem 1rem;
+    align-items: normal;
+    transition: 0.3s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 5px;
+    margin-right: auto;
+    max-width: 800px;
+  }
+
+
+  /* .container .left-panel {
+    top: 50px;
+    flex: none;
+    width: 100%;
+    top: 10px;
+    width: 213px;
+    height: calc(20vh - 70px);
+    margin-left: 100px;
+    scroll-snap-align: start;
+  } */
+
+  .middle-panel {
+    display: block !important;
+    position: relative !important;
+    top: 20px !important;
+    margin-left: 20px !important;
+    margin-right: -138px !important;
+}
+
+  .container .right-panel {
+    /* position: sticky;  */
+    top: 50px;
+    width: 235px;
+    height: calc(100vh - 70px);
+    /* margin-left: 100px; */
+    /* scroll-snap-align: start; */
+    margin-right: 19px;
+  }
+
+  .right-panel {
+    display: contents !important;
+    position: relative !important;
+    flex: none !important;
+    width: 100% !important;
+    margin: -27px !important;
+    margin-left: 211px !important;
+  }
+
+  .right-panel .pages-section, .right-panel .friends-section {
+    margin: 2rem 58px !important;
+    width: 470px !important;
+    padding-left: 117px !important;
+}
+
+  .wrapper {
+    display: block !important;
+    flex: grow;
+  }
+
+  /* .container {
+    display: block !important;
+    flex: grow;
+  } */
+
+  /* .middle-panel {
+    margin-left: -40px;
+    display: block;
+    position: relative !important;
+} */
+
+  .story {
+    width: 20% !important;
+    height: 200px;
+    position: relative;
+    flex-direction: row;
+    overflow: visible;
+  }
+
+  /* .post {
+    width: 94% !important;
+  } */
+
+  .post {
+    width: 412px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .post .post-top {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: calc(20vh - 131px);
+  }
+
+  .post .post-full {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .post .post-top .dp {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .post .post-top .dp > img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .post .post-top .post-info {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .post .post-top .post-info .name {
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .post .post-top .post-info .time {
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .post .post-top i {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .post .post-top > input {
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    flex: 1;
+    background: #eee;
+    margin-left: 10px;
+  }
+
+  .post .post-content {
+    font-size: 16px;
+    font-weight: normal;
+    padding: 10px;
+  }
+
+  .post .post-content > img {
+    width: 100%;
+    margin: 5px 0px;
+  }
+
+  .post .post-bottom {
+    box-shadow: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 0px 5px;
+  }
+
+  .post .post-bottom .action {
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+  }
+
+  .post .post-bottom .action:hover {
+    background: #eee;
+  }
+
+  .post.create .post-bottom > .action {
+    color: slateblue;
+  }
+
+  .action {
+    width: 20% !important;
+  }
+
+  /* .parallax {
+    background-attachment: inherit;
+  } */
+
+  /* .parallax {
+    background-attachment: scroll;
+    background-size: 100% 100%;
+  } */
+}
+
+/* tablet up to iPad PRO*/
 @media screen and (max-width: 1160px) {
   nav {
     display: block !important;
