@@ -1150,8 +1150,9 @@ nav .nav-right span > i {
   .middle-panel {
     display: block;
     position: relative !important;
-    top: 50px;
-    margin-left: 40px;
+    top: 8px;
+    margin-left: 145px;
+    margin-right: -19px;
   }
 
   .container .right-panel {
@@ -1173,10 +1174,11 @@ nav .nav-right span > i {
     margin-left: 211px;
   }
 
-  .right-panel .pages-section,
-  .right-panel .friends-section {
-    margin: 1rem 36px !important;
-  }
+  .right-panel .pages-section, .right-panel .friends-section {
+    margin: 2rem 58px !important;
+    width: 470px;
+    padding-left: 117px;
+}
 
   .wrapper {
     display: block !important;
