@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -11,7 +11,9 @@ router.get('/', withAuth, (req, res) => {
       'id',
       'title',
       'created_at',
-      'post_body'
+      'post_body',
+      'post_url',
+      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
     ],
     include: [
       {
@@ -97,7 +99,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'id',
       'title',
       'created_at',
-      'post_body'
+      'post_body',
+      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
     ],
     include: [
       {
@@ -126,35 +129,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
         res.render('edit-post', {
           post,
-          loggedIn: true
-        });
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch(error => {
-      console.log(error);
-      res.status(500).json(error);
-    });
-});
-
-router.get('/update/:id', withAuth, (req, res) => {
-  User.findOne({
-    where: { id: req.params.id },
-    attributes: [
-      'id',
-      'name',
-      'username',
-      'email',
-      'password'
-    ]
-  })
-    .then(userData => {
-      if (userData) {
-        const user = userData.get({ plain: true });
-
-        res.render('edit-profile', {
-          user,
           loggedIn: true
         });
       } else {

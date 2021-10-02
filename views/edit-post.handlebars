@@ -1,29 +1,50 @@
+{{>nav-active-panel}}
+<main>
 
-{{>left-panel}}
+    <!-- SCROLL -->
+    <div class="scroll" data-rate=".3" data-direction="vertical">
+        <div class="wrapper">
+            <div class="container">
+                {{>left-panel}}
 
-<div class="middle-panel">
+                <div class="middle-panel">
 
-    <div class="post create">
-        <div class="post-full">
-            <div class="wrapper-post">
-                <section class="post-popup">
-                    <form id="edit-post-form">
-                        <input type="text" class="text-label" name="post-title" value="{{post.title}}" />
-                        <input type="url" class="text-label" name="post-url" id="url" value="{{post.post_url}}"
-                            pattern="https://.*">
-                        <input class="text-input" name="post-body" value="{{post.post_body}}" />
-                        <div class="theme-emoji">
-                            <img src="/assets/icons/theme.svg" alt="theme">
-                            <img src="/assets/icons/smile.svg" alt="smile">
+                    <div class="post">
+                        <div class="post-full">
+                            <div class="wrapper-post">
+                                <section class="post-popup">
+                                    <form id="edit-post-form">
+                                        <div class="header-update" style="margin-left: 10px;"><input type="text"
+                                                class="text-label" name="post-title" value="{{post.title}}"
+                                                placeholder="Insert title here..." /></div>
+
+                                        <div class="post-content"><input type="url" class="text-label" name="post-url"
+                                                id="url" value="{{post.post_url}}" placeholder="Insert URL here..."
+                                                pattern="https://.*"></div>
+
+                                        <div class="post-content"><input class="text-input" name="post-body"
+                                                value="{{post.post_body}}" placeholder="Insert content here..." /></div>
+
+                                        <div class="theme-emoji">
+                                            <img src="/assets/icons/theme.svg" alt="theme">
+                                            <img src="/assets/icons/smile.svg" alt="smile">
+                                        </div>
+                                        <button type="submit" class="btn-save">Update post</button>
+                                        <button id="delete-post" type="button" class="btn-del">Delete post
+                                        </button>
+                                    </form>
+                                </section>
+                            </div>
                         </div>
-                        <button type="submit" class="btn-save">Update post</button>
-                        <button id="delete-post" type="button" class="btn-del">Delete post</button </form>
-                </section>
+                    </div>
+
+                </div>
+                {{>right-panel}}
             </div>
         </div>
     </div>
-</div>
-{{>right-panel user}}
+
+</main>
 
 <script src=" /javascript/edit-post.js">
 </script>

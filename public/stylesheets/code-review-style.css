@@ -228,6 +228,12 @@ post .post-top .post-info {
   font-weight: bold;
 }
 
+button {
+  border-radius: 0;
+  border: none;
+  color: white;
+}
+
 .name {
   display: inline-block;
   position: inherit;
@@ -264,6 +270,13 @@ post .post-top .post-info {
   cursor: pointer;
 }
 
+.post .post-bottom .text-r {
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
 .post .post-bottom .action:hover {
   background: #eee;
 }
@@ -281,6 +294,7 @@ post .post-top .post-info {
   transition: 0.3s ease-in;
   cursor: pointer;
 }
+
 
 .post .post-bottom .action:hover {
   background: #eee;

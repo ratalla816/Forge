@@ -1,36 +1,40 @@
 <div class="post">
-    <div class="post-top">
-        <div class="">
-            <i class="fas fa-user" style="font-size:24px;"></i>
-        </div>
-        <div class="post-info">
-            <p class="name">{{user.name}}</p>
-            <span class="time">{{format_date created_at}}</span>
-        </div>
+  <div class="post-top">
+    <div class="">
+      <i class="fas fa-user" style="font-size:24px;"></i>
     </div>
-    <div>
-        <header class="post-header post-header-title ml-5">
-            <a href="/post/{{id}}">{{title}}</a>
-        </header>
-        <div class="post-content"><a target="_blank" href="{{post_url}}">{{post_url}}</a></div>
-        <div class="post-content">{{post_body}}</div>
+    <div class="post-info">
+      <p class="name">{{user.name}}</p>
+      <span class="time">{{format_date created_at}}</span>
     </div>
+  </div>
+  <div>
+    <header class="post-header post-header-title" style="margin-left: 10px;">
+      <a href="/post/{{id}}">{{title}}</a>
+    </header>
+    <div class="post-content"><a href="{{post_url}}">{{format_url post_url}}</a></div>
+    <div class="post-content">{{post_body}}</div>
+  </div>
 
-    <div class="post-bottom">
-        <div class="action">
-            <i class="far fa-thumbs-up"></i>
-            <span>Like</span>
-        </div>
-        <div class="action">
-            <a href="/post/{{id}}">
-                <i class="far fa-comment"></i>
-                <span class="badge"></span>
-                <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-            </a>
-        </div>
-        <div class="action">
-            <i class="fa fa-share"></i>
-            <span>Share</span>
-        </div>
+  <div class="post-bottom">
+    <div class="action">
+      <button id="likes-btn" class="react-btn"><i class="far fa-thumbs-up"></i>
+      </button>
+
     </div>
+    <span class="text-r">{{react_count}}
+      {{format_plural "like" react_count}}</span>
+    <div class="action">
+      <a href="/post/{{id}}">
+        <i class="far fa-comment"></i>
+        <a href="/post/{{id}}">{{comments.length}}
+          {{format_plural "comment" comments.length}}</a>
+      </a>
+    </div>
+    <div class="action">
+      <i class="fa fa-share"></i>
+      <span>Share</span>
+    </div>
+  </div>
 </div>
+{{! <script src="/javascript/upreact.js"></script> }}

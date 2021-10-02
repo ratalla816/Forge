@@ -1,31 +1,43 @@
-<div class="container">
+{{>nav-active-panel}}
+<main>
 
-  {{>left-panel}}
+  <!-- SCROLL -->
+  <div class="scroll" data-rate=".3" data-direction="vertical">
+    <div class="wrapper">
+      <div class="container">
+        <div class="container">
 
-  <div class="middle-panel">
+          {{>left-panel}}
 
-    {{> post-info post}}
+          <div class="middle-panel">
 
-    <div class="post">
+            {{> post-info post}}
 
-      {{#if loggedIn}}
-      <form id="comment-link">
+            <div class="post">
 
-        <textarea class="textarea" name="comment-body" placeholder="Insert comment here..."></textarea>
-        <button class="" type="submit">add comment</button>
+              {{#if loggedIn}}
+              <form id="comment-link">
 
-      </form>
-      {{/if}}
-      <div {{> comments post.comments}}</div>
+                <textarea class="textarea" name="comment-body" placeholder="Insert comment here..."></textarea>
+                <button class="" type="submit">add comment</button>
+                <br />
+                <button type="button" class="upreact-btn" style="margin-top: 5px;">Like Up</button>
+              </form>
+              {{/if}}
+              <div {{> comments post.comments}}</div>
 
 
+            </div>
+          </div>
+
+          {{>right-panel user}}
+
+        </div>
+      </div>
     </div>
-  </div>
 
-  {{>right-panel user}}
-
-</div>
-
+</main>
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/upreact.js"></script>
 {{/if}}

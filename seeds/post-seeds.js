@@ -1,76 +1,157 @@
-const { Post } = require('../models');
+const { Post } = require("../models");
 
 const postSeeds = [
-    {
-        user_id: 1,
-        title: 'How do you maintain multiple variations of a github repo?',
-        post_url: 'github.com',
-        post_body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!'
-    },
-    {
-        user_id: 3,
-        title: 'Interview went great! You are worth more than you think!',
-        post_body: 'Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid.'
-    },
-    {
-        user_id: 8,
-        title: "I can't figure out how to get the async/await function to work instead of promises.",
-        post_url: 'github.com',
-        post_body: 'Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci amet laborum.'
-    },
-    {
-        user_id: 2,
-        title: "What it's like working for Google",
-        post_body: 'Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat, temporibus enim commodi iusto libero magni deleniti quod quam consequuntur! Commodi minima excepturi repudiandae velit hic maxime doloremque. Quaerat provident commodi consectetur veniam similique ad earum omnis ipsum saepe.'
-    },
-    {
-        user_id: 7,
-        title: 'How do I properly parse and filter the following JSON objects?',
-        post_url: 'github.com',
-        post_body: 'Voluptatem quaerat non architecto ab laudantium modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!'
-    },
-    {
-        user_id: 4,
-        title: 'Is there a C# equivalent of JavaScript window object?',
-        post_url: 'github.com',
-        post_body: 'Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. '
-    },
-    {
-        user_id: 6,
-        title: 'What it is like to be a TA for bootcamp!',
-        post_body: 'Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. '
-    },
-    {
-        user_id: 5,
-        title: 'Number not updating when button is clicked',
-        post_url: 'github.com',
-        post_body: 'Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias error harum maxime adipisci amet laborum. Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed amet tempora. '
-    },
-    {
-        user_id: 1,
-        title: 'Getting the error - array.push not a function',
-        post_url: 'github.com',
-        post_body: 'Sit laborum ab, eius fugit doloribus tenetur fugiat, temporibus enim commodi iusto libero magni deleniti quod quam consequuntur! Commodi minima excepturi repudiandae velit hic maxime doloremque. '
-    },
-    {
-        user_id: 6,
-        title: 'The I went to the best Technology Webinar this weekend',
-        post_body: 'Quaerat provident commodi consectetur veniam similique ad earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore suscipit quas? Nulla, placeat.'
-    },
-    {
-        user_id: 3,
-        title: 'Help with parallax scrolling!',
-        post_url: 'github.com',
-        post_body: 'Nulla, placeat. Voluptatem quaerat non architecto ab laudantium modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam quasi aliquam eligendi, placeat qui corporis!'
-    },
-    {
-        user_id: 2,
-        title: 'How can I clean up my code?',
-        post_url: 'github.com',
-        post_body: 'Impedit sit sunt quaerat, odit, tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis modi at sunt excepturi expedita sint? '
-    }
+  {
+    title: "Donec posuere metus vitae ipsum.",
+    post_url: "https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png",
+    user_id: 10,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Morbi non quam nec dui luctus rutrum.",
+    post_url: "https://nasa.gov/donec.json",
+    user_id: 8,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title:
+      "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
+    post_url:
+      "https://europa.eu/parturient/montes/nascetur/ridiculus/mus/etiam/vel.aspx",
+    user_id: 1,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Nunc purus.",
+    post_url: "http://desdev.cn/enim/blandit/mi.jpg",
+    user_id: 4,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Pellentesque eget nunc.",
+    post_url: "http://google.ca/nam/nulla/integer.aspx",
+    user_id: 7,
+  },
+  {
+    title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    post_url: "https://stanford.edu/consequat.png",
+    user_id: 4,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "In hac habitasse platea dictumst.",
+    post_url: "http://edublogs.org/non/ligula/pellentesque.js",
+    user_id: 1,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Morbi non quam nec dui luctus rutrum.",
+    post_url: "http://ucla.edu/consequat/nulla.html",
+    user_id: 1,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Duis ac nibh.",
+    post_url: "http://theguardian.com/dui/vel/nisl/duis/ac/nibh.aspx",
+    user_id: 9,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Curabitur at ipsum ac tellus semper interdum.",
+    post_url: "https://reverbnation.com/ligula/sit.jpg",
+    user_id: 5,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "In hac habitasse platea dictumst.",
+    post_url: "http://china.com.cn/lectus/vestibulum.json",
+    user_id: 3,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    post_url:
+      "http://networksolutions.com/nam/ultrices/libero/non/mattis/pulvinar.json",
+    user_id: 10,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Donec dapibus.",
+    post_url: "https://instagram.com/ac/neque/duis/bibendum/morbi/non.xml",
+    user_id: 8,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Nulla tellus.",
+    post_url: "https://lycos.com/natoque/penatibus/et.html",
+    user_id: 3,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title:
+      "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
+    post_url: "https://gmpg.org/lorem.jpg",
+    user_id: 3,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title:
+      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+    post_url: "https://paginegialle.it/mattis/egestas.jsp",
+    user_id: 7,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "In hac habitasse platea dictumst.",
+    post_url: "http://wikia.com/turpis/eget.jpg",
+    user_id: 6,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Etiam justo.",
+    post_url: "https://shareasale.com/quis.json",
+    user_id: 4,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title: "Nulla ut erat id mauris vulputate elementum.",
+    post_url:
+      "http://java.com/diam/neque/vestibulum/eget/vulputate/ut/ultrices.png",
+    user_id: 6,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
+  {
+    title:
+      "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    post_url: "https://java.com/at/nibh/in.png",
+    user_id: 7,
+    post_body:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+  },
 ];
 
-const posts = () => Post.bulkCreate(postSeeds, {individualHooks: true});
+const posts = () => Post.bulkCreate(postSeeds, { individualHooks: true });
 
 module.exports = posts;

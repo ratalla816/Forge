@@ -1,56 +1,68 @@
-const { User } = require('../models');
+const { User } = require("../models");
 
 const userSeeds = [
-    {
-        name: 'Audry Ford',
-        username: 'audry19',
-        email: 'audry@email.com',
-        password: 'password'
-    },
-    {
-        name: 'Derimar Gray',
-        username: 'derimarg',
-        email: 'derimarg@email.com',
-        password: 'password'
-    },
-    {
-        name: 'Rob Atalla',
-        username: 'rob33',
-        email: 'rob@email.com',
-        password: 'password'
-    },
-    {
-        name: 'Cody Mck',
-        username: 'cody10',
-        email: 'cody@email.com',
-        password: 'password'
-    },
-    {
-        name: 'Charlie Brown',
-        username: 'charlie19',
-        email: 'charlie@email.com',
-        password: 'password'
-    },
-    {
-        name: 'Kimberly Lozaya',
-        username: 'kimberly76',
-        email: 'kim@email.com',
-        password: 'password'
-    },
-    {
-        name: 'Shannon Twoll',
-        username: 'shannon21',
-        email: 'shannon@email.com',
-        password: 'password'
-    },
-    {
-        name: 'Jim Lopez',
-        username: 'jim16',
-        email: 'jim@email.com',
-        password: 'password'
-    }
+  {
+    name: "Derimar Gray",
+    username: "derimarg",
+    email: "derimarg@email.com",
+    password: "password",
+  },
+  {
+    name: "Tom Tom",
+    username: "tomtom1",
+    email: "tom@tom.com",
+    password: "password",
+  },
+  {
+    name: "Ido Ddam",
+    username: "iboddam2",
+    email: "cstoneman2@last.fm",
+    password: "password",
+  },
+  {
+    name: "Dsta Nmey",
+    username: "dstanmer3",
+    email: "ihellier3@goo.ne.jp",
+    password: "password",
+  },
+  {
+    name: "Jiry Di",
+    username: "djiri4",
+    email: "gmidgley4@weather.com",
+    password: "password",
+  },
+  {
+    name: "Prague Ms",
+    username: "msprague5",
+    email: "larnout5@imdb.com",
+    password: "password",
+  },
+  {
+    name: "Derimar Gray",
+    username: "mpergens6",
+    email: "hnapleton6@feedburner.com",
+    password: "password",
+  },
+  {
+    name: "Pennie ell",
+    username: "tpenniell7",
+    email: "kperigo7@china.com.cn",
+    password: "password",
+  },
+  {
+    name: "Sabbin mss",
+    username: "msabbins8",
+    email: "lmongain8@google.ru",
+    password: "password",
+  },
+  {
+    name: "Arthur Jmaca",
+    username: "jmacarthur9",
+    email: "bsteen9@epa.gov",
+    password: "password",
+  },
 ];
 
-const users = () => User.bulkCreate(userSeeds, {individualHooks: true});
+const users = () => User.bulkCreate(userSeeds, { individualHooks: true });
 
 module.exports = users;

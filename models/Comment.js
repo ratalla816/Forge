@@ -1,7 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Comment extends Model { }
+class Comment extends Model {}
 
 Comment.init(
   {
@@ -13,33 +13,31 @@ Comment.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        mode: 'user',
-        key: 'id'
-      }
+        mode: "user",
+        key: "id",
+      },
     },
     post_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        model: 'post',
-        key: 'id'
-      }
+        model: "post",
+        key: "id",
+      },
     },
     comment_body: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
-      }
-    }
+        len: [1],
+      },
+    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment'
+    modelName: "comment",
   }
 );
 

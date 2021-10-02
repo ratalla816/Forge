@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
+const sequelize = require('../../config/connection');
+const { Post, User, Comment, React } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all posts
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
   Post.findAll({
     order: ['created_at', 'DESC'],
     attributes: [
@@ -11,7 +12,8 @@ router.get('/', withAuth, (req, res) => {
       'title',
       'created_at',
       'post_url',
-      'post_body'
+      'post_body',
+      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
     ],
     include: [
       {
@@ -54,7 +56,8 @@ router.get('/:id', (req, res) => {
       'title',
       'created_at',
       'post_url',
-      'post_body'
+      'post_body',
+      [sequelize.literal('(SELECT COUNT(*) FROM react WHERE post.id = react.post_id)'), 'react_count']
     ],
     include: [
       {
@@ -129,6 +132,16 @@ router.put('/:id', withAuth, (req, res) => {
     .catch(error => {
       console.log(error);
       res.status(500).json(error);
+    });
+});
+
+router.put('/upreact', withAuth, (req, res) => {
+  // custom static method created in models/Post.js
+  Post.upreact({ ...req.body, user_id: req.session.user_id }, { React, Comment, User })
+    .then(updatedReactData => res.json(updatedReactData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
