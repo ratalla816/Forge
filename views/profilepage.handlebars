@@ -11,52 +11,31 @@
 
                     <div class="middle-panel">
 
-                        <div class="post">
-                            {{#each users as |user|}}
-                            <div class="post-full">
-                                <div class="wrapper-post">
-                                    <section class="post-popup">
-                                        <form id="edit-user-form" class="form-update">
-                                            <h2 style="margin:15px;">Your Account</h2>
-                                            <div>
-                                                <label for="user-name">Full Name</label>
-                                                <div class="input-update">{{name}}</div>
+                        {{#each users as |user|}}
 
-                                            </div>
-                                            <div>
-                                                <label for="user-username">Username</label>
-                                                <div class="input-update">{{username}}</div>
-
-                                            </div>
-                                            <div>
-                                                <label for="user-email">Email</label>
-                                                <div class="input-update">{{email}}</div>
-
-                                            </div>
-                                            <div>
-                                                <label for="user-password">Password</label>
-                                                <div class="input-update" style="overflow: hidden; margin: right 5px;">
-                                                    {{password}}</div>
-
-                                            </div>
-
-                                            <div class="action" style="width: 100%;">
-                                                <a href="profile/edit/{{user.id}}"><button class="btn">Edit
-                                                        Profile</button></a>
-                                            </div>
-
-                                        </form>
-                                    </section>
-                                </div>
+                        <div class="post" style="width:400px">
+                            <h2>Your Account Information</h2>
+                            <div class="input-update"><b>Name: </b> {{name}}</div>
+                            <div class="input-update"><b>Username: </b> {{username}}</div>
+                            <div class="input-update"><b>Email: </b> {{email}}</div>
+                            <div class="input-update" style="overflow: hidden" id="pwd"><b>Password: </b> <span
+                                    style="width=50px" pattern=".{8,}" id="pwd">{{password}}</span>
+                            </div>
+                            <div class="action">
+                                <a href="profile/edit/{{user.id}}"><button class="block-update">Edit your
+                                        profile</button></a>
                             </div>
                         </div>
+
                         {{/each}}
-
                     </div>
-
-                    {{>right-panel}}
                 </div>
+
             </div>
+
+            {{>right-panel}}
         </div>
+    </div>
+    </div>
 
 </main>
