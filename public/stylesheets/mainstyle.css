@@ -175,7 +175,6 @@ nav .nav-middle a > i {
 
 nav .nav-right .profile,
 .container .left-panel .profile {
-  background: url("/assets/images/dp.png");
   height: 30px;
   width: 30px;
   background-size: cover;
@@ -447,17 +446,9 @@ nav .nav-right span > i {
   padding: 10px;
 }
 
-.post .post-top .dp {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-}
 
-.post .post-top .dp > img {
-  width: 100%;
-  cursor: pointer;
-}
+
+
 
 .post .post-top .post-info {
   margin-left: 10px;

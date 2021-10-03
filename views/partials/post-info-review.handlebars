@@ -3,7 +3,7 @@
         <div class="post-top">
             <div class="">
                 <i class="fas fa-user" style="font-size:24px;color:black;margin-bottom: 24px;
-    margin-left: -2px;"></i>
+    margin-left: -2px;" alt="users icon"></i>
             </div>
             <div class="post-info">
                 <p class="name" style="font-size:24px;color:black;">{{user.name}}</p>
@@ -22,13 +22,13 @@
 
         <div class="post-bottom">
             <div class="action" style="color:black;">
-                <i class="far fa-thumbs-up"></i>
+                <i class="far fa-thumbs-up" alt="likes icon"></i>
                 <span>{{likes_count}} {{format_plural "like" likes_count}}</span>
 
             </div>
             <div class="action">
                 <a href="/post/{{id}}">
-                    <i class="far fa-comment"></i>
+                    <i class="far fa-comment" alt="comments icon"></i>
                     <span>{{comments.length}} {{format_plural "comment" comments.length}}</span>
                 </a>
             </div>
