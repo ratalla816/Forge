@@ -263,7 +263,8 @@ nav .nav-right span > i {
 }
 
 .wrapper {
-  background-color: #eee;
+  position:relative;
+  background-color: transparent;
   width: 100%;
   overflow: scroll;
   }
@@ -383,8 +384,8 @@ nav .nav-right span > i {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  overflow: hidden;
-  position: absolute;
+  overflow: scroll;
+  position: relative;
   top: 10px;
   left: 10px;
   border: royalblue 4px solid;
@@ -803,7 +804,7 @@ nav .nav-middle a > i {
     margin-bottom: -26px !important;
     padding-bottom: 27px !important;
     padding-right: 11px !important;
-    /* height: calc(20vh - 97px); */
+    
   }
 
   nav .nav-left > img {
@@ -815,11 +816,9 @@ nav .nav-middle a > i {
 
   .wrapper {
     width: 100%;
-    /* overflow: hidden; */
+   
     overflow: scroll;
-     /* scroll-snap-align: end; */
-    scroll-behavior: smooth; 
-    margin: -1px;
+   margin: -1px;
   }
 
   .profile {
@@ -829,7 +828,7 @@ nav .nav-middle a > i {
     background-size: cover;
     border-radius: 50%;
     cursor: pointer;
-    /* background: black; */
+    
     margin-left: 0px;
   }
 
@@ -864,13 +863,13 @@ nav .nav-middle a > i {
   }
 
   nav .nav-middle {
-    /* display: flex; */
+   
     padding-bottom: 5px;
-    /* margin-left: 67px; */
+   
     align-items: flex-end;
     margin-bottom: -41px;
     padding-top: 13px;
-    /* padding-right: 5px; */
+   
   }
 
   nav .nav-middle {
@@ -930,7 +929,7 @@ nav .nav-right .logout {
   nav .nav-middle a.active {
     color: royalblue;
     position: relative;
-    /* padding: 4px; */
+   
     padding-right: 1px;
     padding-left: 3px;
     padding-bottom: 5px;
@@ -954,11 +953,11 @@ nav .nav-right .logout {
     position: absolute;
     bottom: 0;
     left: 0;
-    /* background: royalblue; */
+   
   }
 
   .left-panel {
-    /* display: block !important; */
+  
     position: relative !important;
     margin-left: -77px;
     margin-top: -104px;
@@ -972,7 +971,7 @@ nav .nav-right .logout {
     width: 13px;
     height: calc(20vh - 70px);
     margin-left: -84px;
-    /* scroll-snap-align: start; */
+  
   }
 
   .container .left-panel {
@@ -983,11 +982,11 @@ nav .nav-right .logout {
     width: 213px;
     height: calc(20vh - 70px);
     margin-left: 100px;
-    /* scroll-snap-align: start; */
+  
   }
 
   .middle-panel {
-    /* display: block; */
+  
     position: relative !important;
     width: 55%;
     margin-left: 7px;
@@ -998,13 +997,13 @@ nav .nav-right .logout {
     }
 
   .container .right-panel {
-    /* position: sticky; */
+  
     position:relative;
     top: 50px;
     width: 213px;
     height: calc(100vh - 70px);
     margin-left: 100px;
-    /* scroll-snap-align: start; */
+ 
   }
 
   .post .post-bottom .action {
@@ -1016,7 +1015,7 @@ nav .nav-right .logout {
 }
 
 .right-panel {
-  /* display: block !important; */
+ 
   position: relative !important;
   display: contents !important;
   flex: none !important;
@@ -1025,7 +1024,7 @@ nav .nav-right .logout {
   margin-left: 211px !important;
   flex: none;
   margin: -27px;
-  /* margin-left: 211px; */
+
 }
 
 .right-panel .pages-section .name, .right-panel .friends-section .name {
@@ -1076,13 +1075,14 @@ padding-top: 15px;
 }
 
 .container {
-  /* display:contents; */
+ 
   display: block;
   flex: auto;
   padding-left: 0px;
 }
 
   /*Account profile*/
+
   .card-header {
     color: var(--primary);
     background-color: var(--info);
@@ -1167,7 +1167,10 @@ padding-top: 15px;
     background-attachment: scroll;
     background-size: 200% 200%;
   } */
+
 }
+
+
 
 /* mobile phones up to iphone 13 */
 @media screen and (max-width: 500px) {
@@ -1190,14 +1193,7 @@ padding-top: 15px;
     z-index: 99;
   }
 
-  /* nav .nav-left,
-  nav .nav-right {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-  } */
-
+  
   nav .nav-left {
     display: flex;
     margin-bottom: -90px !important;
@@ -1230,8 +1226,7 @@ padding-top: 15px;
   .wrapper {
     width: 100%;
     overflow: scroll;
-    scroll-behavior: smooth;
-  }
+    }
 
    .profile {
     background: url(./images/dp.png);
@@ -1240,7 +1235,7 @@ padding-top: 15px;
     background-size: cover;
     border-radius: 50%;
     cursor: pointer;
-    /* background: black; */
+  
     margin-left: 0px;
   }
 
@@ -1311,9 +1306,8 @@ nav .nav-right .logout {
 
   .wrapper {
     overflow: scroll;
-     /* scroll-snap-align: end; */
-     scroll-behavior: smooth; 
-  }
+  
+     }
 
   .logo {
       width: 60px !important;
@@ -1332,7 +1326,7 @@ nav .nav-right .logout {
   nav .nav-middle a.active {
     color: royalblue;
     position: relative;
-    /* padding: 4px; */
+   
     padding-right: 1px;
     padding-left: 3px;
     padding-bottom: 5px;
@@ -1345,7 +1339,7 @@ nav .nav-right .logout {
     position: absolute;
     bottom: 0;
     left: 0;
-    /* background: royalblue; */
+ 
   }
 
   .left-panel {
@@ -1363,7 +1357,7 @@ nav .nav-right .logout {
     width: 13px;
     height: calc(20vh - 70px);
     margin-left: -92px;
-    /* scroll-snap-align: start; */
+  
     margin-top: 12px;
   }
 
@@ -1378,12 +1372,12 @@ nav .nav-right .logout {
     }
 
   .container .right-panel {
-    /* position: sticky; */
+  
     top: 50px;
     width: 213px;
     height: calc(100vh - 70px);
     margin-left: 100px;
-    /* scroll-snap-align: start; */
+  
   }
 
   .post .post-bottom .action {
@@ -1404,7 +1398,7 @@ nav .nav-right .logout {
     margin-left: 211px !important;
     flex: none;
     margin: -27px;
-    /* margin-left: 211px; */
+   
   }
 
   .right-panel .pages-section .name, .right-panel .friends-section .name {
@@ -1452,31 +1446,16 @@ nav .nav-right .logout {
   padding-top: 15px;
 }
 
-  /* .container .right-panel {
-    /* position: sticky;  */
-    /* top: 50px; */
-    /* width: 235px; */
-    /* height: calc(100vh - 70px); */
-    /* margin-left: 100px; */
-    /* scroll-snap-align: start; */
-    /* margin-right: 19px; */
-  /* } */ 
-
-  
-  /* .right-panel .pages-section, .right-panel .friends-section {
-    margin: 2rem 58px !important;
-    width: 470px !important;
-    padding-left: 117px !important;
-} */
-
+ 
   .container {
-    /* display:contents; */
+  
     display: block;
     flex: auto;
     padding-left: 0px;
-  }
+  } */
 
-  /*Account profile*/
+  /* Account profile */
+
   .card-header {
     color: var(--primary);
     background-color: var(--info);
@@ -1551,17 +1530,20 @@ nav .nav-right .logout {
 
   .action {
     width: 20% !important;
-  }
+  } 
 
-  /* .parallax {
+   .parallax {
     background-attachment: inherit;
   }
 
-  .parallax {
+  /* .parallax {
     background-attachment: scroll;
     background-size: 200% 200%;
-  } */
+  }  */
+
 }
+
+
 
 /* tablet up to standard iPad*/
 @media screen and (max-width: 800px) {
@@ -1577,7 +1559,7 @@ nav .nav-right .logout {
   }
 
   nav .nav-left > input {
-    /* padding: 5px 110px; */
+
     width: 100%;
     margin-top: 5px;
   }
@@ -1592,13 +1574,10 @@ nav .nav-right .logout {
     margin-left: 10px;
   }
 
-  /* nav .nav-left > input {
-      padding: 5px 110px; 
-      width: 100%
-      }   */
+ 
 
   nav {
-    /* height: 185px; */
+    
     width: 100%;
     padding: 0 2rem;
     display: flex;
@@ -1613,8 +1592,7 @@ nav .nav-right .logout {
   .wrapper {
     width: 100%;
     overflow: scroll;
-    scroll-behavior: smooth;
-  }
+   }
 
   .logo {
     width: 100px !important;
@@ -1623,9 +1601,7 @@ nav .nav-right .logout {
     margin-left: -8px;
 }
 
-  /* nav .nav-left .logo > img {
-    width: 40px;
-  } */
+ 
 
   .profile {
     background: url(./images/dp.png);
@@ -1634,7 +1610,7 @@ nav .nav-right .logout {
     background-size: cover;
     border-radius: 50%;
     cursor: pointer;
-    /* background: black; */
+  
     margin-left: 0px;
   }
 
@@ -1673,17 +1649,15 @@ nav .nav-right .logout {
   }
 
   nav .nav-middle {
-    /* display: flex; */
-    /* padding-bottom: 5px; */
+  
     margin-left: 67px;
-    /* margin-bottom: 0; */
-    /* padding-right: 5px; */
+  
   }
 
   nav .nav-middle a.active {
     color: royalblue;
     position: relative;
-    /* padding: 4px; */
+   
     padding-right: 1px;
     padding-left: 3px;
     padding-bottom: 5px;
@@ -1696,7 +1670,7 @@ nav .nav-right .logout {
     position: absolute;
     bottom: 0;
     left: 0;
-    /* background: royalblue; */
+  
   }
 
    nav .nav-right {
@@ -1746,8 +1720,7 @@ nav .nav-right .logout {
     top: 50px;
     width: 235px;
     height: calc(100vh - 70px);
-    /* margin-left: 100px; */
-    /* scroll-snap-align: start; */
+  
     margin-right: 19px;
   }
 
@@ -1772,13 +1745,7 @@ nav .nav-right .logout {
     flex: grow;
   }
 
- .story {
-    width: 20% !important;
-    height: 200px;
-    position: relative;
-    flex-direction: row;
-    overflow: hidden;
-  }
+ 
 
   .post {
     width: 412px;
@@ -1874,11 +1841,11 @@ nav .nav-right .logout {
 
   .post.create .post-bottom > .action {
     color: slateblue;
-  }
+  } */
 
   .action {
     width: 20% !important;
-  }
+  } 
 
   /* .parallax {
     background-attachment: inherit;
@@ -1888,7 +1855,10 @@ nav .nav-right .logout {
     background-attachment: scroll;
     background-size: 100% 100%;
   } */
+
 }
+
+
 
 /* tablet up to iPad PRO*/
 @media screen and (max-width: 1160px) {
@@ -1899,33 +1869,20 @@ nav .nav-right .logout {
     width: 129%;
   }
 
-  /* nav .nav-left > img {
-    width: 51px;
-  } */
+  
 
   nav .nav-left > input {
-    /* padding: 5px 110px; */
+  
     width: 100%;
     margin-top: 5px;
   }
 
-  /* nav .nav-left > input {
-    height: 40px;
-    padding: 7px 30px;
-    border: none;
-    border-radius: 25px;
-    outline: none;
-    background-color: #eee;
-    margin-left: 10px;
-  } */
+ 
 
-  /* nav .nav-left > input {
-      padding: 5px 110px; 
-      width: 100%
-      }   */
+  
 
   nav {
-    /* height: 185px; */
+   
     width: 100%;
     padding: 0 2rem;
     display: flex;
@@ -1941,8 +1898,7 @@ nav .nav-right .logout {
     width: 100%;
     position: relative;
     overflow: scroll;
-    scroll-behavior: smooth
-  }
+   }
 
   .logo {
     width: 85px !important;
@@ -1951,9 +1907,7 @@ nav .nav-right .logout {
     margin-left: -17px;
 }
 
-  /* nav .nav-left .logo > img {
-    width: 40px;
-  } */
+ 
 
   .profile {
     background: url(./images/dp.png);
@@ -1962,7 +1916,7 @@ nav .nav-right .logout {
     background-size: cover;
     border-radius: 50%;
     cursor: pointer;
-    /* background: black; */
+   
     margin-left: 0px;
   }
 
@@ -1994,13 +1948,13 @@ nav .nav-right .logout {
 }
 
 nav .nav-middle {
-  /* display: flex; */
+ 
   padding-bottom: 0px;
-  /* margin-left: 67px; */
+ 
   align-items: flex-end;
   margin-bottom: -41px;
   padding-top: 28px;
-  /* padding-right: 5px; */
+ 
 }
 
   nav .nav-middle a {
@@ -2034,12 +1988,12 @@ nav .nav-middle {
     position: relative;
     bottom: 0;
     left: 0;
-    /* background: royalblue; */
+   
   }
 
  
   .left-panel {
-    display: block;
+  
     position: relative !important;
     flex: none;
     width: 100%;
@@ -2055,13 +2009,12 @@ nav .nav-middle {
   }
 
   .container .right-panel {
-    /* position: sticky;  */
+   
     position:relative;
     top: 50px;
     width: 235px;
     height: calc(100vh - 70px);
-    /* margin-left: 100px; */
-    /* scroll-snap-align: start; */
+   
     margin-right: 19px;
   }
 
@@ -2082,6 +2035,7 @@ nav .nav-middle {
 
   .wrapper {
     display: block !important;
+    position:relative !important;
     flex: grow;
   }
 
@@ -2179,21 +2133,23 @@ nav .nav-middle {
 
   .post.create .post-bottom > .action {
     color: slateblue;
-  }
+  } 
 
   .action {
     width: 20% !important;
-  }
+  } 
 
   /* .parallax {
     background-attachment: inherit;
   } */
 
-  /* .parallax {
+   /* .parallax {
     background-attachment: scroll;
     background-size: 100% 100%;
-  } */
+  }  */
+
 }
+
 
 /* Pop up section */
 
@@ -2202,7 +2158,7 @@ nav .nav-middle {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* background: linear-gradient(#00C6FF, #0078FF); */
+  
 }
 ::selection {
   color: #fff;
