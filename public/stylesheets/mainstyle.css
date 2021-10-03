@@ -265,7 +265,7 @@ nav .nav-right span > i {
 .wrapper {
   background-color: #eee;
   width: 100%;
-  overflow: hidden;
+  overflow: scroll;
   }
 
 
@@ -784,14 +784,6 @@ nav .nav-right span > i {
     z-index: 99;
   }
 
-  /* nav .nav-left,
-  nav .nav-right {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-  } */
-
   nav .nav-left {
     display: flex;
     margin-bottom: -90px !important;
@@ -823,12 +815,11 @@ nav .nav-middle a > i {
 
   .wrapper {
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     overflow: scroll;
-    scroll-snap-align: end;
-    scroll-behavior: smooth;
+     /* scroll-snap-align: end; */
+    scroll-behavior: smooth; 
     margin: -1px;
-    
   }
 
   .profile {
@@ -842,8 +833,6 @@ nav .nav-middle a > i {
     margin-left: 0px;
   }
 
-  
- 
   .dk {
     border: none !important;
     background: transparent;
@@ -929,7 +918,7 @@ nav .nav-right .logout {
   margin-top: -60px !important;
   width: 75px !important;
   padding-left: 24px !important;
-  margin-right: -75px !important;
+  margin-right: -130px !important;
   margin-bottom: 148px !important;
 
 }
@@ -969,8 +958,8 @@ nav .nav-right .logout {
   }
 
   .left-panel {
-    display: block !important;
-    /* position: relative !important; */
+    /* display: block !important; */
+    position: relative !important;
     margin-left: -77px;
     margin-top: -104px;
     padding-left: 151px;
@@ -983,7 +972,7 @@ nav .nav-right .logout {
     width: 13px;
     height: calc(20vh - 70px);
     margin-left: -84px;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
   }
 
   .container .left-panel {
@@ -994,12 +983,12 @@ nav .nav-right .logout {
     width: 213px;
     height: calc(20vh - 70px);
     margin-left: 100px;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
   }
 
   .middle-panel {
     /* display: block; */
-    /* position: relative !important; */
+    position: relative !important;
     width: 55%;
     margin-left: 7px;
     margin-bottom: 75px !important;
@@ -1010,11 +999,12 @@ nav .nav-right .logout {
 
   .container .right-panel {
     /* position: sticky; */
+    position:relative;
     top: 50px;
     width: 213px;
     height: calc(100vh - 70px);
     margin-left: 100px;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
   }
 
   .post .post-bottom .action {
@@ -1026,10 +1016,9 @@ nav .nav-right .logout {
 }
 
 .right-panel {
-  display: block !important;
-  /* position: relative !important; */
+  /* display: block !important; */
+  position: relative !important;
   display: contents !important;
-  /* position: relative !important; */
   flex: none !important;
   width: 100% !important;
   margin: -27px !important;
@@ -1162,14 +1151,6 @@ padding-top: 15px;
     border-radius: var(--border-radius);
   }
 
-  /* .story {
-    width: 20% !important;
-    height: 200px;
-    position: relative;
-    flex-direction: row;
-    overflow: visible;
-  } */
-
   .post {
     width: 94% !important;
   }
@@ -1178,11 +1159,11 @@ padding-top: 15px;
     width: 20% !important;
   }
 
-  .parallax {
+  /* .parallax {
     background-attachment: inherit;
   }
 
-  /* .parallax {
+  .parallax {
     background-attachment: scroll;
     background-size: 200% 200%;
   } */
@@ -1248,7 +1229,8 @@ padding-top: 15px;
 
   .wrapper {
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
+    scroll-behavior: smooth;
   }
 
    .profile {
@@ -1329,8 +1311,8 @@ nav .nav-right .logout {
 
   .wrapper {
     overflow: scroll;
-    scroll-snap-align: end;
-    scroll-behavior: smooth;
+     /* scroll-snap-align: end; */
+     scroll-behavior: smooth; 
   }
 
   .logo {
@@ -1368,7 +1350,7 @@ nav .nav-right .logout {
 
   .left-panel {
     display: block !important;
-    /* position: relative !important; */
+    position: relative !important;
     margin-left: -77px;
     margin-top: -104px;
     padding-left: 151px;
@@ -1381,7 +1363,7 @@ nav .nav-right .logout {
     width: 13px;
     height: calc(20vh - 70px);
     margin-left: -92px;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
     margin-top: 12px;
   }
 
@@ -1401,7 +1383,7 @@ nav .nav-right .logout {
     width: 213px;
     height: calc(100vh - 70px);
     margin-left: 100px;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
   }
 
   .post .post-bottom .action {
@@ -1414,9 +1396,8 @@ nav .nav-right .logout {
 
   .right-panel {
     display: block !important;
-    /* position: relative !important; */
+    position: relative !important;
     display: contents !important;
-    /* position: relative !important; */
     flex: none !important;
     width: 100% !important;
     margin: -27px !important;
@@ -1564,14 +1545,6 @@ nav .nav-right .logout {
     border-radius: var(--border-radius);
   }
 
-  /* .story {
-    width: 20% !important;
-    height: 200px;
-    position: relative;
-    flex-direction: row;
-    overflow: visible;
-  } */
-
   .post {
     width: 94% !important;
   }
@@ -1580,11 +1553,11 @@ nav .nav-right .logout {
     width: 20% !important;
   }
 
-  .parallax {
+  /* .parallax {
     background-attachment: inherit;
   }
 
-  /* .parallax {
+  .parallax {
     background-attachment: scroll;
     background-size: 200% 200%;
   } */
@@ -1639,7 +1612,8 @@ nav .nav-right .logout {
 
   .wrapper {
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
+    scroll-behavior: smooth;
   }
 
   .logo {
@@ -1759,18 +1733,6 @@ nav .nav-right .logout {
     max-width: 800px;
   }
 
-
-  /* .container .left-panel {
-    top: 50px;
-    flex: none;
-    width: 100%;
-    top: 10px;
-    width: 213px;
-    height: calc(20vh - 70px);
-    margin-left: 100px;
-    scroll-snap-align: start;
-  } */
-
   .middle-panel {
     display: block !important;
     position: relative !important;
@@ -1780,7 +1742,7 @@ nav .nav-right .logout {
 }
 
   .container .right-panel {
-    /* position: sticky;  */
+    position: sticky; 
     top: 50px;
     width: 235px;
     height: calc(100vh - 70px);
@@ -1804,35 +1766,19 @@ nav .nav-right .logout {
     padding-left: 117px;
 }
 
-
-
-  .wrapper {
+.wrapper {
+    position: relative;
     display: block !important;
     flex: grow;
   }
 
-  /* .container {
-    display: block !important;
-    flex: grow;
-  } */
-
-  /* .middle-panel {
-    margin-left: -40px;
-    display: block;
-    position: relative !important;
-} */
-
-  .story {
+ .story {
     width: 20% !important;
     height: 200px;
     position: relative;
     flex-direction: row;
-    overflow: visible;
+    overflow: hidden;
   }
-
-  /* .post {
-    width: 94% !important;
-  } */
 
   .post {
     width: 412px;
@@ -1993,7 +1939,9 @@ nav .nav-right .logout {
 
   .wrapper {
     width: 100%;
-    overflow: hidden;
+    position: relative;
+    overflow: scroll;
+    scroll-behavior: smooth
   }
 
   .logo {
@@ -2083,7 +2031,7 @@ nav .nav-middle {
     content: "";
     width: 100%;
     height: 3px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     /* background: royalblue; */
@@ -2098,17 +2046,6 @@ nav .nav-middle {
     display: contents;
   }
 
-  /* .container .left-panel {
-    top: 50px;
-    flex: none;
-    width: 100%;
-    top: 10px;
-    width: 213px;
-    height: calc(20vh - 70px);
-    margin-left: 100px;
-    scroll-snap-align: start;
-  } */
-
   .middle-panel {
     display: block;
     position: relative !important;
@@ -2119,6 +2056,7 @@ nav .nav-middle {
 
   .container .right-panel {
     /* position: sticky;  */
+    position:relative;
     top: 50px;
     width: 235px;
     height: calc(100vh - 70px);
@@ -2146,29 +2084,6 @@ nav .nav-middle {
     display: block !important;
     flex: grow;
   }
-
-  /* .container {
-    display: block !important;
-    flex: grow;
-  } */
-
-  /* .middle-panel {
-    margin-left: -40px;
-    display: block;
-    position: relative !important;
-} */
-
-  /* .story {
-    width: 20% !important;
-    height: 200px;
-    position: relative;
-    flex-direction: row;
-    overflow: visible;
-  } */
-
-  /* .post {
-    width: 94% !important;
-  } */
 
   .post {
     width: 412px;
