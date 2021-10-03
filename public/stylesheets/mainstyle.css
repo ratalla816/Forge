@@ -109,14 +109,27 @@ nav {
   background-color: #fff;
   box-shadow: 0px 1px 3px #ccc;
   position: sticky;
+  overflow: hidden;
   top: 0;
   z-index: 99;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 30px;
 }
 
 nav .nav-left,
 nav .nav-right {
   display: flex;
   align-items: center;
+  position: sticky;
+  overflow: hidden;
   padding-bottom: 5px;
   padding-right: 31px;
 }
@@ -137,6 +150,8 @@ nav .nav-left > input {
 
 nav .nav-middle {
   display: flex;
+  position: sticky;
+  overflow: hidden;
   align-items: center;
   padding-bottom: 5px;
   width: 164px; 
@@ -177,6 +192,8 @@ nav .nav-right .profile,
 .container .left-panel .profile {
   height: 30px;
   width: 30px;
+  position: sticky;
+  overflow: hidden;
   background-size: cover;
   border-radius: 50%;
   cursor: pointer;
@@ -264,7 +281,7 @@ nav .nav-right span > i {
 .wrapper {
   background-color: #eee;
   width: 100%;
-  overflow: scroll;
+  /* overflow: scroll; */
   }
 
 
@@ -285,6 +302,7 @@ nav .nav-right span > i {
 .container .left-panel,
 .container .right-panel {
   position: sticky;
+  position: -webkit-sticky;
   top: 70px;
   width: 150px;
   height: calc(100vh - 70px);
@@ -771,6 +789,7 @@ nav .nav-right span > i {
     background-color: #fff;
     box-shadow: 0px 1px 3px #ccc;
     position: sticky;
+    position: -webkit-sticky;
     top: 5px;
     z-index: 99;
   }
@@ -807,7 +826,7 @@ nav .nav-middle a > i {
   .wrapper {
     width: 100%;
     /* overflow: hidden; */
-    overflow: scroll;
+    /* overflow: scroll; */
      /* scroll-snap-align: end; */
     scroll-behavior: smooth; 
     margin: -1px;
@@ -989,8 +1008,9 @@ nav .nav-right .logout {
     }
 
   .container .right-panel {
-    /* position: sticky; */
-    position:relative;
+    position: sticky;
+    position: -webkit-sticky;
+    /* position:relative; */
     top: 50px;
     width: 213px;
     height: calc(100vh - 70px);
@@ -1177,6 +1197,7 @@ padding-top: 15px;
     background-color: #fff;
     box-shadow: 0px 1px 3px #ccc;
     position: sticky;
+    position: -webkit-sticky;
     top: 5px;
     z-index: 99;
   }
@@ -1220,7 +1241,7 @@ padding-top: 15px;
 
   .wrapper {
     width: 100%;
-    overflow: scroll;
+    /* overflow: scroll; */
     scroll-behavior: smooth;
   }
 
@@ -1301,7 +1322,7 @@ nav .nav-right .logout {
 }
 
   .wrapper {
-    overflow: scroll;
+    /* overflow: scroll; */
      /* scroll-snap-align: end; */
      scroll-behavior: smooth; 
   }
@@ -1369,7 +1390,8 @@ nav .nav-right .logout {
     }
 
   .container .right-panel {
-    /* position: sticky; */
+    position: sticky;
+    position: -webkit-sticky;
     top: 50px;
     width: 213px;
     height: calc(100vh - 70px);
@@ -1597,14 +1619,15 @@ nav .nav-right .logout {
     background-color: #fff;
     box-shadow: 0px 1px 3px #ccc;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     z-index: 99;
   }
 
   .wrapper {
     width: 100%;
-    overflow: scroll;
-    scroll-behavior: smooth;
+    /* overflow: scroll; */
+    /* scroll-behavior: smooth; */
   }
 
   .logo {
@@ -1734,6 +1757,7 @@ nav .nav-right .logout {
 
   .container .right-panel {
     position: sticky; 
+    position: -webkit-sticky;
     top: 50px;
     width: 235px;
     height: calc(100vh - 70px);
@@ -1924,6 +1948,7 @@ nav .nav-right .logout {
     background-color: #fff;
     box-shadow: 0px 1px 3px #ccc;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     z-index: 99;
   }
@@ -1931,8 +1956,8 @@ nav .nav-right .logout {
   .wrapper {
     width: 100%;
     position: relative;
-    overflow: scroll;
-    scroll-behavior: smooth
+    /* overflow: scroll; */
+    /* scroll-behavior: smooth */
   }
 
   .logo {
@@ -2046,8 +2071,9 @@ nav .nav-middle {
   }
 
   .container .right-panel {
-    /* position: sticky;  */
-    position:relative;
+    position: sticky; 
+    position: -webkit-sticky;
+    /* position:relative; */
     top: 50px;
     width: 235px;
     height: calc(100vh - 70px);
