@@ -21,15 +21,15 @@
         </div>
 
         <div class="post-bottom">
-            <div class="action">
-                <button type="button" class="react-btn" style="background:transparent;"><i class="far fa-thumbs-up"></i></button>
+            <div class="action" style="color:black;">
+                <i class="far fa-thumbs-up"></i>
+                <span>{{likes_count}} {{format_plural "like" likes_count}}</span>
+
             </div>
-            <span>{{likes_count}} {{format_plural "like" likes_count}}</span>
             <div class="action">
                 <a href="/post/{{id}}">
                     <i class="far fa-comment"></i>
-                    <span class="badge"></span>
-                    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+                    <span>{{comments.length}} {{format_plural "comment" comments.length}}</span>
                 </a>
             </div>
             {{!-- <div class="action">

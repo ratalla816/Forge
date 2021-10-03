@@ -35,14 +35,14 @@
                         </div>
 
                         <div class="post-bottom">
-                            <div class="action">
-                                <i class="far fa-thumbs-up" id={{id}}></i>
-                                <span>likes</span>
+                            <div class="action" style="color:black;">
+                                <i class="far fa-thumbs-up"></i>
+                                <span>{{likes_count}}
+                                    {{format_plural "like" likes_count}}</span>
                             </div>
                             <div class="action">
                                 <a href="/post/{{id}}">
                                     <i class="far fa-comment"></i>
-                                    <span class="badge"></span>
                                     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment"
                                         comments.length}}</a>
                                 </a>

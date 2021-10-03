@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Likes } = require('../models');
+const sequelize = require('../config/connection');
+
 
 // get all posts for reviewpage
 router.get('/', (req, res) => {
@@ -9,7 +11,8 @@ router.get('/', (req, res) => {
             'title',
             'created_at',
             'post_body',
-            'post_url'
+            'post_url',
+            [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)'), 'likes_count']
         ],
         include: [
             {

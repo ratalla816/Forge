@@ -8,49 +8,49 @@
                 {{>left-panel}}
 
                 <div class="middle-panel">
-                  <div class="profile-container">
-                    <div class="post">
-                        <div class="post-full">
-                            <div class="wrapper-post">
-                                <section class="post-popup">
-                                    <form id="edit-user-form" class="form-update">
-                                        <h2 style="margin:15px;">Your Account</h2>
-                                        <div>
-                                            <label for="user-name">Full Name</label>
-                                            <input id="user-name" class="input-update" name="user-name" type="text"
-                                                value="{{user.name}}" />
-                                        </div>
-                                        <div>
-                                            <label for="user-username">Username</label>
-                                            <input id="user-username" class="input-update" name="user-username"
-                                                class="text-label" type="text" value="{{user.username}}" />
-                                        </div>
-                                        <div>
-                                            <label for="user-email">Email</label>
-                                            <input id="user-email" class="input-update" name="user-email"
-                                                class="text-label" type="email" value="{{user.email}}" />
-                                        </div>
-                                        <div>
-                                            <label for="user-password">Password</label>
-                                            <input id="user-password" class="input-update" name="user-password"
-                                                class="text-label" type="text" value="{{user.password}}" />
-                                        </div>
+                    <div class="profile-container">
+                        <div class="post">
+                            <div class="post-full">
+                                <div class="wrapper-post">
+                                    <section class="post-popup">
+                                        <form id="edit-user-form" class="form-update">
+                                            <h2 style="margin:15px;">Your Account</h2>
+                                            <div>
+                                                <label for="user-name">Full Name</label>
+                                                <input id="user-name" class="input-update" name="user-name" type="text"
+                                                    value="{{user.name}}" />
+                                            </div>
+                                            <div>
+                                                <label for="user-username">Username</label>
+                                                <input id="user-username" class="input-update" name="user-username"
+                                                    class="text-label" type="text" value="{{user.username}}" />
+                                            </div>
+                                            <div>
+                                                <label for="user-email">Email</label>
+                                                <input id="user-email" class="input-update" name="user-email"
+                                                    class="text-label" type="email" value="{{user.email}}" />
+                                            </div>
+                                            <div>
+                                                <label for="user-password">Password</label>
+                                                <input id="user-password" class="input-update" name="user-password"
+                                                    class="text-label" type="text" value="{{user.password}}" />
+                                            </div>
 
-                                        <button type="submit" class="btn-save">Update Account</button>
-                                        <button id="delete-user" type="button" class="btn-del">Delete Account
-                                        </button>
-                                    </form>
-                                </section>
+                                            <button type="submit" class="btn-save">Update Account</button>
+                                            <button id="delete-user" type="button" class="btn-del">Delete Account
+                                            </button>
+                                        </form>
+                                    </section>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            
 
-                {{>right-panel user}}
+
+                </div>
+                {{>right-panel}}
             </div>
         </div>
-    </div>
 
 </main>
 
