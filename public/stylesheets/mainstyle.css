@@ -794,15 +794,24 @@ nav .nav-right span > i {
 
   nav .nav-left {
     display: flex;
-    margin-bottom: -93px !important;
-    margin-inline-start: -32px;
-    }
+    margin-bottom: -90px !important;
+    margin-inline-start: -116px;
+}
+
+nav .nav-middle a > i {
+  font-size: 25px;
+  padding-right: 1px;
+  padding-left: 3px;
+  padding-bottom: 1px;
+}
 
   nav .nav-right {
     display: flex;
     justify-content: right;
     margin-bottom: -26px !important;
-    padding-right: 0px; 
+    padding-bottom: 27px !important;
+    padding-right: 11px !important;
+    /* height: calc(20vh - 97px); */
   }
 
   nav .nav-left > img {
@@ -815,10 +824,11 @@ nav .nav-right span > i {
   .wrapper {
     width: 100%;
     overflow: hidden;
-  }
-
-  .middle-panel {
-    margin-left: 7px;
+    overflow: scroll;
+    scroll-snap-align: end;
+    scroll-behavior: smooth;
+    margin: -1px;
+    
   }
 
   .profile {
@@ -832,6 +842,8 @@ nav .nav-right span > i {
     margin-left: 0px;
   }
 
+  
+ 
   .dk {
     border: none !important;
     background: transparent;
@@ -872,17 +884,54 @@ nav .nav-right span > i {
     /* padding-right: 5px; */
   }
 
-  .wrapper {
-    overflow: scroll;
-    /* scroll-snap-align: end; */
-    scroll-behavior: smooth;
+  nav .nav-middle {
+    display: flex;
+    padding-bottom: 5px;
+    margin-left: 67px;
+    align-items: flex-end;
+    margin-bottom: -41px;
+    padding-right: 5px;
+    padding-top: 60px !important;
+
   }
 
-  .logo {
-    width: 100px !important;
-    margin-top: 30px !important;
-    margin-right: -41px;
-    margin-left: -8px;
+  nav .nav-right .a {
+    text-decoration: none;
+    color: #333;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #eee;
+    display: grid;
+    place-items: center;
+    margin-left: 1rem;
+    margin-right: 4px;
+    margin-bottom: -17px !important;
+
+}
+
+nav .nav-right .logout {
+  text-decoration: none;
+  color: #333;
+  height: 40px;
+  width: 60px;
+  background: #eee;
+  display: grid;
+  place-items: center;
+  margin-left: 1rem;
+  height: calc(20vh - 70px);
+}
+
+
+.logo {
+  width: 60px !important;
+  margin-left: 54px !important;
+  margin-top: -60px !important;
+  width: 75px !important;
+  padding-left: 24px !important;
+  margin-right: -75px !important;
+  margin-bottom: 148px !important;
+
 }
 
   .dp {
@@ -898,6 +947,17 @@ nav .nav-right span > i {
     padding-bottom: 5px;
   }
 
+.container {
+  display: flex;
+  justify-content: right !important;
+  margin: -3px;
+  padding: 1px;
+  margin-left: 29px !important;
+  margin-right: -23px !important;
+  max-width: 400px !important;
+  padding-top: 5px;
+}
+
   nav .nav-middle a.active::after {
     content: "";
     width: 100%;
@@ -909,8 +969,21 @@ nav .nav-right span > i {
   }
 
   .left-panel {
-    display: block;
-    position: relative !important;
+    display: block !important;
+    /* position: relative !important; */
+    margin-left: -77px;
+    margin-top: -104px;
+    padding-left: 151px;
+  }
+
+  .container .left-panel ul li {
+    display: block !important;
+    flex: none;
+    top: 10px;
+    width: 13px;
+    height: calc(20vh - 70px);
+    margin-left: -84px;
+    scroll-snap-align: start;
   }
 
   .container .left-panel {
@@ -927,11 +1000,13 @@ nav .nav-right span > i {
   .middle-panel {
     /* display: block; */
     /* position: relative !important; */
-    width: 75%;
+    width: 55%;
     margin-left: 7px;
-    margin-top: -54px;
-    margin-bottom: 75px;
-  }
+    margin-bottom: 75px !important;
+    margin-left: 7px;
+    margin-top: -17px !important; 
+    margin-right: -90px !important;
+    }
 
   .container .right-panel {
     /* position: sticky; */
@@ -942,19 +1017,81 @@ nav .nav-right span > i {
     scroll-snap-align: start;
   }
 
-  .right-panel {
-    display: block;
-    position: relative !important;
-    flex: none;
-    width: 100%;
-    margin: -27px;
-    margin-left: 211px;
-  }
+  .post .post-bottom .action {
+    box-shadow: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 0px 5px;
+    margin-right: 15px;
+}
 
-  .container {
-    display: block !important;
-    flex: grow;
-  }
+.right-panel {
+  display: block !important;
+  /* position: relative !important; */
+  display: contents !important;
+  /* position: relative !important; */
+  flex: none !important;
+  width: 100% !important;
+  margin: -27px !important;
+  margin-left: 211px !important;
+  flex: none;
+  margin: -27px;
+  /* margin-left: 211px; */
+}
+
+.right-panel .pages-section .name, .right-panel .friends-section .name {
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: -6px;
+}
+
+.right-panel .pages-section .page > .dp > img, .right-panel .friends-section .friend > .dp > img {
+width: 100%;
+}
+
+.right-panel .pages-section {
+  margin: 2rem 58px !important;
+  width: 470px !important;
+  padding-left: 65px !important;
+}
+
+.right-panel .pages-section h4, .right-panel .friends-section h4 {
+  margin-bottom: -6px;
+  margin-top: -14px !important;
+  margin: -1px;
+  padding: 1px;
+}
+
+.right-panel .pages-section .page, .right-panel .friends-section .friend {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: #333;
+}
+
+.post .post-top {
+display: flex;
+align-items: center;
+padding: 10px;
+height: calc(20vh - 131px);
+padding-top: 20px !important;
+}
+
+.post-header-title {
+padding-top: 15px;
+}
+
+.container {
+  /* display:contents; */
+  display: block;
+  flex: auto;
+  padding-left: 0px;
+}
 
   /*Account profile*/
   .card-header {
@@ -1100,7 +1237,7 @@ nav .nav-right span > i {
     justify-content: right;
     margin-bottom: -26px !important;
     padding-right: 0px; 
-  }
+   }
 
   nav .nav-left > img {
     width: 100%;
@@ -1187,7 +1324,7 @@ nav .nav-right .logout {
   display: grid;
   place-items: center;
   margin-left: 1rem;
-  height: calc(20vh - 70px);
+  height: calc(20vh - 100px);
 }
 
   .wrapper {
@@ -1198,11 +1335,11 @@ nav .nav-right .logout {
 
   .logo {
       width: 60px !important;
-      margin-bottom: 32px !important;
+      margin-bottom: 32px;
       margin-left: 54px !important;
       margin-top: 33px !important;
       width: 75px !important;
-      margin-bottom: 147px !important;
+      margin-bottom: 147px;
       padding-left: 38px;
     }
 
@@ -1243,18 +1380,19 @@ nav .nav-right .logout {
     top: 10px;
     width: 13px;
     height: calc(20vh - 70px);
-    margin-left: -84px;
+    margin-left: -92px;
     scroll-snap-align: start;
+    margin-top: 12px;
   }
 
    .middle-panel {
     display: block;
     position: relative !important;
     width: 55%;
-    margin-left: 7px;
+    margin-left: 10px !important;
     margin-bottom: 75px;
     margin-left: 7px;
-    margin-top: 144px; 
+    margin-top: -18px; 
     }
 
   .container .right-panel {
@@ -1301,12 +1439,12 @@ nav .nav-right .logout {
   .right-panel .pages-section {
     margin: 2rem 58px !important;
     width: 470px !important;
-    padding-left: 65px !important;
+    padding-left: 90px !important;
 }
 
   .right-panel .pages-section h4, .right-panel .friends-section h4 {
     margin-bottom: -6px;
-    margin-top: -30px;
+    margin-top: -20px;
 }
 
   .right-panel .pages-section .page, .right-panel .friends-section .friend {
@@ -1506,7 +1644,7 @@ nav .nav-right .logout {
 
   .logo {
     width: 100px !important;
-    margin-top: 30px !important;
+    margin-top: 30px;
     margin-right: -41px;
     margin-left: -8px;
 }
@@ -1638,7 +1776,7 @@ nav .nav-right .logout {
     position: relative !important;
     top: 20px !important;
     margin-left: 20px !important;
-    margin-right: -138px !important;
+    margin-right: -138px;
 }
 
   .container .right-panel {
@@ -1976,7 +2114,7 @@ nav .nav-middle {
     position: relative !important;
     top: 8px;
     margin-left: 145px;
-    margin-right: -19px;
+    margin-right: -134px;
   }
 
   .container .right-panel {
