@@ -358,14 +358,8 @@ nav .nav-right span > i {
 .wrapper {
   background-color: #eee;
   width: 100%;
-<<<<<<< HEAD
-  /* overflow: scroll; */
-  }
-
-=======
   overflow: hidden;
 }
->>>>>>> feature/new-scroll
 
 .resize {
   width: 100px;
@@ -984,31 +978,6 @@ nav .nav-right span > i {
     margin-bottom: -17px !important;
   }
 
-<<<<<<< HEAD
-}
-
-nav .nav-right .logout {
-  text-decoration: none;
-  color: #333;
-  height: 40px;
-  width: 60px;
-  background: #eee;
-  display: grid;
-  place-items: center;
-  margin-left: 1rem;
-  height: calc(20vh - 70px);
-}
-
-
-.logo {
-  width: 60px !important;
-  margin-left: 54px !important;
-  margin-top: -60px !important;
-  width: 75px !important;
-  padding-left: 24px !important;
-  margin-right: -130px !important;
-  margin-bottom: 148px !important;
-=======
   nav .nav-right .logout {
     text-decoration: none;
     color: #333;
@@ -1020,7 +989,6 @@ nav .nav-right .logout {
     margin-left: 1rem;
     height: calc(20vh - 70px);
   }
->>>>>>> feature/new-scroll
 
   .logo {
     width: 60px !important;
@@ -1125,20 +1093,6 @@ nav .nav-right .logout {
     margin-right: 15px;
   }
 
-<<<<<<< HEAD
-.right-panel {
-  /* display: block !important; */
-  position: relative !important;
-  display: contents !important;
-  flex: none !important;
-  width: 100% !important;
-  margin: -27px !important;
-  margin-left: 211px !important;
-  flex: none;
-  margin: -27px;
-  /* margin-left: 211px; */
-}
-=======
   .right-panel {
     display: block !important;
     /* position: relative !important; */
@@ -1152,7 +1106,6 @@ nav .nav-right .logout {
     margin: -27px;
     /* margin-left: 211px; */
   }
->>>>>>> feature/new-scroll
 
   .right-panel .pages-section .name,
   .right-panel .friends-section .name {
@@ -1866,8 +1819,6 @@ nav .nav-right .logout {
     max-width: 800px;
   }
 
-<<<<<<< HEAD
-=======
   /* .container .left-panel {
     top: 50px;
     flex: none;
@@ -1879,7 +1830,6 @@ nav .nav-right .logout {
     scroll-snap-align: start;
   } */
 
->>>>>>> feature/new-scroll
   .middle-panel {
     display: block !important;
     position: relative !important;
@@ -1913,16 +1863,9 @@ nav .nav-right .logout {
     margin: 2rem 58px !important;
     width: 470px;
     padding-left: 117px;
-<<<<<<< HEAD
-}
-
-.wrapper {
-    position: relative;
-=======
   }
 
   .wrapper {
->>>>>>> feature/new-scroll
     display: block !important;
     flex: grow;
   }
