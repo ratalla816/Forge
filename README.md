@@ -115,7 +115,7 @@ GIVEN an authenticated user:
 - <p><a href="https://www.npmjs.com/package/express-session">Express-session</a></p>
 - <p><a href="https://www.npmjs.com/package/connect-session-sequelize">Connect-session-sequelize</a></p>
 - <p><a href="https://www.npmjs.com/package/express-handlebars">Express Handlebars</a></p>
-- <p><a href="#">Parallax</a></p>
+- <p><a href="https://www.npmjs.com/package/aos">AOS - Animate on scroll library</a></p>
 
 [Back To Top](#forge)
 
