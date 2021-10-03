@@ -1,38 +1,41 @@
-<div class="post">
-  <div class="post-top">
-    <div class="">
-      <i class="fas fa-user" style="font-size:24px;"></i>
+<div data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1200" >
+  <div class="post block">
+    <div class="post-top">
+      <div class="">
+        <i class="fas fa-user" style="font-size:24px;"></i>
+      </div>
+      <div class="post-info">
+        <p class="name">{{user.name}}</p>
+        <span class="time">{{format_date created_at}}</span>
+      </div>
     </div>
-    <div class="post-info">
-      <p class="name">{{user.name}}</p>
-      <span class="time">{{format_date created_at}}</span>
-    </div>
-  </div>
-  <div>
-    <header class="post-header post-header-title" style="margin-left: 10px;">
-      <a href="/post/{{id}}">{{title}}</a>
-    </header>
-    <div class="post-content"><a href="{{post_url}}" target="_blank">{{format_url post_url}}</a></div>
-    <div class="post-content">{{post_body}}test</div>
-  </div>
-
-  <div class="post-bottom">
-    <div class="action">
-      <i class="far fa-thumbs-up" style="color:black" alt="likes icons"></i>
-      <span class="text-r">{{likes_count}}
-        {{format_plural "like" likes_count}}</span>
+    <div>
+      <header class="post-header post-header-title" style="margin-left: 10px;">
+        <a href="/post/{{id}}">{{title}}</a>
+      </header>
+      <div class="post-content"><a href="{{post_url}}" target="_blank">{{format_url post_url}}</a></div>
+      <div class="post-content">{{post_body}}test</div>
     </div>
 
-    <div class="action">
-      <a href="/post/{{id}}">
-        <i class="far fa-comment"></i>
-        <a href="/post/{{id}}">{{comments.length}}
-          {{format_plural "comment" comments.length}}</a>
-      </a>
-    </div>
-    <div class="action">
-      {{!-- <i class="fa fa-share"></i> --}}
-      <span></span>
+    <div class="post-bottom">
+      <div class="action">
+        <i class="far fa-thumbs-up" style="color:black" alt="likes icons"></i>
+        <span class="text-r">{{likes_count}}
+          {{format_plural "like" likes_count}}</span>
+      </div>
+
+      <div class="action">
+        <a href="/post/{{id}}">
+          <i class="far fa-comment"></i>
+          <a href="/post/{{id}}">{{comments.length}}
+            {{format_plural "comment" comments.length}}</a>
+        </a>
+      </div>
+      <div class="action">
+        {{!-- <i class="fa fa-share"></i> --}}
+        <span></span>
+      </div>
     </div>
   </div>
+
 </div>

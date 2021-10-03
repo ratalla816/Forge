@@ -1,18 +1,19 @@
 <h1 style="margin:20px;margin-right:100px">Users List</h1>
 {{#each users as |user|}}
+<div data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1200">
 
-<div class="post">
-    <div class="post-top">
-        <div class="">
-            <i class="fas fa-user" style="font-size:24px;" alt="icon user profile"></i>
-        </div>
-        <div class="post-info">
-            <p class="name">{{name}}</p>
-            <span class="time">{{username}}</span>
+    <div class="post block">
+        <div class="post-top">
+            <div class="">
+                <i class="fas fa-user" style="font-size:24px;" alt="icon user profile"></i>
+            </div>
+            <div class="post-info">
+                <p class="name">{{name}}</p>
+                <span class="time">{{username}}</span>
+            </div>
         </div>
     </div>
 </div>
-
 {{else}}
 <h6 class="">there are currently no users</h6>
 {{/each}}

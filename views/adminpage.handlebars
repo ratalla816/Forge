@@ -15,47 +15,49 @@
                     </div>
                     {{#if posts.length}}
                     {{#each posts as |post|}}
+                    <div data-aos="fade-zoom-in" data-aos-offset="100" data-aos-easing="ease-in-sine"
+                        data-aos-duration="1200">
 
-                    <div class="post">
-                        <div class="post-top">
-                            <div class="">
-                                <i class="fas fa-user" style="font-size:24px;" alt="icon user"></i>
+                        <div class="post block">
+                            <div class="post-top">
+                                <div class="">
+                                    <i class="fas fa-user" style="font-size:24px;" alt="icon user"></i>
+                                </div>
+                                <div class="post-info">
+                                    <p class="name">{{user.name}}</p>
+                                    <span class="time">{{format_date created_at}}</span>
+                                </div>
                             </div>
-                            <div class="post-info">
-                                <p class="name">{{user.name}}</p>
-                                <span class="time">{{format_date created_at}}</span>
+                            <div>
+                                <header class="post-header post-header-title" style="margin-left: 10px;">
+                                    <a href="/post/{{id}}">{{title}}</a>
+                                </header>
+                                <div class="post-content"><a href="{{post_url}}">{{format_url post_url}}</a>
+                                </div>
+                                <div class="post-content">{{post_body}}</div>
                             </div>
-                        </div>
-                        <div>
-                            <header class="post-header post-header-title" style="margin-left: 10px;">
-                                <a href="/post/{{id}}">{{title}}</a>
-                            </header>
-                            <div class="post-content"><a href="{{post_url}}">{{format_url post_url}}</a>
-                            </div>
-                            <div class="post-content">{{post_body}}</div>
-                        </div>
 
-                        <div class="post-bottom">
-                            <div class="action" style="color:black;">
-                                <i class="far fa-thumbs-up"></i>
-                                <span>{{likes_count}}
-                                    {{format_plural "like" likes_count}}</span>
+                            <div class="post-bottom">
+                                <div class="action" style="color:black;">
+                                    <i class="far fa-thumbs-up"></i>
+                                    <span>{{likes_count}}
+                                        {{format_plural "like" likes_count}}</span>
+                                </div>
+                                <div class="action">
+                                    <a href="/post/{{id}}">
+                                        <i class="far fa-comment"></i>
+                                        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment"
+                                            comments.length}}</a>
+                                    </a>
+                                </div>
+                                <div class="action">
+                                    <a href="/admin/edit/{{post.id}}"><button class="btn-up">Edit
+                                            post</button></a>
+                                </div>
                             </div>
-                            <div class="action">
-                                <a href="/post/{{id}}">
-                                    <i class="far fa-comment"></i>
-                                    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment"
-                                        comments.length}}</a>
-                                </a>
-                            </div>
-                            <div class="action">
-                                <a href="/admin/edit/{{post.id}}"><button class="btn-up">Edit
-                                        post</button></a>
-                            </div>
-                        </div>
 
+                        </div>
                     </div>
-
                     {{/each}}
 
                     {{else}}
